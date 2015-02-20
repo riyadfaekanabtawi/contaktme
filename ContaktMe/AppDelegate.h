@@ -1,0 +1,29 @@
+//
+//  AppDelegate.h
+//  BeepGoosh
+//
+//  Created by Riyad Anabtawi on 1/11/15.
+//  Copyright (c) 2015 Riyad Anabtawi. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+@protocol AppiShit
+
+-(void)playLiveVideoAfterMinimizing;
+
+@end
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
+
+@property (strong, nonatomic) UIWindow *window;
+
+
++(void)setVideoPlaying:(BOOL)isPlaying;
++(BOOL)isVideoPlaying;
++(BOOL)shouldAutorotate;
++(NSUInteger)supportedInterfaceOrientations;
++(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation;
+
+@property (nonatomic,retain) id<AppiShit> delegate;
+
+@end
+

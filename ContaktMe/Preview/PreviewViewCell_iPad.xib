@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tapGestureRecognizer id="I2D-gM-iyr">
+            <connections>
+                <action selector="imageTap:" destination="DDn-5A-pYj" id="Fcz-et-Awf"/>
+            </connections>
+        </tapGestureRecognizer>
+        <view contentMode="scaleToFill" id="DDn-5A-pYj" customClass="SBTVPreviewViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="446" height="540"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" id="5eW-6A-lV5" userLabel="View - Content">
+                    <rect key="frame" x="0.0" y="0.0" width="446" height="540"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_1024.jpg" id="ZZk-69-QTI">
+                            <rect key="frame" x="0.0" y="0.0" width="446" height="236"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="I2D-gM-iyr" appends="YES" id="iCI-kV-KJo"/>
+                            </connections>
+                        </imageView>
+                        <view contentMode="scaleToFill" id="jsD-eN-xaY">
+                            <rect key="frame" x="375" y="207" width="61" height="47"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="PXs-i2-mJ1">
+                                    <rect key="frame" x="15" y="9" width="30" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </view>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ph1-Pw-DGI">
+                            <rect key="frame" x="0.0" y="250" width="446" height="26"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view alpha="0.20000000298023224" contentMode="scaleToFill" id="ZYj-7L-ixr" userLabel="View - Separator">
+                            <rect key="frame" x="0.0" y="436" width="446" height="1"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </view>
+                        <view alpha="0.20000000298023224" contentMode="scaleToFill" id="13g-cg-c5G" userLabel="View - Separator">
+                            <rect key="frame" x="0.0" y="492" width="446" height="1"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </view>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mk5-lB-awk">
+                            <rect key="frame" x="0.0" y="317" width="446" height="108"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <string key="text">Lucas ipsum dolor sit amet wedge vao nautolan yarael mon nassau ferroans massassi ponda nunb. Yoda jax utapaun rex yuvernian zam bria. Rhen walon maris wicket desann ka. Grievous ruwee ki-adi-mundi endor ubb wroonian nunb orrin. Aka himoran raa drach'nam durge utai ailyn trandoshan thrella. Latter durron nunb greeata orrin. Whitesun nilgaard khai nassau jinn naboo tusken raider lobot. Rodian sio mirax wol. Spar bren mandell ulic. Darth kalee ventress dat tund d8 teek. Mothma wicket rhen falleen coway aparo khai.</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0Rv-wa-klN">
+                            <rect key="frame" x="289" y="445" width="40" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="icon_like_on.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="icon_like_on.png"/>
+                            <connections>
+                                <action selector="likeButtonTouchUpInside:" destination="DDn-5A-pYj" eventType="touchUpInside" id="a8d-wU-2xz"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6Qh-Yf-AR0">
+                            <rect key="frame" x="367" y="445" width="40" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="compartir_preview.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="compartir_preview.png"/>
+                            <connections>
+                                <action selector="ShareFacebook:" destination="DDn-5A-pYj" eventType="touchUpInside" id="h1h-Tz-72V"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="AMO-2q-T4G">
+                            <rect key="frame" x="328" y="445" width="40" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="icon_twitter_on.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="icon_twitter_on.png"/>
+                            <connections>
+                                <action selector="twitterTouchUpInside:" destination="DDn-5A-pYj" eventType="touchUpInside" id="3y9-NS-fOV"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="iGg-HB-cjl">
+                            <rect key="frame" x="406" y="445" width="40" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="icon_heart_on.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="icon_heart_on.png"/>
+                            <connections>
+                                <action selector="favoriteButtonTouchUpInside:" destination="DDn-5A-pYj" eventType="touchUpInside" id="dEN-Ik-vYn"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 de Septiembre" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hN4-41-jDL">
+                            <rect key="frame" x="0.0" y="437" width="142" height="26"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16:00 Hrs" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WQe-bN-2Ka">
+                            <rect key="frame" x="0.0" y="466" width="125" height="26"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recordar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UHg-ke-Yj6">
+                            <rect key="frame" x="0.0" y="288" width="79" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reloj.png" id="0hY-v6-Phd">
+                            <rect key="frame" x="72" y="291" width="15" height="15"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OYH-Pn-xo2">
+                            <rect key="frame" x="0.0" y="279" width="110" height="38"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <state key="normal">
+                                <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="remindButtonTouchUpInside:" destination="DDn-5A-pYj" eventType="touchUpInside" id="DZP-Ss-727"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XND-qt-sky">
+                            <rect key="frame" x="118" y="290" width="69" height="18"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="t3I-nx-QIf">
+                            <rect key="frame" x="188" y="83" width="70" height="70"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="icon_play.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="playButton:" destination="DDn-5A-pYj" eventType="touchUpInside" id="0Lh-Y1-6Re"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="categoryLabel" destination="XND-qt-sky" id="Ty3-yy-SSG"/>
+                <outlet property="channelImage" destination="PXs-i2-mJ1" id="9TV-5W-bQ7"/>
+                <outlet property="channelView" destination="jsD-eN-xaY" id="Sig-Z9-Dc6"/>
+                <outlet property="content" destination="5eW-6A-lV5" id="e17-uR-JmL"/>
+                <outlet property="descriptionLabel" destination="Mk5-lB-awk" id="fB6-6m-9AO"/>
+                <outlet property="diaMesiPad" destination="hN4-41-jDL" id="AR9-JS-AKo"/>
+                <outlet property="favouriteButton" destination="iGg-HB-cjl" id="wt3-bC-8GQ"/>
+                <outlet property="headerImage" destination="ZZk-69-QTI" id="zsC-ML-cht"/>
+                <outlet property="horaStartiPad" destination="WQe-bN-2Ka" id="G1c-Y4-Zf1"/>
+                <outlet property="likeButton" destination="0Rv-wa-klN" id="kO9-YC-REj"/>
+                <outlet property="recordarLabel" destination="UHg-ke-Yj6" id="RUN-FG-xd7"/>
+                <outlet property="relojImage" destination="0hY-v6-Phd" id="Sr0-vX-5Bd"/>
+                <outlet property="remindButton" destination="OYH-Pn-xo2" id="uk4-vn-IO2"/>
+                <outlet property="shareButton" destination="6Qh-Yf-AR0" id="4Dh-jq-TXQ"/>
+                <outlet property="titleLabel" destination="ph1-Pw-DGI" id="uT3-8K-fac"/>
+                <outlet property="twitterButton" destination="AMO-2q-T4G" id="K5W-um-M4a"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="compartir_preview.png" width="30" height="30"/>
+        <image name="icon_heart_on.png" width="70" height="70"/>
+        <image name="icon_like_on.png" width="70" height="70"/>
+        <image name="icon_play.png" width="70" height="70"/>
+        <image name="icon_twitter_on.png" width="70" height="70"/>
+        <image name="placeholder_1024.jpg" width="1024" height="400"/>
+        <image name="reloj.png" width="40" height="40"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

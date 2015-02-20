@@ -1,0 +1,54 @@
+
+/* Class = "IBUITextField"; placeholder = "Email"; ObjectID = "3iU-wL-UaJ"; */
+"3iU-wL-UaJ.placeholder" = "Usuario o E-mail";
+
+/* Class = "IBUILabel"; text = "CONTAKT"; ObjectID = "7iz-jE-PL9"; */
+"7iz-jE-PL9.text" = "CONTAKT";
+
+/* Class = "IBUIButton"; normalTitle = "Login"; ObjectID = "AWk-9X-Vuz"; */
+"AWk-9X-Vuz.normalTitle" = "Login";
+
+/* Class = "IBUIButton"; normalTitle = "Go!"; ObjectID = "Gxy-5O-xHU"; */
+"Gxy-5O-xHU.normalTitle" = "Entrar!";
+
+/* Class = "IBUITextField"; placeholder = "Search name"; ObjectID = "JVL-WH-d2L"; */
+"JVL-WH-d2L.placeholder" = "Buscar nombre";
+
+/* Class = "IBUILabel"; text = "Hello there!"; ObjectID = "Lss-ve-ds3"; */
+"Lss-ve-ds3.text" = "Hola!";
+
+/* Class = "IBUITextField"; placeholder = "Full Name"; ObjectID = "NvA-zX-7mF"; */
+"NvA-zX-7mF.placeholder" = "Nombre completo";
+
+/* Class = "IBUILabel"; text = "Evento"; ObjectID = "PmN-st-PE8"; */
+"PmN-st-PE8.text" = "Evento";
+
+/* Class = "IBUITextField"; placeholder = "Password"; ObjectID = "QW1-GC-Dp1"; */
+"QW1-GC-Dp1.placeholder" = "Contraseña";
+
+/* Class = "IBUIButton"; normalTitle = "Join"; ObjectID = "RzL-MT-DWx"; */
+"RzL-MT-DWx.normalTitle" = "Registrame";
+
+/* Class = "IBUILabel"; text = "Slide to see recent contakts!"; ObjectID = "VXr-Ev-LhR"; */
+"VXr-Ev-LhR.text" = "Deslize para ver contactos recientes";
+
+/* Class = "IBUITextField"; placeholder = "Email"; ObjectID = "b54-In-EHa"; */
+"b54-In-EHa.placeholder" = "Usuario o E-mail";
+
+/* Class = "IBUILabel"; text = "Hiii Ammo how are you!"; ObjectID = "cjl-Xv-fML"; */
+"cjl-Xv-fML.text" = "Hiii Ammo how are you!";
+
+/* Class = "IBUITextField"; placeholder = "Password"; ObjectID = "g2a-tK-HJM"; */
+"g2a-tK-HJM.placeholder" = "Contraseña";
+
+/* Class = "IBUITextField"; placeholder = "Confirm Password"; ObjectID = "gcm-S8-Sv0"; */
+"gcm-S8-Sv0.placeholder" = "Confirmar contraseña";
+
+/* Class = "IBUITextField"; placeholder = "Your friend's email"; ObjectID = "lOb-Qs-K3v"; */
+"lOb-Qs-K3v.placeholder" = "Email de su amigo";
+
+/* Class = "IBUIButton"; normalTitle = "Register"; ObjectID = "r5b-wk-ndw"; */
+"r5b-wk-ndw.normalTitle" = "Registrar";
+
+/* Class = "IBUILabel"; text = "PANEL"; ObjectID = "sfJ-tR-MhC"; */
+"sfJ-tR-MhC.text" = "PANEL";
