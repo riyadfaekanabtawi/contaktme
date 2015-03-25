@@ -30,18 +30,19 @@
         [self slideMenuSetup];
     
     
-    UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"contaktList.png"]];
+    UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo.png"]];
     
     logo.clipsToBounds = YES;
     logo.contentMode = UIViewContentModeScaleAspectFit;
     
-    logo.frame=CGRectMake(logo.frame.origin.x, logo.frame.origin.y, 192, 24);
+    logo.frame=CGRectMake(logo.frame.origin.x, logo.frame.origin.y, 140, 20);
     UIView *logoContainer = [[UIView alloc] initWithFrame:logo.frame];
     [logoContainer addSubview:logo];
     
     self.navigationItem.titleView = logoContainer;
     self.navigationItem.leftBarButtonItem.title = @"";
     self.navigationController.navigationBar.topItem.title = @"";
+
 
     self.userDick = [NSMutableDictionary new];
     

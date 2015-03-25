@@ -9,7 +9,7 @@
 #import "SBTVServices.h"
 #import "DDXML.h"
 #import "JSONServiceParser.h"
-
+#import "User.h"
 #import <CommonCrypto/CommonDigest.h>
 
 #define MAX_ATTEMPTS 4
@@ -219,7 +219,7 @@
 + (NSString *)getWS:(NSString *)name
 {
 
-    NSString *errorDesc = nil;
+    NSError *errorDesc = nil;
     NSPropertyListFormat format;
     NSString *plistPath;
     NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
@@ -230,10 +230,11 @@
     }
     NSData *plistXML = [[NSFileManager defaultManager] contentsAtPath:plistPath];
     NSDictionary *temp = (NSDictionary *)[NSPropertyListSerialization
-                                          propertyListFromData:plistXML
-                                          mutabilityOption:NSPropertyListMutableContainersAndLeaves
+                                          propertyListWithData:plistXML
+                                          options:NSPropertyListMutableContainersAndLeaves
                                           format:&format
-                                          errorDescription:&errorDesc];
+                                          error:&errorDesc];
+                                          
     if (!temp) {
 
     }
@@ -457,55 +458,208 @@
 
 
 +(void)getUserCountry:(void (^)(id)) handler orErrorHandler:(void (^)(NSError *)) errorHandler {
-//
-//    NSURL *url = [NSURL URLWithString:@"http://54.207.109.226/geo/api/1.0/common/country"];
-//
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//
-//    NSDate *lastCheck = [defaults objectForKey:@"last_country_check"];
-//
-//    if (lastCheck != nil) {
-//        //Check only once a day
-//        if ([[NSDate date] timeIntervalSinceDate:lastCheck] < 6 * 60 * 60 && NO) {
-//            handler([defaults stringForKey:@"user_country_code"]);
-//        }
-//        else {
-//            [defaults setObject:[NSDate date] forKey:@"last_country_check"];
-//            [defaults synchronize];
-//            [[[JSONServiceParser alloc] initWithTimeout:20] getJSONFromUrl:url withHandler:^(id data) {
-//
-//                NSString *countryCode = [data objectForKey:@"data"];
-//                [defaults setObject:countryCode forKey:@"user_country_code"];
-//                [defaults synchronize];
-//
-//                handler(countryCode);
-//
-//            } orErrorHandler:^(NSError *err) {
-//                handler([defaults stringForKey:@"user_country_code"]);
-//            }];
-//        }
-//    }
-//    else {
-//        [defaults setObject:[NSDate date] forKey:@"last_country_check"];
-//        [defaults synchronize];
-//        [[[JSONServiceParser alloc] initWithTimeout:20] getJSONFromUrl:url withHandler:^(id data) {
-//
-//            NSString *countryCode = [data objectForKey:@"data"];
-//            [defaults setObject:countryCode forKey:@"user_country_code"];
-//            [defaults synchronize];
-//            NSLog(@"Country CODE: %@", countryCode);
-//            handler(countryCode);
-//
-//        } orErrorHandler:^(NSError *err) {
-//            handler([defaults stringForKey:@"user_country_code"]);
-//        }];
-//    }
+
+    NSURL *url = [NSURL URLWithString:@"http://54.207.109.226/geo/api/1.0/common/country"];
+
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
+    NSDate *lastCheck = [defaults objectForKey:@"last_country_check"];
+
+    if (lastCheck != nil) {
+        //Check only once a day
+        if ([[NSDate date] timeIntervalSinceDate:lastCheck] < 6 * 60 * 60 && NO) {
+        //    handler([defaults stringForKey:@"user_country_code"]);
+        }
+        else {
+            [defaults setObject:[NSDate date] forKey:@"last_country_check"];
+            [defaults synchronize];
+            [[JSONServiceParser alloc]  getJSONFromUrl:url withHandler:^(id data) {
+
+                NSString *countryCode = [data objectForKey:@"data"];
+                [defaults setObject:countryCode forKey:@"user_country_code"];
+                [defaults synchronize];
+
+                handler(countryCode);
+
+            } orErrorHandler:^(NSError *err) {
+                handler([defaults stringForKey:@"user_country_code"]);
+            }];
+        }
+    }
+    else {
+        [defaults setObject:[NSDate date] forKey:@"last_country_check"];
+        [defaults synchronize];
+        [[JSONServiceParser alloc] getJSONFromUrl:url withHandler:^(id data) {
+
+            NSString *countryCode = [data objectForKey:@"data"];
+            [defaults setObject:countryCode forKey:@"user_country_code"];
+            [defaults synchronize];
+            NSLog(@"Country CODE: %@", countryCode);
+            handler(countryCode);
+
+        } orErrorHandler:^(NSError *err) {
+            handler([defaults stringForKey:@"user_country_code"]);
+        }];
+    }
 
     
     
 }
 
 
++(void)searchNeaLatitude:(NSString *)latitude andLongitude:(NSString *)longitude forUser:(NSNumber *)user_id AndHandler:(void (^)(id))handler orErrorHandler:(void (^)(NSError *))errorHandler{
+
+
+ NSURL *url = [NSURL URLWithString:@""];
+
+    User *current;
+
+    [[[JSONServiceParser alloc] init] getJSONFromUrl:url
+                                         withHandler:^(id response) {
+                                             
+//                                             for(NSDictionary *users in response){
+//                                                 
+//                                                 for(NSDictionary *data in [users objectForKey:@"users"]){
+//                                                     
+//                                                     //User *user = [[User alloc]initWithDictionary:data];
+//                                                     
+//                                                     //current = user;
+//                                                 }
+//                                             }
+                                            handler(current);
+                                             
+                                             
+                                         } orErrorHandler:^(NSError *err) {
+                                         
+                                             
+                                         }];
+        
+
+}
+
++(void)getUsersforUser:(NSNumber *)user AndHandler:(void (^)(id))handler orErrorHandler:(void (^)(NSError *))errorHandler{
+
+    NSURL *url = [NSURL URLWithString:@""];
+    
+
+    
+    [[[JSONServiceParser alloc] init] getJSONFromUrl:url
+                                         withHandler:^(id response) {
+                                             
+                              
+                                             
+                                           //  handler([response objectForKey:@"contacts"]);
+                                           //handler
+                                             
+                                         } orErrorHandler:^(NSError *err) {
+                                             
+                                             
+                                         }];
+
+
+
+
+}
+
+
++(void)registerUserWithEmail:(NSString *)email andPassword:(NSString *)password andLanguage:(NSNumber *)language withAppID:(NSString *)appID AndHandler:(void (^)(id))handler orErrorHandler:(void (^)(NSError *))errorHandler{
+
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@user/register",BASE_URL]];
+    
+    NSString *params= [NSString stringWithFormat:@"email=%@&password=%@&language=%@&application_id=%@",email,password,language,appID];
+    
+    NSData *data=[params dataUsingEncoding:NSUTF8StringEncoding];
+  
+    [[[JSONServiceParser alloc] init] getJSONFromPost:url
+                                          sendingData:data
+                                          withHandler:^(id streamsData) {
+                                              
+                                              
+                                              handler(streamsData);
+                                  
+                                              
+                                          } orErrorHandler:^(NSError *err) {
+                                              errorHandler(err);
+                                          }];
+
+
+
+}
+
++(void)LoginUserWithemail:(NSString *)email andpassword:(NSString *)password AndHandler:(void (^)(id))handler orErrorHandler:(void (^)(NSError *))errorHandler{
+    
+    
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@user/login?email=%@&password=%@",BASE_URL,email,password]];
+    
+    
+    
+    [[[JSONServiceParser alloc] init] getJSONFromUrl:url
+                                         withHandler:^(id response) {
+                                             
+                                             
+                                             
+                                             if([[response objectForKey:@"status"] isEqualToString:@"OK"]){
+                                               handler([response objectForKey:@"data"]);
+                                             
+                                             }
+                                           
+                                    
+                                             
+                                         } orErrorHandler:^(NSError *err) {
+                                             
+                                             
+                                         }];
+    
+}
+
+
++(void)updateBasicInfoWithFullName:(NSString *)full_name andProfession:(NSString *)profession andCellphone:(NSString *)cell_phone forUserID:(NSNumber *)user_id AndHandler:(void (^)(id))handler orErrorHandler:(void (^)(NSError *))errorHandler{
+    
+    
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@user/addBasicInformation",BASE_URL]];
+    
+    NSString *params= [NSString stringWithFormat:@"full_name=%@&profession=%@&cellphone=%@&user=%@",full_name,profession,cell_phone,user_id];
+    NSString *header= [NSString stringWithFormat:@"%@:%@",client_id,client_secret];
+    
+    NSData *data=[params dataUsingEncoding:NSUTF8StringEncoding];
+    
+    
+    [[[JSONServiceParser alloc] init]getJSONFromPostHeader:url
+                                               sendingData:data
+                                                 andHeader:header
+                                               withHandler:^(id data) {
+                                                   handler(data);
+                                               } orErrorHandler:^(NSError *err) {
+                                                   errorHandler(err);
+                                               }];
+    
+    
+}
+
+
++(void)requestTokenForUser:(NSNumber *)user_id andPassword:(NSString *)password  AndHandler:(void (^)(id))handler orErrorHandler:(void (^)(NSError *))errorHandler{
+    
+    
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://52.1.119.11:8080/o/token/"]];
+    
+    NSString *params= [NSString stringWithFormat:@"grant_type=password&password=%@&username=%@",password,user_id];
+    NSString *clients = [NSString stringWithFormat:@"%@%@",client_id,client_secret];
+    NSString *header= [[NSString stringWithFormat:@"Basic %@",clients] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+   
+    NSData *data=[params dataUsingEncoding:NSUTF8StringEncoding];
+    
+    
+    [[[JSONServiceParser alloc] init]getJSONFromPostHeader:url
+                                               sendingData:data
+                                                 andHeader:header
+                                               withHandler:^(id data) {
+                                                   handler(data);
+                                               } orErrorHandler:^(NSError *err) {
+                                                   errorHandler(err);
+                                               }];
+    
+    
+}
 
 
 @end

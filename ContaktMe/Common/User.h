@@ -26,7 +26,6 @@
 @property NSString *category;
 @property NSString *gender;
 @property NSString *city;
-@property NSString *accepted_i;
 @property NSString *country;
 @property NSString *mobilephone;
 @property NSString *workplace;

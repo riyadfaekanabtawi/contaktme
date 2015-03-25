@@ -10,7 +10,7 @@
 @protocol AppiShit
 
 -(void)playLiveVideoAfterMinimizing;
-
+-(void)sbtvAppDidRecieveNotification:(NSDictionary *)notification;
 @end
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -22,7 +22,7 @@
 +(BOOL)shouldAutorotate;
 +(NSUInteger)supportedInterfaceOrientations;
 +(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation;
-
+@property (nonatomic,retain) NSDictionary *pendingNotification;
 @property (nonatomic,retain) id<AppiShit> delegate;
 
 @end

@@ -59,16 +59,36 @@
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:data];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
 
+    
     self.completionHandler = handler;
     self.errorHandler = errorHandler;
-
+    
     passRawData = NO;
-
+    
     (void)[[NSURLConnection alloc] initWithRequest:request delegate:self];
     webData = [NSMutableData data];
+    
+    startTime = [NSDate date];
+}
 
+
+-(void)getJSONFromPostHeader:(NSURL *)url sendingData:(NSData *)data andHeader:(NSString *)header withHandler:(void (^)(id)) handler orErrorHandler:(void (^)(NSError *)) errorHandler {
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"POST"];
+    [request setHTTPBody:data];
+    [request setValue:header forHTTPHeaderField:@"Authorization"];
+    
+    
+    self.completionHandler = handler;
+    self.errorHandler = errorHandler;
+    
+    passRawData = NO;
+    
+    (void)[[NSURLConnection alloc] initWithRequest:request delegate:self];
+    webData = [NSMutableData data];
+    
     startTime = [NSDate date];
 }
 
@@ -82,12 +102,6 @@
     self.completionHandler = handler;
     self.errorHandler = errorHandler;
 
-    passRawData = YES;
-
-    (void)[[NSURLConnection alloc] initWithRequest:request delegate:self];
-    webData = [NSMutableData data];
-
-    startTime = [NSDate date];
 }
 
 -(void) connection: (NSURLConnection *) connection didReceiveResponse:(NSURLResponse *)response {

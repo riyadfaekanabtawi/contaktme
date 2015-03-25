@@ -33,7 +33,7 @@
 @property (nonatomic,retain) IBOutlet UIScrollView *pullScrollView;
 @property (nonatomic,retain) IBOutlet UIView *draggableView;
 @property (nonatomic,retain) IBOutlet UIView *openMessage;
-@property (nonatomic,retain) IBOutlet UIView *ChatRoomContainer;
+
 @property (nonatomic,retain) IBOutlet UIView *tapView;
 @property (nonatomic,retain) IBOutlet UILabel *userName;
 @property  BOOL accepted;
@@ -60,6 +60,7 @@
 @property (nonatomic,retain) IBOutlet UIView *footer;
 @property (nonatomic,retain) IBOutlet UIImageView *shareicon;
 @property (nonatomic,retain) UISwipeGestureRecognizer *gesture;
+
 
 
 

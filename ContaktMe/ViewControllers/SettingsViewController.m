@@ -9,6 +9,8 @@
 #import "SettingsViewController.h"
 #import "Incidencia.h"
 #import "Functions.h"
+
+#import "SearchViewController.h"
 #import "SBTVServices.h"
 
 @interface SettingsViewController ()
@@ -19,6 +21,7 @@
     
     SBTVProgramPreview *preview;
     NSTimer *timer;
+    SearchViewController *_search;
     NSTimer *timer2;
     BOOL finalizado;
     BOOL _autoupdateOptionsSelection;
@@ -34,7 +37,7 @@
 - (void)viewDidLoad {
     
     
-    [self loadIncidences];
+   // [self loadIncidences];
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
     self.ScreenWidth.constant=screenWidth;
@@ -99,8 +102,8 @@
     self.slideMenuMargin.constant=-240;
     self.blockUIview.alpha=0.0f;
     [self.view layoutIfNeeded];
-
-    UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"settings_title.png"]];
+    [self slideMenuSetup];
+    UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo.png"]];
     
     logo.clipsToBounds = YES;
     logo.contentMode = UIViewContentModeScaleAspectFit;
@@ -124,6 +127,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)slideMenuSetup
+{
+    
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if ( revealViewController )
+    {
+        [self.navigationController.navigationBar removeGestureRecognizer:self.revealViewController.panGestureRecognizer];
+        
+        [self.navigationController.navigationBar setTintColor:[Functions colorWithHexString:@"F35e46"]];
+    }
+}
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -143,23 +157,35 @@
         
         
     }
+    
+    if ([segue.identifier isEqualToString:@"searchProfessionals"]) {
+        
+        _search = segue.destinationViewController;
+     
+        _search.isSearchingProfessionals=YES;
+        _search.isSearchingOffers=NO;
+        
+        
+        
+    }
+    
+    if ([segue.identifier isEqualToString:@"searchOffers"]) {
+        
+        _search = segue.destinationViewController;
+        _search.isSearchingProfessionals=NO;
+        _search.isSearchingOffers=YES;
+        
+        
+        
+        
+    }
+    
+    
 }
 
 
 
 
-
-- (void)slideMenuSetup
-{
-    
-    SWRevealViewController *revealViewController = self.revealViewController;
-    if ( revealViewController )
-    {
-        [self.navigationController.navigationBar removeGestureRecognizer:self.revealViewController.panGestureRecognizer];
-       
-        [self.navigationController.navigationBar setTintColor:[Functions colorWithHexString:@"F35e46"]];
-    }
-   }
 
 
 
@@ -581,18 +607,19 @@
 
 -(IBAction)ChatRoom:(id)sender{
 
-    self.ChatRoomContainer.alpha=0.0f;
-    self.ChatRoomContainer.hidden=YES;
-    [UIView animateWithDuration:0.5 animations:^{
-     
-        self.hyperView.alpha=0.0f;
-        self.ChatRoomContainer.alpha=1.0f;
-        self.ChatRoomContainer.hidden=NO;
-        
-        
-    } completion:^(BOOL finished) {
-        
-    }];
-    
+    [self performSegueWithIdentifier:@"chatRoom" sender:self];
+}
+
+-(void)nearbyProfessionals{
+
+    [self performSegueWithIdentifier:@"searchProfessionals" sender:self];
+
+}
+
+
+-(void)nearbyOffers{
+
+[self performSegueWithIdentifier:@"searchOffers" sender:self];
+
 }
 @end

@@ -15,9 +15,11 @@
 @class SBTVProgramPreview;
 
 @protocol SBTVProgramPreviewDelegate <NSObject>
+@optional
+
 -(void)removeView;
-
-
+-(void)nearbyOffers;
+-(void)nearbyProfessionals;
 @end
 
 @interface SBTVProgramPreview : UIView <SBTVPreviewViewCellDelegate>

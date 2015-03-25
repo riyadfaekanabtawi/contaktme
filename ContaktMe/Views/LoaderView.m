@@ -7,7 +7,7 @@
 //
 
 #import "LoaderView.h"
-
+#import "Functions.h"
 @implementation LoaderView
 
 - (id)initWithFrame:(CGRect)frame
@@ -53,7 +53,9 @@
         LoaderView *view = [[[NSBundle mainBundle] loadNibNamed:@"LoaderView" owner:self options:nil] objectAtIndex: 0];
         
         view.alpha = 1;
+          view.loadingView = [[HYCircleLoadingView alloc]initWithFrame:CGRectMake(0, 0, 35, 35)];
         
+       // [Functions addView:view.loadingView ToContainer:view WithTopMargin:@0 LeftMargin:@0 BottomMargin:@0 RightMargin:@0 Width:@30 Height:@30 CenterX:@1 CenterY:@1];
         UIWindow *frontWindow = [[UIApplication sharedApplication] keyWindow];
         
         [frontWindow.subviews[0] addSubview:view];
@@ -84,13 +86,13 @@
     [UIView animateWithDuration:0.2 animations:^{
         self.alpha = 1;
     } completion:^(BOOL finished) {
-        [self.activityIndicator startAnimating];
+         [self.loadingView startAnimation];
     }];
     
 }
 
 -(void)endAnimation {
-    [self.activityIndicator stopAnimating];
+        [self.loadingView stopAnimation];
     [self removeFromSuperview];
 }
 

@@ -19,10 +19,15 @@
 
 #define TEAM_LOGO_BASE_URL @"https://s3-sa-east-1.amazonaws.com/cdfsbtv/logos/%@.png"
 
-#define FONT_LIGHT             @"Roboto-Light"
-#define FONT_REGULAR           @"Roboto-Regular"
-#define FONT_BOLD              @"Roboto-Bold"
-#define FONT_MEDIUM              @"Roboto-Medium"
+#define FONT_LIGHT             @"Sansation-Regular"
+#define FONT_REGULAR           @"Sansation-Regular"
+#define FONT_BOLD              @"Sansation-Bold"
+#define FONT_MEDIUM              @"Sansation-Regular"
+
+
+#define BASE_URL @"http://52.1.119.11:8080/api/1.0/"
+#define client_id @"dYq7pD7xCiRP4Tq3R8HD9wfIVfPcmtceqF12dN.="
+#define client_secret @"dyvbrtCPYaUn3HZU3xk7VY--.wY75@3A3b19s5xMKet3gg;m7AJGTOaEVKCXmou@q=llFFndCWy;Q!1tGYFzhiUe8p!d9GV?UUOKl00XFmmbyxQrNXQTi2DQ.@eOY6ON"
 
 #define IS_IPHONE_4_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.width - ( double )320 ) < DBL_EPSILON )
 

@@ -13,11 +13,14 @@
 #import "TickleGestureRecognizer.h"
 @class SBTVPreviewViewCell;
 
-@protocol SBTVPreviewViewCellDelegate <NSObject>
+@protocol SBTVPreviewViewCellDelegate <NSObject,UITextFieldDelegate>
 
+@optional
 -(void)previewViewCellTap:(SBTVPreviewViewCell *)cell;
 
 -(void)removeView;
+-(void)nearbyOffers;
+-(void)nearbyProfessionals;
 
 @end
 
@@ -28,6 +31,13 @@
 
     UIImage *image;
 }
+
+@property (weak, nonatomic) IBOutlet UILabel *TitlesecctionProject;
+@property (weak, nonatomic) IBOutlet UIButton *postProject;
+@property (weak, nonatomic) IBOutlet UITextField *projecttitle;
+@property (weak, nonatomic) IBOutlet UITextField *professionalRequired;
+@property (weak, nonatomic) IBOutlet UITextField *projectDetails;
+@property (weak, nonatomic) IBOutlet UITextField *AvaragePay;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *handTop;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *panelTop;
 
@@ -72,6 +82,7 @@
 @property (nonatomic,retain) IBOutlet UILabel *userName;
 @property (nonatomic,retain) IBOutlet UIButton *sendSMS;
 @property (nonatomic,retain) IBOutlet UIButton *sendFree;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topSpaceProjectPanel;
 @property (nonatomic,retain) IBOutlet UIButton *ChatButton;
 @property  BOOL accepted;
 @property (nonatomic,retain) IBOutlet UILabel *DragLabel;
@@ -99,7 +110,22 @@
 @property (nonatomic,retain) IBOutlet UIView *footer;
 @property (nonatomic,retain) IBOutlet UIImageView *shareicon;
 @property (nonatomic,retain) UISwipeGestureRecognizer *gesture;
+@property (nonatomic,retain) IBOutlet UILabel *TapTo;
+@property (nonatomic,retain) IBOutlet UILabel *shareTap;
 
+
+
+//Settings Footer
+
+@property (nonatomic,retain) IBOutlet UILabel *createProject;
+@property (nonatomic,retain) IBOutlet UILabel *nearbyOffers;
+@property (nonatomic,retain) IBOutlet UILabel *nearbyProfessionals;
+@property (nonatomic,retain) IBOutlet UILabel *myMessages;
+@property (nonatomic,retain) IBOutlet UIView *footerSettings;
+@property (nonatomic,retain) IBOutlet UILabel *SHARE;
+@property (nonatomic,retain) IBOutlet UILabel *ME;
+
+//EndSettingsFooter
 - (void)handleTap:(UITapGestureRecognizer *)recognizer;
 
 @property (strong, nonatomic) IBOutlet UIPanGestureRecognizer *monkeyPan;

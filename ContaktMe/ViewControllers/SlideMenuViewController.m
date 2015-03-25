@@ -8,30 +8,67 @@
 
 #import "SlideMenuViewController.h"
 #import "Functions.h"
+#import "VODFilterLevel3.h"
 @interface SlideMenuViewController ()
 
 @end
 
-@implementation SlideMenuViewController
+@implementation SlideMenuViewController{
+
+ VODFilterLevel3 *level3Filter;
+    NSArray *_SearchOptions;
+    NSArray *_projects;
+    Project *_project;
+   
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if(IS_IPHONE_4){
+    self.logout.alpha=0.0f;
+    self.onlineUsers.alpha=0.0f;
+     self.nearbyOffersview.alpha=0.0f;
+    self.pendingRequests.alpha=0.0f;
+    self.allContacts.alpha=0.0f;
+    self.allProjectsview.alpha=0.0f;
+    self.chats.alpha=0.0f;
+    self.home.alpha=1.0f;
+    self.privacy.alpha=0.0f;
+    self.blcok.alpha=0.0f;
+   self.search.alpha=0.0f;
+   
     
-        self.mainScrollHeight.constant=self.view.frame.size.height+80;
-        [self.view layoutIfNeeded];
-    }else{
-        self.mainScrollHeight.constant=self.view.frame.size.height;
-        [self.view layoutIfNeeded];
+ 
     
-    }
+
+    self.panelLabel.font=[UIFont fontWithName:FONT_BOLD size:self.panelLabel.font.pointSize];
+    self.userName.font=[UIFont fontWithName:FONT_LIGHT size:self.userName.font.pointSize];
+    self.homeLabel.font=[UIFont fontWithName:FONT_LIGHT size:self.homeLabel.font.pointSize];
+    self.onlinUsersLabel.font=[UIFont fontWithName:FONT_LIGHT size:self.onlinUsersLabel.font.pointSize];
+    self.pendingLabel.font=[UIFont fontWithName:FONT_LIGHT size:self.pendingLabel.font.pointSize];
+    self.allcontaktsLabel.font=[UIFont fontWithName:FONT_LIGHT size:self.allcontaktsLabel.font.pointSize];
+    self.chatsLabel.font=[UIFont fontWithName:FONT_LIGHT size:self.chatsLabel.font.pointSize];
+    self.privacyLabel.font=[UIFont fontWithName:FONT_LIGHT size:self.privacyLabel.font.pointSize];
+    self.AllProjectsLabel.font=[UIFont fontWithName:FONT_LIGHT size:self.AllProjectsLabel.font.pointSize];
+    self.blockLabel.font=[UIFont fontWithName:FONT_LIGHT size:self.blockLabel.font.pointSize];
+    self.searchLocationLabel.font=[UIFont fontWithName:FONT_LIGHT size:self.searchLocationLabel.font.pointSize];
+    self.LogoutLabel.font=[UIFont fontWithName:FONT_LIGHT size:self.LogoutLabel.font.pointSize];
+    self.sectionLabel.font=[UIFont fontWithName:FONT_BOLD size:self.sectionLabel.font.pointSize];
     
     
+    
+    self.userAvatar.layer.cornerRadius = self.userAvatar.frame.size.width / 2;
+    self.userAvatar.clipsToBounds = YES;
+  self.mainScrollHeight.constant=self.view.frame.size.height+80;
+    
+    [self.contactTableView registerNib:[UINib nibWithNibName:@"VODFilterLevel1Cell"
+                                                          bundle:[NSBundle mainBundle]]
+                    forCellReuseIdentifier:@"VODFilterLevel1Cell"];
     self.mainView.backgroundColor=[Functions colorWithHexString:@"2d3e4f"];
     
     self.user=[User new];
     self.user.user_id=@"1";
-    
+    _SearchOptions=@[@"For Jobs",@"For Professionals"];
+    _projects=@[@"Mobile iOS Dev",@"UI-X Designer"];
     _configOptions=@[@"Privacy",@"Contacts",@"Chats",@"LogOut",@"Block user"];
     _configIcons=@[@"privacy_icon.png",@"contacts_icon.png",@"chat_menu_icon.png",@"logout_icon.png",@"block_icon.png"];
     
@@ -39,10 +76,10 @@
     self.list.textColor=[Functions colorWithHexString:@"f35e46"];
     self.titleMenu.font=[UIFont fontWithName:FONT_BOLD size:18];
     self.list.font=[UIFont fontWithName:FONT_LIGHT size:18];
-    [self.contactTableView registerNib:[UINib nibWithNibName:@"ContactListViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"contactcell"];
+    //[self.contactTableView registerNib:[UINib nibWithNibName:@"ContactListViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"contactcell"];
     
     
-        [self.configTableView registerNib:[UINib nibWithNibName:@"ContactListViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"contactcell"];
+
     
     
     CALayer *layer = self.view.layer;
@@ -74,8 +111,8 @@
     user0.avatar=@"emrie.jpg";
     user0.followed_by=@200;
     user0.state=@"online";
-    user0.accepted_i=@"1";
-          user0.accepted=@"NO";
+    
+          user0.accepted=@"YES";
     user0.profession=@"Industrial Engineer";
     user0.mobilephone=@"+011-949-4113667";
     user0.birthPlace=@"Palestine";
@@ -89,11 +126,11 @@
     user1.status_message=@"At Work";
     user1.city=@"Amman";
     user1.avatar=@"adnan.png";
-    user1.state=@"busy";
+    user1.state=@"online";
     user1.followed_by=@120;
-          user1.accepted=@"NO";
+          user1.accepted=@"YES";
     user1.birthPlace=@"Palestine";
-    user1.accepted_i=@"0";
+   
     user1.profession=@"Photographer";
     user1.mobilephone=@"+611-949-4113667";
     user1.workplace=@"CEO @ContaktMe";
@@ -112,11 +149,11 @@
     user2.state=@"online";
     user2.category=@"Work";
     user2.birthPlace=@"Chile";
-    user2.accepted_i=@"0";
+   
     user2.profession=@"Software Engineer";
     user2.mobilephone=@"+56-57778789";
     user2.workplace=@"@ContaktMe";
-          user2.accepted=@"NO";
+          user2.accepted=@"YES";
     user2.email=@"amaluje@gmail.com";
     user2.country=@"Chile";
     user2.category=@"Work";
@@ -128,7 +165,7 @@
     user0.status_message=@"What we do in life, echoes in eternity";
     user3.city=@"Santiago";
     user3.avatar=@"frank.png";
-    user3.accepted_i=@"1";
+ 
     user3.state=@"online";
           user3.accepted=@"YES";
     user3.profession=@"IT Engineer";
@@ -145,12 +182,12 @@
     user4.status_message=@"South America!";
     user4.city=@"New Port";
     user4.birthPlace=@"Lebanon";
-    user4.accepted_i=@"1";
+
     user4.followed_by=@100;
     user4.avatar=@"farid.png";
     user4.country=@"USA";
     user4.state=@"offline";
-    user4.accepted=@"YES";
+    user4.accepted=@"NO";
     user4.profession=@"IT Engineer";
     user4.mobilephone=@"+56-67542321";
     user4.workplace=@"@ContaktMe";
@@ -160,10 +197,10 @@
     
     User *user5=[User new];
     user5.name=@"Isaac Kaufman";
-        user5.accepted=@"YES";
+        user5.accepted=@"NO";
     user5.status_message=@"@Caesars Palace, Las Vegas";
     user5.birthPlace=@"USA";
-    user5.accepted_i=@"1";
+
     user5.followed_by=@57;
     user5.city=@"Laguna Nigel";
     user5.avatar=@"isaac.png";
@@ -178,25 +215,31 @@
     
     self.contacts = [NSArray arrayWithObjects:user1,user0,user2,user3,user4,user5, nil];
     
+    self.AlluserDick=[NSMutableDictionary new];
     
     self.userDick = [NSMutableDictionary new];
     
     for ( User* u in self.contacts ) {
         
-        if ( ![self.userDick objectForKey:u.accepted] ) {
-            [self.userDick setObject:[NSMutableArray new] forKey:u.accepted];
+        if ( ![self.userDick objectForKey:u.state] ) {
+            [self.userDick setObject:[NSMutableArray new] forKey:u.state];
         }
         
-        [[self.userDick objectForKey:u.accepted] addObject:u];
+        [[self.userDick objectForKey:u.state] addObject:u];
     }
     
     
+    for ( User* u in self.contacts ) {
+        
+        if ( [self.AlluserDick objectForKey:u.accepted] ) {
+            [self.AlluserDick setObject:[NSMutableArray new] forKey:u.accepted];
+        }
+        
+        [[self.AlluserDick objectForKey:u.state] addObject:u];
+    }
     
     
-    
-    [self.configTableView reloadData];
-    
-    [self.contactTableView reloadData];
+
  
 
     // Do any additional setup after loading the self.
@@ -219,7 +262,7 @@
         
         
         }else{
-            [self.delegate SelectedOption:string andContakts:_contacts];
+            [self.delegate SelectedOption:string];
         
         }
    
@@ -255,7 +298,7 @@
             
        
             
-            [self.delegate ShowSelectedUser:display];
+            //[self.delegate ShowSelectedUser:display];
         }else{
         
         
@@ -297,9 +340,9 @@
         return  1;
     }else{
     
-        NSArray *cats = [_userDick allKeys];
+       // NSArray *cats = [_userDick allKeys];
         
-        return [cats count];
+        return 1;
     
     }
 
@@ -312,27 +355,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     
-    if(tableView.tag==22){
-    
-    return @"Configuration";
-    
-    }else{
-    
-        NSArray *cats = [_userDick allKeys];
-        
-        NSString *label=[cats objectAtIndex:section];
-        
-        
-        if([label isEqualToString:@"YES"]){
-            
-            return @"Online";
-        }else{
-            
-            return @"Pendign Requests";
-        }
-        
-    
-    }
+ return @"Configuration";
  
 }
 
@@ -440,7 +463,7 @@ return @" ";
 -(void)selectedUser:(User *)user{
     
     
-    [self.delegate ShowSelectedUser:user];
+    //[self.delegate ShowSelectedUser:user];
     
 }
 
@@ -461,6 +484,292 @@ return @" ";
 
 -(void)Sad:(User *)user{
   // [self.delegate sad:user];
+}
+
+
+
+
+-(IBAction)onlineUsers:(id)sender{
+   
+    [UIView animateWithDuration:0.5 delay:0 options:0 animations:^{
+        self.home.alpha=0.0f;
+        self.onlineUsers.alpha=1.0f;
+        self.pendingRequests.alpha=0.0f;
+         self.allProjectsview.alpha=0.0f;
+        self.allContacts.alpha=0.0f;
+        self.chats.alpha=0.0f;
+         self.nearbyOffersview.alpha=0.0f;
+        self.search.alpha=0.0f;
+        self.privacy.alpha=0.0f;
+        self.blcok.alpha=0.0f;
+        self.logout.alpha=0.0f;
+        NSArray *onlineArray = [self.userDick objectForKey:@"online"];
+        
+        [self.delegate vodFilterDisplayThirdLevel:onlineArray andType:@"Online"];
+        
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+
+-(IBAction)pendingRequests:(id)sender{
+
+
+   
+    [UIView animateWithDuration:0.5 delay:0 options:0 animations:^{
+        self.home.alpha=0.0f;
+        self.onlineUsers.alpha=0.0f;
+         self.allProjectsview.alpha=0.0f;
+        self.pendingRequests.alpha=1.0f;
+        self.allContacts.alpha=0.0f;
+        self.chats.alpha=0.0f;
+        self.privacy.alpha=0.0f;
+        self.blcok.alpha=0.0f;
+        self.logout.alpha=0.0f;
+         self.nearbyOffersview.alpha=0.0f;
+        self.search.alpha=0.0f;
+        NSArray *offline = [self.userDick objectForKey:@"offline"];
+        
+        if([offline count]==0){
+        
+            UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Sorry!"message:@"You cant send a voice message if the contactis offline or currently busy-" delegate:nil cancelButtonTitle:@"OK"otherButtonTitles:nil];[message show];
+
+        }else{
+           [self.delegate vodFilterDisplayThirdLevel:offline andType:@"offline"];
+        
+        }
+     
+        
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+
+
+-(IBAction)allContacts:(id)sender{
+
+   
+    [UIView animateWithDuration:0.5 delay:0 options:0 animations:^{
+        self.home.alpha=0.0f;
+        self.onlineUsers.alpha=0.0f;
+        self.pendingRequests.alpha=0.0f;
+        self.allContacts.alpha=1.0f;
+         self.nearbyOffersview.alpha=0.0f;
+        self.chats.alpha=0.0f;
+        self.privacy.alpha=0.0f;
+         self.allProjectsview.alpha=0.0f;
+        self.blcok.alpha=0.0f;
+        self.logout.alpha=0.0f;
+        self.search.alpha=0.0f;
+         [self.delegate SelectedOption:@"All"];
+        
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+
+-(IBAction)chats:(id)sender{
+ 
+    
+    [UIView animateWithDuration:0.5 delay:0 options:0 animations:^{
+        self.chats.alpha=1.0f;
+        self.home.alpha=0.0f;
+        self.onlineUsers.alpha=0.0f;
+        self.pendingRequests.alpha=0.0f;
+         self.nearbyOffersview.alpha=0.0f;
+        self.allContacts.alpha=0.0f;
+        self.search.alpha=0.0f;
+        self.privacy.alpha=0.0f;
+         self.allProjectsview.alpha=0.0f;
+        self.blcok.alpha=0.0f;
+        self.logout.alpha=0.0f;
+        [self.delegate SelectedOption:@"Chats"];
+        
+        
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+
+-(IBAction)privacy:(id)sender{
+
+
+
+
+    [UIView animateWithDuration:0.5 delay:0 options:0 animations:^{
+        self.home.alpha=0.0f;
+        self.onlineUsers.alpha=0.0f;
+        self.pendingRequests.alpha=0.0f;
+        self.allContacts.alpha=0.0f;
+        self.chats.alpha=0.0f;
+        self.privacy.alpha=1.0f;
+        self.blcok.alpha=0.0f;
+         self.allProjectsview.alpha=0.0f;
+        self.search.alpha=0.0f;
+        self.logout.alpha=0.0f;
+        [self.delegate SelectedOption:@"Privacy"];
+
+        
+    } completion:^(BOOL finished) {
+        
+    }];
+
+}
+
+
+-(IBAction)blockUser:(id)sender{
+
+
+    [UIView animateWithDuration:0.5 delay:0 options:0 animations:^{
+        
+        self.blcok.alpha=1.0f;
+        self.onlineUsers.alpha=0.0f;
+        self.pendingRequests.alpha=0.0f;
+        self.allContacts.alpha=0.0f;
+        self.chats.alpha=0.0f;
+        self.privacy.alpha=0.0f;
+         self.nearbyOffersview.alpha=0.0f;
+        self.search.alpha=0.0f;
+         self.allProjectsview.alpha=0.0f;
+        self.logout.alpha=0.0f;
+        self.home.alpha=0.0f;
+        [self.delegate SelectedOption:@"Block user"];
+        
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+
+-(IBAction)searchbyLocation:(id)sender{
+    
+    [UIView animateWithDuration:0.5 delay:0 options:0 animations:^{
+        self.logout.alpha=0.0f;
+        self.search.alpha=1.0f;
+         self.allProjectsview.alpha=0.0f;
+        self.onlineUsers.alpha=0.0f;
+        self.pendingRequests.alpha=0.0f;
+        self.allContacts.alpha=0.0f;
+        self.chats.alpha=0.0f;
+        self.privacy.alpha=0.0f;
+         self.nearbyOffersview.alpha=0.0f;
+        self.blcok.alpha=0.0f;
+        self.home.alpha=0.0f;
+ [self.delegate vodFilterDisplayThirdLevel:_SearchOptions andType:@"search"];
+        
+        
+    } completion:^(BOOL finished) {
+        
+    }];
+    
+    
+    
+}
+
+
+-(IBAction)allProjects:(id)sender{
+    
+    [UIView animateWithDuration:0.5 delay:0 options:0 animations:^{
+        self.logout.alpha=0.0f;
+         self.allProjectsview.alpha=1.0f;
+        self.search.alpha=0.0f;
+        self.onlineUsers.alpha=0.0f;
+        self.pendingRequests.alpha=0.0f;
+        self.allContacts.alpha=0.0f;
+         self.nearbyOffersview.alpha=0.0f;
+        self.chats.alpha=0.0f;
+        self.privacy.alpha=0.0f;
+        self.blcok.alpha=0.0f;
+        self.home.alpha=0.0f;
+        [self.delegate vodFilterDisplayThirdLevel:_projects andType:@"projects"];
+
+        
+    } completion:^(BOOL finished) {
+        
+    }];
+    
+    
+    
+}
+-(IBAction)logout:(id)sender{
+    
+    [UIView animateWithDuration:0.5 delay:0 options:0 animations:^{
+        self.logout.alpha=1.0f;
+        self.allProjectsview.alpha=0.0f;
+           self.home.alpha=0.0f;
+        self.onlineUsers.alpha=0.0f;
+        self.pendingRequests.alpha=0.0f;
+        self.allContacts.alpha=0.0f;
+        self.chats.alpha=0.0f;
+        self.privacy.alpha=0.0f;
+         self.nearbyOffersview.alpha=0.0f;
+        self.blcok.alpha=0.0f;
+        
+        [self.delegate selectedLogOut];
+
+        
+    } completion:^(BOOL finished) {
+        
+    }];
+
+ 
+
+}
+
+
+
+-(IBAction)HomeTouchupInside:(id)sender{
+    
+    [UIView animateWithDuration:0.5 delay:0 options:0 animations:^{
+        self.home.alpha=1.0f;
+        self.logout.alpha=0.0f;
+        self.onlineUsers.alpha=0.0f;
+        self.pendingRequests.alpha=0.0f;
+        self.allContacts.alpha=0.0f;
+        self.chats.alpha=0.0f;
+        self.privacy.alpha=0.0f;
+        self.blcok.alpha=0.0f;
+         self.allProjectsview.alpha=0.0f;
+         self.nearbyOffersview.alpha=0.0f;
+        [self.delegate backToHome];
+        
+        
+    } completion:^(BOOL finished) {
+        
+    }];
+    
+    
+    
+}
+
+
+-(IBAction)goToSettings:(id)sender{
+
+
+    [self.delegate goToSettings];
+
+}
+
+
+-(IBAction)nearbyOffers:(id)sender{
+
+    [UIView animateWithDuration:0.5 delay:0 options:0 animations:^{
+        self.home.alpha=1.0f;
+        self.logout.alpha=0.0f;
+        self.onlineUsers.alpha=0.0f;
+        self.pendingRequests.alpha=0.0f;
+        self.allContacts.alpha=0.0f;
+        self.chats.alpha=0.0f;
+        self.privacy.alpha=0.0f;
+        self.blcok.alpha=0.0f;
+        self.allProjectsview.alpha=0.0f;
+        self.nearbyOffersview.alpha=1.0f;
+        [self.delegate backToHome];
+        
+        
+    } completion:^(BOOL finished) {
+        
+    }];
+
 }
 @end
 

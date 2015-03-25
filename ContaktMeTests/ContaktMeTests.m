@@ -1,19 +1,19 @@
 //
-//  ContaktMeTests.m
-//  ContaktMeTests
+//  contaktmeTests.m
+//  contaktmeTests
 //
-//  Created by Riyad Anabtawi on 1/17/15.
+//  Created by Riyad Anabtawi on 2/24/15.
 //  Copyright (c) 2015 Riyad Anabtawi. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface ContaktMeTests : XCTestCase
+@interface contaktmeTests : XCTestCase
 
 @end
 
-@implementation ContaktMeTests
+@implementation contaktmeTests
 
 - (void)setUp {
     [super setUp];

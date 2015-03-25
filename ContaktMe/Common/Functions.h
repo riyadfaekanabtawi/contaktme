@@ -25,8 +25,8 @@
 
 +(BOOL)isDate:(NSDate *)date inRangeFirstDate:(NSDate *)firstDate lastDate:(NSDate *)lastDate;
 
-
-
++(BOOL) NSStringIsValidEmail:(NSString *)checkString;
++(void)addView:(UIView *)view ToContainer:(UIView *)container WithTopMargin:(NSNumber *)topMargin LeftMargin:(NSNumber *)leftMargin BottomMargin:(NSNumber *)bottomMargin RightMargin:(NSNumber *)rightMargin Width:(NSNumber *)width Height:(NSNumber *)height;
 +(void)storeUserInfo:(User *)user;
 +(User *)retrieveUserInfo;
 +(void)deleteUserInfo;

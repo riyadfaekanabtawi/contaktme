@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "HYCircleLoadingView.h"
 @interface LoaderView : UIView
 
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
-
+@property (nonatomic, strong) HYCircleLoadingView *loadingView;
 +(LoaderView *)create;
 
 

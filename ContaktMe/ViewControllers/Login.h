@@ -34,6 +34,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topLogin;
 @property (weak, nonatomic) IBOutlet UIButton * registerMe;
+
+
+@property (weak, nonatomic) IBOutlet UIButton * GoButton;
+
 @end
 
 @protocol LoginDelegate <NSObject>

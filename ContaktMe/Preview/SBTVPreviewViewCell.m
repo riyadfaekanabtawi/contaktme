@@ -53,7 +53,8 @@
 
     }
     
- 
+    self.topSpaceProjectPanel.constant= [UIScreen mainScreen].bounds.size.height;
+    [self layoutIfNeeded];
         
         UITapGestureRecognizer * recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
         recognizer.delegate = self;
@@ -68,7 +69,8 @@
     self.dragUP.alpha=0.0f;
     self.Shareview.alpha=0.0f;
     self.CameraView.alpha=0.0f;
-    self.name.font=[UIFont fontWithName:FONT_LIGHT size:16];
+    self.userName.font=[UIFont fontWithName:FONT_LIGHT size:16];
+     self.location_user.font=[UIFont fontWithName:FONT_LIGHT size:16];
     self.name.font=[UIFont fontWithName:FONT_LIGHT size:16];
     self.location.font=[UIFont fontWithName:FONT_LIGHT size:16];
     self.location.font=[UIFont fontWithName:FONT_BOLD size:14];
@@ -76,7 +78,28 @@
     self.profession.font=[UIFont fontWithName:FONT_BOLD size:14];
     self.followed_by.font=[UIFont fontWithName:FONT_LIGHT size:14];
     self.cellphone.font=[UIFont fontWithName:FONT_BOLD size:14];
+    self.createProject.font=[UIFont fontWithName:FONT_LIGHT size:self.createProject.font.pointSize];
+     self.nearbyOffers.font=[UIFont fontWithName:FONT_LIGHT size:self.nearbyOffers.font.pointSize];
+     self.nearbyProfessionals.font=[UIFont fontWithName:FONT_LIGHT size:self.nearbyProfessionals.font.pointSize];
+     self.myMessages.font=[UIFont fontWithName:FONT_LIGHT size:self.myMessages.font.pointSize];
+     self.SHARE.font=[UIFont fontWithName:FONT_BOLD size:self.SHARE.font.pointSize];
+     self.ME.font=[UIFont fontWithName:FONT_LIGHT size:self.ME.font.pointSize];
+    self.TapTo.font=[UIFont fontWithName:FONT_BOLD size:self.TapTo.font.pointSize];
+    self.shareTap.font=[UIFont fontWithName:FONT_LIGHT size:self.shareTap.font.pointSize];
+     self.TitlesecctionProject.font=[UIFont fontWithName:FONT_BOLD size:self.TitlesecctionProject.font.pointSize];
+         self.postProject.titleLabel.font=[UIFont fontWithName:FONT_LIGHT size:self.postProject.titleLabel.font.pointSize];
+    
+    self.projecttitle.font=[UIFont fontWithName:FONT_LIGHT size:self.projecttitle.font.pointSize];
+    UIColor *color = [UIColor whiteColor];
+    self.projecttitle.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Project Title" attributes:@{NSForegroundColorAttributeName: color}];
+        self.projectDetails.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Project Details" attributes:@{NSForegroundColorAttributeName: color}];
+        self.professionalRequired.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Professional Required" attributes:@{NSForegroundColorAttributeName: color}];
+    
+        self.AvaragePay.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Avarage Pay" attributes:@{NSForegroundColorAttributeName: color}];
+    self.projectDetails.font=[UIFont fontWithName:FONT_LIGHT size:self.projectDetails.font.pointSize];
+    self.professionalRequired.font=[UIFont fontWithName:FONT_LIGHT size:self.professionalRequired.font.pointSize];
     self.status_message.font=[UIFont fontWithName:FONT_LIGHT size:14];
+    self.AvaragePay.font=[UIFont fontWithName:FONT_LIGHT size:self.AvaragePay.font.pointSize];
     self.birthPlace.font=[UIFont fontWithName:FONT_LIGHT size:14];
     self.workplace.font=[UIFont fontWithName:FONT_BOLD size:14];
     self.location.textColor=[Functions colorWithHexString:@"f35e46"];
@@ -494,7 +517,7 @@
     {
         UIImagePickerController *imagePicker =
         [[UIImagePickerController alloc] init];
-        imagePicker.delegate = self;
+      //  imagePicker.delegate = self;
         
         imagePicker.sourceType =
         UIImagePickerControllerSourceTypeCamera;
@@ -513,7 +536,7 @@
     {
         UIImagePickerController *imagePicker =
         [[UIImagePickerController alloc] init];
-        imagePicker.delegate = self;
+      //  imagePicker.delegate = self;
         
         imagePicker.sourceType =
         UIImagePickerControllerSourceTypePhotoLibrary;
@@ -584,4 +607,70 @@ finishedSavingWithError:(NSError *)error
 
 
 }
+
+
+-(IBAction)CreateProject:(id)sender{
+
+    [UIView animateWithDuration:0.7 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        
+        self.topSpaceProjectPanel.constant=0;
+        [self layoutIfNeeded];
+    } completion:nil];
+
+
+
+}
+-(IBAction)hideCreateProject:(id)sender{
+    [self.projecttitle resignFirstResponder];
+    [self.projectDetails resignFirstResponder];
+    [self.professionalRequired resignFirstResponder];
+    [self.AvaragePay resignFirstResponder];
+    [UIView animateWithDuration:0.7 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        
+        self.topSpaceProjectPanel.constant=[UIScreen mainScreen].bounds.size.height;
+        [self layoutIfNeeded];
+    } completion:nil];
+    
+    
+    
+}
+-(IBAction)NearbyOffers:(id)sender{
+    
+    [self.delegate nearbyOffers];
+    
+    
+}
+
+-(IBAction)PostProject:(id)sender{
+    
+    [self.projecttitle resignFirstResponder];
+    [self.projectDetails resignFirstResponder];
+    [self.professionalRequired resignFirstResponder];
+    [self.AvaragePay resignFirstResponder];
+    [UIView animateWithDuration:0.7 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        
+        self.topSpaceProjectPanel.constant=[UIScreen mainScreen].bounds.size.height;
+        [self layoutIfNeeded];
+    } completion:nil];
+    
+    
+    
+}
+
+
+-(IBAction)NearbyProfessionals:(id)sender{
+    
+    
+    [self.delegate nearbyProfessionals];
+    
+}
+
+-(IBAction)MyMessages:(id)sender{
+    
+    
+    
+    
+}
+
+
 @end

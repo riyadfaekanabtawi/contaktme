@@ -23,6 +23,20 @@
     [super viewDidLoad];
     
         [self.searchTableView registerNib:[UINib nibWithNibName:@"ContactListViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"contactcell"];
+    
+    UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo.png"]];
+    
+    logo.clipsToBounds = YES;
+    logo.contentMode = UIViewContentModeScaleAspectFit;
+    
+    logo.frame=CGRectMake(logo.frame.origin.x, logo.frame.origin.y, 140, 20);
+    UIView *logoContainer = [[UIView alloc] initWithFrame:logo.frame];
+    [logoContainer addSubview:logo];
+    
+    self.navigationItem.titleView = logoContainer;
+    self.navigationItem.leftBarButtonItem.title = @"";
+    self.navigationController.navigationBar.topItem.title = @"";
+
     // Do any additional setup after loading the view.
 }
 

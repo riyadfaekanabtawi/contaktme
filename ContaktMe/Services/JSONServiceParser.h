@@ -21,6 +21,7 @@
 @property (nonatomic,copy) void (^completionHandler)(id data);
 @property (nonatomic,copy) void (^errorHandler)(NSError *error);
 
+-(void)getDataFromPost:(NSURL *)urlHeader sendingData:(NSData *)data withHandler:(void (^)(id)) handler orErrorHandler:(void (^)(NSError *)) errorHandler;
 
 -(void)getJSONFromUrl:(NSURL *)url withHandler:(void (^)(id)) handler orErrorHandler:(void (^)(NSError *)) errorHandler;
 
@@ -29,5 +30,7 @@
 -(void)getJSONFromPost:(NSURL *)url sendingData:(NSData *)data withHandler:(void (^)(id)) handler orErrorHandler:(void (^)(NSError *)) errorHandler;
 
 -(void)getDataFromPost:(NSURL *)url sendingData:(NSData *)data withHandler:(void (^)(id)) handler orErrorHandler:(void (^)(NSError *)) errorHandler;
+
+-(void)getJSONFromPostHeader:(NSURL *)url sendingData:(NSData *)data andHeader:(NSString *)header withHandler:(void (^)(id)) handler orErrorHandler:(void (^)(NSError *)) errorHandler;
 
 @end

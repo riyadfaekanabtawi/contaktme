@@ -10,15 +10,16 @@
 #import "Functions.h"
 #import "ContactsViewController.h"
 #import "SearchUserViewController.h"
+#import "SearchViewController.h"
 @interface HomeViewController ()
 
 @end
 
 @implementation HomeViewController{
-
+    SearchViewController *_search;
     SBTVProgramPreview *preview;
         SBTVProgramPreview *previewSingle;
-
+  VODFilterLevel3 *level3Filter;
 }
 
 -(void)ShowDrag{
@@ -33,9 +34,11 @@
 //            NSLog(@"%@", fontName);
 //        }
 //    }
+    self.topAddView.constant=self.topAddView.constant=1000;
+    [self.view layoutIfNeeded];
     [super viewDidLoad];
     
-    self.addUserView.alpha=0.0f;
+  
 
     self.view.backgroundColor=[Functions colorWithHexString:@"fff"];
 
@@ -56,10 +59,10 @@
     
     self.navigationItem.titleView = logoContainer;
     self.navigationItem.leftBarButtonItem.title = @"";
-    
-    
-    
-    
+    _emailDestiny.font=[UIFont fontWithName:FONT_REGULAR size:_emailDestiny.font.pointSize];
+    _doneButtonAdd.titleLabel.font=[UIFont fontWithName:FONT_REGULAR size:_doneButtonAdd.titleLabel.font.pointSize];
+     [self.emailDestiny setValue:[UIFont fontWithName:FONT_LIGHT size: 14] forKeyPath:@"_placeholderLabel.font"];
+    self.doneButtonAdd.titleLabel.font=[UIFont fontWithName:FONT_BOLD size:16];
     User *user0=[User new];
     user0.name=@"Anan Anabtawi";
     user0.status_message=@"On Vacation";
@@ -67,7 +70,6 @@
     user0.avatar=@"emrie.jpg";
     user0.followed_by=@200;
     user0.state=@"online";
-    user0.accepted_i=@"1";
     user0.profession=@"Industrial Engineer";
     user0.mobilephone=@"+011-949-4113667";
     user0.birthPlace=@"Palestine";
@@ -75,6 +77,7 @@
     user0.email=@"anan@gmail.com";
     user0.country=@"USA";
     user0.category=@"Family";
+    
     
     User *user1=[User new];
     user1.name=@"Adnan Anabtawi";
@@ -84,7 +87,6 @@
     user1.state=@"busy";
     user1.followed_by=@120;
     user1.birthPlace=@"Palestine";
-    user1.accepted_i=@"0";
     user1.profession=@"Photographer";
     user1.mobilephone=@"+611-949-4113667";
     user1.workplace=@"CEO @ContaktMe";
@@ -103,7 +105,6 @@
     user2.state=@"online";
     user2.category=@"Work";
     user2.birthPlace=@"Chile";
-    user2.accepted_i=@"0";
     user2.profession=@"Software Engineer";
     user2.mobilephone=@"+56-57778789";
     user2.workplace=@"@ContaktMe";
@@ -118,7 +119,6 @@
     user0.status_message=@"What we do in life, echoes in eternity";
     user3.city=@"Santiago";
     user3.avatar=@"frank.png";
-    user3.accepted_i=@"1";
     user3.state=@"online";
     user3.profession=@"IT Engineer";
     user3.mobilephone=@"+56-9-59467288";
@@ -134,7 +134,6 @@
     user4.status_message=@"South America!";
     user4.city=@"New Port";
     user4.birthPlace=@"Lebanon";
-    user4.accepted_i=@"1";
     user4.followed_by=@100;
     user4.avatar=@"farid.png";
     user4.country=@"USA";
@@ -150,7 +149,6 @@
     user5.name=@"Isaac Kaufman";
     user5.status_message=@"@Caesars Palace, Las Vegas";
     user5.birthPlace=@"USA";
-    user5.accepted_i=@"1";
     user5.followed_by=@57;
     user5.city=@"Laguna Nigel";
     user5.avatar=@"isaac.png";
@@ -202,7 +200,7 @@
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
+        [self hideFilterLayer];
     
     if([segue.identifier isEqualToString:@"shareMe"]){
         ShareContactViewController *controller = segue.destinationViewController;
@@ -210,8 +208,18 @@
         
         
     }
+    if([segue.identifier isEqualToString:@"ShowJobOffer"]){
+ 
+        
+    }
     
+    if([segue.identifier isEqualToString:@"nearbyJobs"]){
+       
+        
+        
+    }
     
+   
     if([segue.identifier isEqualToString:@"Privacy"]){
     
     
@@ -238,12 +246,29 @@
         
         
     }
+    
+    
+     if([segue.identifier isEqualToString:@"SearchPros"]){
+         _search=segue.destinationViewController;
+         _search.isSearchingOffers=NO;
+         _search.isSearchingProfessionals=YES;
+    
+    }
+    
+    
+    if([segue.identifier isEqualToString:@"SearchJobs"]){
+    
+        _search=segue.destinationViewController;
+        _search.isSearchingOffers=YES;
+        _search.isSearchingProfessionals=NO;
+    }
+    
 }
 
 
 
 -(void)viewDidAppear:(BOOL)animated {
-    
+
  
     self.navigationItem.backBarButtonItem.tintColor=[UIColor whiteColor];
     
@@ -341,7 +366,7 @@
     }
 }
 -(void)showSlideMenu:(id)sender{
-
+    [self hideFilterLayer];
     SWRevealViewController *revealViewController = self.revealViewController;
     [revealViewController revealToggleAnimated:YES];
     
@@ -375,31 +400,11 @@
 
 }
 
--(void)ShowSelectedUser:(User *)user{
-    
-    
-    [previewSingle removeFromSuperview];
-    previewSingle=nil;
-    previewSingle = [[SBTVProgramPreview alloc] init];
-    
-    
-    previewSingle.delegate=self;
-    previewSingle.controller=self;
-    [previewSingle setPrograms:[NSArray arrayWithObject:user] WithSelectedProgram:user];
-    
-    [Functions fillContainerView:self.view WithView:previewSingle];
-    SWRevealViewController *revealViewController = self.revealViewController;
-    
-    if ( revealViewController )
-    {
-        [revealViewController revealToggle:self];
-    }
-    [self viewDidAppear:YES];
-}
+
 
 -(IBAction)tapblockUItohideSlideMenu:(id)sender{
 
-
+       [self hideFilterLayer];
     SWRevealViewController *revealViewController = self.revealViewController;
    
     self.blockUIview.alpha=0.0f;
@@ -487,14 +492,14 @@
 
 
 
--(void)SelectedOption:(NSString *)string andContakts:(NSArray *)contacts{
+-(void)SelectedOption:(NSString *)string{
     SWRevealViewController *revealViewController = self.revealViewController;
     if ( revealViewController )
     {
         [revealViewController revealToggle:self];
     }
     
-    self.contacts=contacts;
+    
  
     [self performSegueWithIdentifier:string sender:self];
     
@@ -504,27 +509,6 @@
 }
 
 
--(void)happy:(User *)user{
-
-    SWRevealViewController *revealViewController = self.revealViewController;
-    if ( revealViewController )
-    {
-        [revealViewController revealToggle:self];
-    }
-        [self showSlideMenu:self];
-}
-
-
--(void)sad:(User *)user{
-    SWRevealViewController *revealViewController = self.revealViewController;
-    if ( revealViewController )
-    {
-        [revealViewController revealToggle:self];
-    }
-    
-    [self showSlideMenu:self];
-
-}
 
 
 -(void)removeView{
@@ -546,16 +530,17 @@
 
 
 -(void)showAddview{
+    [self hideFilterLayer];
     SWRevealViewController *revealViewController = self.revealViewController;
     
     if ( revealViewController )
     {
         [revealViewController revealToggle:self];
     }
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:0.7 animations:^{
         
-        self.addUserView.alpha=1.0f;
-        
+        self.topAddView.constant=0;
+        [self.view layoutIfNeeded];
         
     } completion:^(BOOL finished) {
         
@@ -569,7 +554,8 @@
 
     [UIView animateWithDuration:0.5 animations:^{
         
-        self.addUserView.alpha=0.0f;
+        self.topAddView.constant=1000;
+        [self.view layoutIfNeeded];
         
         
     } completion:^(BOOL finished) {
@@ -600,4 +586,253 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
 
 }
+-(void)vodFilterDisplayThirdLevel:(NSArray *)filter andType:(NSString *)type{
+
+    if([type isEqualToString:@"search"]){
+    
+        if (level3Filter != nil) {
+            
+            [UIView animateWithDuration:0.5 delay:0 options:0 animations:^{
+                
+                CGRect frame = level3Filter.frame;
+                frame.origin.x = frame.origin.x - frame.size.width;
+                frame.origin.y=40;
+                level3Filter.frame = frame;
+                
+            } completion:^(BOOL finished) {
+                
+                
+                [level3Filter removeFromSuperview];
+                level3Filter = nil;
+                
+                [self displayNewLeve3Filter:filter andType:type];
+            }];
+            
+        }else{
+            
+            [self displayNewLeve3Filter:filter andType:type];
+        }
+        
+
+    
+    }else   if([type isEqualToString:@"projects"]){
+        
+        if (level3Filter != nil) {
+            
+            [UIView animateWithDuration:0.5 delay:0 options:0 animations:^{
+                
+                CGRect frame = level3Filter.frame;
+                frame.origin.x = frame.origin.x - frame.size.width;
+                frame.origin.y=40;
+                level3Filter.frame = frame;
+                
+            } completion:^(BOOL finished) {
+                
+                
+                [level3Filter removeFromSuperview];
+                level3Filter = nil;
+                
+                [self displayNewLeve3Filter:filter andType:type];
+            }];
+            
+        }else{
+            
+            [self displayNewLeve3Filter:filter andType:type];
+        }
+        
+        
+        
+    }
+    
+    
+    else{
+    
+        if (level3Filter != nil) {
+            
+            [UIView animateWithDuration:0.5 delay:0 options:0 animations:^{
+                
+                CGRect frame = level3Filter.frame;
+                frame.origin.x = frame.origin.x - frame.size.width;
+                frame.origin.y=40;
+                level3Filter.frame = frame;
+                
+            } completion:^(BOOL finished) {
+                
+                
+                [level3Filter removeFromSuperview];
+                level3Filter = nil;
+                
+                [self displayNewLeve3Filter:filter andType:type];
+            }];
+            
+        }else{
+        
+                [self displayNewLeve3Filter:filter andType:type];
+        }
+        
+
+    }
+    
+
+
+
+}
+
+
+-(void)displayNewLeve3Filter:(NSArray *)filter andType:(NSString *)type {
+    
+    VODFilterLevel3 *newVodfilterLevel3 = [VODFilterLevel3 createWithFilter:filter andType:type];
+    
+    level3Filter = newVodfilterLevel3;
+    newVodfilterLevel3.delegate = self;
+    CGRect frame = newVodfilterLevel3.frame;
+    frame.origin.x = -105;
+    frame.origin.y = 40;
+    frame.size.height = self.view.frame.size.height;
+    
+    newVodfilterLevel3.frame = frame;
+    
+    
+    
+    [self.view addSubview:newVodfilterLevel3];
+ 
+    [UIView animateWithDuration:0.5 delay:0 options:0 animations:^{
+        
+        CGRect frame = newVodfilterLevel3.frame;
+        frame.origin.x = 0;
+        frame.origin.y=40;
+        
+        newVodfilterLevel3.frame = frame;
+        
+    } completion:^(BOOL finished) {
+        
+    }];
+    
+}
+
+
+-(void)hideFilterLayer{
+    
+    [UIView animateWithDuration:0.5 delay:0 options:0 animations:^{
+        
+        CGRect frame = level3Filter.frame;
+        frame.origin.x = -100;
+        frame.origin.y=40;
+        level3Filter.frame = frame;
+        
+    } completion:^(BOOL finished) {
+        
+        
+        [level3Filter removeFromSuperview];
+        level3Filter.delegate = nil;
+        level3Filter = nil;
+    }];
+    
+    
+}
+
+
+
+-(void)displayUser:(User *)user{
+
+    [self hideFilterLayer];
+    [previewSingle removeFromSuperview];
+    previewSingle=nil;
+    previewSingle = [[SBTVProgramPreview alloc] init];
+    
+    
+    previewSingle.delegate=self;
+    previewSingle.controller=self;
+    [previewSingle setPrograms:[NSArray arrayWithObject:user] WithSelectedProgram:user];
+    
+    [Functions fillContainerView:self.view WithView:previewSingle];
+    SWRevealViewController *revealViewController = self.revealViewController;
+    
+    if ( revealViewController )
+    {
+        [revealViewController revealToggle:self];
+    }
+    [self viewDidAppear:YES];
+
+
+}
+
+-(void)backToHome{
+  [self hideFilterLayer];
+    [self hideFilterLayer];
+    [previewSingle removeFromSuperview];
+    previewSingle=nil;
+  [self hideMenu];
+    
+    [self hideAddview:self];
+
+
+}
+
+
+
+-(void)displaySearchProf{
+  [self hideMenu];
+
+    [self performSegueWithIdentifier:@"SearchPros" sender:self];
+
+}
+
+
+-(void)displaySearchJobs{
+  [self hideMenu];
+
+    [self performSegueWithIdentifier:@"SearchJobs" sender:self];
+
+}
+
+
+-(void)goToSettings{
+  [self hideMenu];
+
+    [self performSegueWithIdentifier:@"Settings" sender:self];
+}
+
+
+
+
+-(void)hideMenu{
+
+    SWRevealViewController *revealViewController = self.revealViewController;
+    
+    self.blockUIview.alpha=0.0f;
+    
+    if ( revealViewController )
+    {
+        [revealViewController revealToggle:self];
+    }
+}
+
+
+-(void)displayNearbyJobs{
+
+    [self hideMenu];
+    
+    [self performSegueWithIdentifier:@"nearbyJobs" sender:self];
+
+}
+
+
+-(void)userSelectedJob{
+
+ [self hideMenu];
+    [self hideFilterLayer];
+    
+    [self performSegueWithIdentifier:@"ShowJobOffer" sender:self];
+
+}
+
+
+-(void)displayAlertToAcceptUser:(User *)user{
+
+          UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Hmmm"message:[NSString stringWithFormat:@"Do you whish to  accept or deny \n %@",user.name]delegate:nil cancelButtonTitle:@"ACCEPT"otherButtonTitles:@"DENY",nil];[message show];
+
+
+}
 @end
+

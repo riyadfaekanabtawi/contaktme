@@ -328,5 +328,101 @@
 }
 
 
++(void)addView:(UIView *)view ToContainer:(UIView *)container WithTopMargin:(NSNumber *)topMargin LeftMargin:(NSNumber *)leftMargin BottomMargin:(NSNumber *)bottomMargin RightMargin:(NSNumber *)rightMargin Width:(NSNumber *)width Height:(NSNumber *)height {
+    
+    view.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [container addSubview:view];
+    
+    NSLayoutConstraint *top;
+    NSLayoutConstraint *bottom;
+    NSLayoutConstraint *left;
+    NSLayoutConstraint *right;
+    
+    NSLayoutConstraint *widthConstraint;
+    NSLayoutConstraint *heightConstraint;
+    
+    if ( topMargin != nil ) {
+        top = [NSLayoutConstraint constraintWithItem:view
+                                           attribute:NSLayoutAttributeTop
+                                           relatedBy:NSLayoutRelationEqual
+                                              toItem:container
+                                           attribute:NSLayoutAttributeTop
+                                          multiplier:1.0
+                                            constant:topMargin.floatValue];
+        
+        [container addConstraint:top];
+    }
+    
+    if ( leftMargin != nil ) {
+        left = [NSLayoutConstraint constraintWithItem:view
+                                            attribute:NSLayoutAttributeLeading
+                                            relatedBy:NSLayoutRelationEqual
+                                               toItem:container
+                                            attribute:NSLayoutAttributeLeading
+                                           multiplier:1.0
+                                             constant:leftMargin.floatValue];
+        
+        [container addConstraint:left];
+    }
+    
+    if ( bottomMargin != nil ) {
+        bottom = [NSLayoutConstraint constraintWithItem:view
+                                              attribute:NSLayoutAttributeBottom
+                                              relatedBy:NSLayoutRelationEqual
+                                                 toItem:container
+                                              attribute:NSLayoutAttributeBottom
+                                             multiplier:1.0
+                                               constant:bottomMargin.floatValue];
+        
+        [container addConstraint:bottom];
+    }
+    
+    if ( rightMargin != nil ) {
+        right = [NSLayoutConstraint constraintWithItem:view
+                                             attribute:NSLayoutAttributeTrailing
+                                             relatedBy:NSLayoutRelationEqual
+                                                toItem:container
+                                             attribute:NSLayoutAttributeTrailing
+                                            multiplier:1.0
+                                              constant:rightMargin.floatValue];
+        
+        [container addConstraint:right];
+    }
+    
+    if ( width != nil ) {
+        widthConstraint = [NSLayoutConstraint constraintWithItem:view
+                                                       attribute:NSLayoutAttributeWidth
+                                                       relatedBy:NSLayoutRelationEqual
+                                                          toItem:nil
+                                                       attribute:NSLayoutAttributeNotAnAttribute
+                                                      multiplier:1.0
+                                                        constant:width.floatValue];
+        
+        [container addConstraint:widthConstraint];
+    }
+    
+    if ( height != nil ) {
+        heightConstraint = [NSLayoutConstraint constraintWithItem:view
+                                                        attribute:NSLayoutAttributeHeight
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:nil
+                                                        attribute:NSLayoutAttributeNotAnAttribute
+                                                       multiplier:1.0
+                                                         constant:height.floatValue];
+        
+        [container addConstraint:heightConstraint];
+    }
+}
 
+
++(BOOL) NSStringIsValidEmail:(NSString *)checkString
+{
+    BOOL stricterFilter = NO;
+    NSString *stricterFilterString = @"[A-Z0-9a-z\\._%+-]+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}";
+    NSString *laxString = @".+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2}[A-Za-z]*";
+    NSString *emailRegex = stricterFilter ? stricterFilterString : laxString;
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    return [emailTest evaluateWithObject:checkString];
+}
 @end

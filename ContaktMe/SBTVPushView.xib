@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="knS-PB-w9Y" customClass="SBTVPushView" customModule="contaktme" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVB-68-em8">
+                    <rect key="frame" x="13" y="30" width="20" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="5JY-fB-3bZ"/>
+                        <constraint firstAttribute="height" constant="21" id="pJw-Q8-Nub"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.95294117649999999" green="0.36862745099999999" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ib-iL-lCi">
+                    <rect key="frame" x="0.0" y="0.0" width="46" height="65"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="46" id="nL5-vq-cNl"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="23"/>
+                    <inset key="contentEdgeInsets" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
+                    <state key="normal">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="closeButtonTouchUpInside:" destination="knS-PB-w9Y" eventType="touchUpInside" id="2xI-rK-zhv"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fY-9c-lce">
+                    <rect key="frame" x="49" y="-2" width="271" height="67"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="selectionButtonTouchUpInside:" destination="knS-PB-w9Y" eventType="touchUpInside" id="x1L-hO-mtR"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="258" translatesAutoresizingMaskIntoConstraints="NO" id="iJL-gn-LG9">
+                    <rect key="frame" x="54" y="20" width="258" height="42"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                    <color key="textColor" red="0.94117647059999998" green="0.27058823529999998" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="0Ib-iL-lCi" secondAttribute="bottom" id="3tR-AY-eVL"/>
+                <constraint firstItem="0Ib-iL-lCi" firstAttribute="top" secondItem="knS-PB-w9Y" secondAttribute="top" id="5ig-Tn-jvj"/>
+                <constraint firstItem="0Ib-iL-lCi" firstAttribute="leading" secondItem="knS-PB-w9Y" secondAttribute="leading" id="7Yu-ia-rGj"/>
+                <constraint firstAttribute="bottom" secondItem="iJL-gn-LG9" secondAttribute="bottom" constant="3" id="8sv-Lr-erl"/>
+                <constraint firstItem="iJL-gn-LG9" firstAttribute="top" secondItem="knS-PB-w9Y" secondAttribute="top" constant="20" id="9lH-Cj-rg8"/>
+                <constraint firstAttribute="trailing" secondItem="iJL-gn-LG9" secondAttribute="trailing" constant="8" id="XFD-la-hae"/>
+                <constraint firstItem="iJL-gn-LG9" firstAttribute="leading" secondItem="0Ib-iL-lCi" secondAttribute="trailing" constant="8" id="ZQP-w1-CBN"/>
+                <constraint firstItem="UVB-68-em8" firstAttribute="top" secondItem="knS-PB-w9Y" secondAttribute="top" constant="30" id="cLN-Sq-cuX"/>
+                <constraint firstItem="UVB-68-em8" firstAttribute="leading" secondItem="knS-PB-w9Y" secondAttribute="leading" constant="13" id="f9S-Bc-ejy"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="closeButton" destination="0Ib-iL-lCi" id="2gd-bG-Gq0"/>
+                <outlet property="mainButton" destination="2fY-9c-lce" id="sJn-Nu-2YK"/>
+                <outlet property="messageLabel" destination="iJL-gn-LG9" id="q0W-iH-Lfn"/>
+            </connections>
+            <point key="canvasLocation" x="221" y="208.5"/>
+        </view>
+    </objects>
+</document>

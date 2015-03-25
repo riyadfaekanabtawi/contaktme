@@ -12,30 +12,20 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="vmu-Ja-ap9">
-                    <rect key="frame" x="64" y="240" width="193" height="24"/>
+                    <rect key="frame" x="64" y="272" width="193" height="24"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="193" id="Q8Q-VK-P9r"/>
                         <constraint firstAttribute="height" constant="24" id="jFi-oT-lik"/>
                     </constraints>
                 </imageView>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="RFo-df-ZpN">
-                    <rect key="frame" x="145" y="274" width="20" height="20"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="20" id="MqU-OW-2CS"/>
-                        <constraint firstAttribute="height" constant="20" id="nAe-He-DZB"/>
-                    </constraints>
-                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.70000000000000007" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="centerX" secondItem="RFo-df-ZpN" secondAttribute="centerX" constant="5" id="2ig-WK-zMA"/>
-                <constraint firstAttribute="centerY" secondItem="vmu-Ja-ap9" secondAttribute="centerY" constant="32" id="HDD-px-YXM"/>
-                <constraint firstAttribute="centerY" secondItem="RFo-df-ZpN" secondAttribute="centerY" id="VZX-N5-q6Q"/>
+                <constraint firstAttribute="centerY" secondItem="vmu-Ja-ap9" secondAttribute="centerY" id="HDD-px-YXM"/>
                 <constraint firstAttribute="centerX" secondItem="vmu-Ja-ap9" secondAttribute="centerX" id="sRR-ww-08r"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="activityIndicator" destination="RFo-df-ZpN" id="a9o-vy-jxv"/>
                 <outlet property="logoImageView" destination="vmu-Ja-ap9" id="iiQ-vM-Ytr"/>
             </connections>
         </view>

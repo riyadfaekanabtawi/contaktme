@@ -268,6 +268,7 @@
         self.cells = [NSMutableArray new];
         SBTVPreviewViewCell *cell;
               cell.ChatButton.hidden=YES;
+         cell.footerSettings.hidden=YES;
         cell.controller=self.controller;
         CGFloat xPosition = [self cellCenterXOneContact];
         CGFloat yPosition = (self.frame.size.height / 2.0f) - (self.previewCellHeight / 2.0f);
@@ -295,6 +296,7 @@
                                yPosition,
                                self.previewCellWidth, self.previewCellHeight)];
                   cell.ChatButton.hidden=YES;
+            cell.footerSettings.hidden=YES;
             [self addSubview:cell];
             
             cell.delegate = self;
@@ -311,6 +313,7 @@
             
             SBTVPreviewViewCell *cell = [self.cells objectAtIndex:0];
                   cell.ChatButton.hidden=YES;
+            cell.footerSettings.hidden=YES;
             cell.mainView.alpha = 1.0f;
             for (int i = 1; i < self.cells.count; ++i) {
                 cell = [self.cells objectAtIndex:i];
@@ -330,6 +333,7 @@
         }
         
       cell.ChatButton.hidden=YES;
+        cell.footerSettings.hidden=YES;
     
     }else{
     
@@ -347,6 +351,7 @@
         self.cells = [NSMutableArray new];
         SBTVPreviewViewCell *cell;
          cell.ChatButton.hidden=YES;
+        cell.footerSettings.hidden=YES;
         cell.controller=self.controller;
         CGFloat xPosition = [self cellCenterX];
         CGFloat yPosition = (self.frame.size.height / 2.0f) - (self.previewCellHeight / 2.0f);
@@ -394,6 +399,7 @@
 
             [self addSubview:cell];
             cell.close.hidden=YES;
+            cell.footerSettings.hidden=YES;
             cell.closeImage.hidden=YES;
             cell.delegate = self;
                   cell.ChatButton.hidden=YES;
@@ -410,6 +416,7 @@
             SBTVPreviewViewCell *cell = [self.cells objectAtIndex:0];
             cell.mainView.alpha = 1.0f;
             cell.close.hidden=YES;
+            cell.footerSettings.hidden=YES;
                      cell.ChatButton.hidden=YES;
             cell.closeImage.hidden=YES;
             for (int i = 1; i < self.cells.count; ++i) {
@@ -455,7 +462,9 @@
         self.cells = [NSMutableArray new];
         SBTVPreviewViewCell *cell;
         cell.close.hidden=YES;
-                 cell.ChatButton.hidden=NO;
+        cell.footer.hidden=YES;
+        cell.footerSettings.hidden=NO;
+                 cell.ChatButton.hidden=YES;
         cell.closeImage.hidden=YES;
         cell.controller=self.controller;
         CGFloat xPosition = [self cellCenterXOneContact];
@@ -485,7 +494,9 @@
                                self.previewCellWidth, self.previewCellHeight)];
             cell.close.hidden=YES;
             cell.closeImage.hidden=YES;
-                     cell.ChatButton.hidden=NO;
+             cell.footerSettings.hidden=NO;
+                     cell.ChatButton.hidden=YES;
+            cell.footer.hidden=YES;
             [self addSubview:cell];
             
             cell.delegate = self;
@@ -503,7 +514,9 @@
             SBTVPreviewViewCell *cell = [self.cells objectAtIndex:0];
             cell.close.hidden=YES;
             cell.closeImage.hidden=YES;
-                     cell.ChatButton.hidden=NO;
+             cell.footerSettings.hidden=NO;
+                     cell.ChatButton.hidden=YES;
+            cell.footer.hidden=YES;
             cell.mainView.alpha = 1.0f;
             for (int i = 1; i < self.cells.count; ++i) {
                 cell = [self.cells objectAtIndex:i];
@@ -521,8 +534,10 @@
             cell.program = [programs objectAtIndex:i + indexOffset];
             
         }
-                 cell.ChatButton.hidden=NO;
+                 cell.ChatButton.hidden=YES;
+        cell.footer.hidden=YES;
         cell.close.hidden=YES;
+         cell.footerSettings.hidden=NO;
         cell.closeImage.hidden=YES;
         
         
@@ -587,7 +602,9 @@
                 
             }
             cell.close.hidden=YES;
-                     cell.ChatButton.hidden=NO;
+                     cell.ChatButton.hidden=YES;
+            cell.footer.hidden=YES;
+             cell.footerSettings.hidden=NO;
             cell.closeImage.hidden=YES;
             [self addSubview:cell];
             cell.close.hidden=YES;
@@ -607,7 +624,9 @@
             SBTVPreviewViewCell *cell = [self.cells objectAtIndex:0];
             cell.mainView.alpha = 1.0f;
             cell.close.hidden=YES;
-            cell.ChatButton.hidden=NO;
+            cell.ChatButton.hidden=YES;
+            cell.footer.hidden=YES;
+             cell.footerSettings.hidden=NO;
             cell.closeImage.hidden=YES;
             for (int i = 1; i < self.cells.count; ++i) {
                 cell = [self.cells objectAtIndex:i];
@@ -888,6 +907,17 @@
 -(void)removeView{
 
     [self.delegate removeView];
+
+}
+
+-(void)nearbyProfessionals{
+
+    [self.delegate nearbyProfessionals];
+
+}
+
+-(void)nearbyOffers{
+    [self.delegate nearbyOffers];
 
 }
 @end

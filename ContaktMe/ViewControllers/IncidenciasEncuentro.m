@@ -136,7 +136,7 @@
 + (NSDictionary *)getIncidencia:(NSString *)name
 {
     
-    NSString *errorDesc = nil;
+    NSError *errorDesc = nil;
     NSPropertyListFormat format;
     NSString *plistPath;
     NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
@@ -147,12 +147,12 @@
     }
     NSData *plistXML = [[NSFileManager defaultManager] contentsAtPath:plistPath];
     NSDictionary *temp = (NSDictionary *)[NSPropertyListSerialization
-                                          propertyListFromData:plistXML
-                                          mutabilityOption:NSPropertyListMutableContainersAndLeaves
+                                          propertyListWithData:plistXML
+                                          options:NSPropertyListMutableContainersAndLeaves
                                           format:&format
-                                          errorDescription:&errorDesc];
+                                          error:&errorDesc];
     if (!temp) {
-        NSLog(@"Error reading plist: %@, format: %lu", errorDesc, format);
+       // NSLog(@"Error reading plist: %@, format: %lu", errorDesc, format);
     }
 
     return [temp objectForKey:name];
