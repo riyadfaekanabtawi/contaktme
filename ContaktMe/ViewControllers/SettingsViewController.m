@@ -35,7 +35,7 @@
 }
 -(void)removeView{};
 - (void)viewDidLoad {
-    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
    // [self loadIncidences];
     CGRect screenRect = [[UIScreen mainScreen] bounds];
@@ -64,18 +64,18 @@
     
     [self slideMenuSetup];
     User *user0=[User new];
-    user0.name=@"Riyad Anabtawi";
-    user0.status_message=@"Coding here and there";
+    user0.name=[defaults objectForKey:@"USER_NAME"];
+    user0.status_message=[defaults objectForKey:@"USER_MESSAGE"];
     user0.city=@"Santiago";
     user0.avatar=@"riyad.jpg";
     user0.followed_by=@254;
     user0.state=@"online";
 
-    user0.profession=@"IT Engineer";
-    user0.mobilephone=@"+56-9-5784385";
-    user0.birthPlace=@"Brazil";
+    user0.profession=[defaults objectForKey:@"USER_PROFESSION"];
+    user0.mobilephone=[defaults objectForKey:@"USER_CELL"];
+
     user0.workplace=@"CEO @ContaktMe";
-    user0.email=@"riyadcarioca@gmail.com";
+    user0.email=[defaults objectForKey:@"USER_EMAIL"];
     user0.country=@"Chile";
    
    

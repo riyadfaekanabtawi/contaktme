@@ -23,6 +23,8 @@
 }
 
 - (void)viewDidLoad {
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [super viewDidLoad];
     self.logout.alpha=0.0f;
     self.onlineUsers.alpha=0.0f;
@@ -78,7 +80,7 @@
     self.list.font=[UIFont fontWithName:FONT_LIGHT size:18];
     //[self.contactTableView registerNib:[UINib nibWithNibName:@"ContactListViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"contactcell"];
     
-    
+    self.userName.text=[NSString stringWithFormat:@"%@",[defaults objectForKey:@"USER_NAME"]];
 
     
     

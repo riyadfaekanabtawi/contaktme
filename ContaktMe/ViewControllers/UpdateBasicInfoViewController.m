@@ -216,11 +216,38 @@ clickedButtonAtIndex:(NSInteger)buttonIndex{
                                                            andProfession:self.profession.text
                                                             andCellphone:self.cellphone.text
                                                                forUserID:[defaults objectForKey:@"USER_ID"]
+                                andToken:[data objectForKey:@"access_token"]
                                                               AndHandler:^(id data) {
-                                                                  [defaults setObject:self.fullname.text forKey:@"USER_NAME"];
-                                                                  [defaults setObject:self.fullname.text forKey:@"USER_PROFESSIOM"];
-                                                                  [defaults setObject:self.cellphone.text forKey:@"USER_CELL"];
-                                                                  [defaults synchronize];
+                                                                  
+                                                                  if ([[data objectForKey:@"status"] isEqualToString:@"OK"]) {
+                                                                      [defaults setObject:[[data objectForKey:@"data"] objectForKey:@"status"] forKey:@"USER_STATUS"];
+                                                                      [defaults setObject:self.fullname.text forKey:@"USER_NAME"];
+                                                                      [defaults setObject:self.profession.text forKey:@"USER_PROFESSIOM"];
+                                                                      [defaults setObject:self.cellphone.text forKey:@"USER_CELL"];
+                                                                      [defaults synchronize];
+                                                                      [self performSegueWithIdentifier:@"home" sender:self];
+                                                                  }else if([[data objectForKey:@"code"] isEqualToValue:@1009]){
+                                                                  
+                                                                      [[[UIAlertView alloc] initWithTitle:@"Opps!"
+                                                                                                  message:[data objectForKey:@"description"]
+                                                                                                 delegate:self
+                                                                                        cancelButtonTitle:@"OK!"
+                                                                                        otherButtonTitles:nil] show];
+
+                                                                  
+                                                                  
+                                                                  }
+                                                                  
+                                                                  
+                                                                  else{
+                                                                      [[[UIAlertView alloc] initWithTitle:@"Opps!"
+                                                                                                  message:@"Service not available,pleasetry again"
+                                                                                                 delegate:self
+                                                                                        cancelButtonTitle:@"OK!"
+                                                                                        otherButtonTitles:nil] show];
+                                                                  
+                                                                  }
+                                                              
                                                               } orErrorHandler:^(NSError *err) {
                                                                   
                                                                   

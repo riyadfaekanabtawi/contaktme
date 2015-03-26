@@ -613,13 +613,13 @@
 }
 
 
-+(void)updateBasicInfoWithFullName:(NSString *)full_name andProfession:(NSString *)profession andCellphone:(NSString *)cell_phone forUserID:(NSNumber *)user_id AndHandler:(void (^)(id))handler orErrorHandler:(void (^)(NSError *))errorHandler{
-    
++(void)updateBasicInfoWithFullName:(NSString *)full_name andProfession:(NSString *)profession andCellphone:(NSString *)cell_phone forUserID:(NSNumber *)user_id andToken:(NSString *)token AndHandler:(void (^)(id))handler orErrorHandler:(void (^)(NSError *))errorHandler{
+     // NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@user/addBasicInformation",BASE_URL]];
     
     NSString *params= [NSString stringWithFormat:@"full_name=%@&profession=%@&cellphone=%@&user=%@",full_name,profession,cell_phone,user_id];
-    NSString *header= [NSString stringWithFormat:@"%@:%@",client_id,client_secret];
+    NSString *header= [NSString stringWithFormat:@"Bearer %@",token];
     
     NSData *data=[params dataUsingEncoding:NSUTF8StringEncoding];
     
@@ -643,8 +643,8 @@
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://52.1.119.11:8080/o/token/"]];
     
     NSString *params= [NSString stringWithFormat:@"grant_type=password&password=%@&username=%@",password,user_id];
-    NSString *clients = [NSString stringWithFormat:@"%@%@",client_id,client_secret];
-    NSString *header= [[NSString stringWithFormat:@"Basic %@",clients] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+
+    NSString *header= [NSString stringWithFormat:@"Basic ZFlxN3BEN3hDaVJQNFRxM1I4SEQ5d2ZJVmZQY210Y2VxRjEyZE4uPTpkeXZicnRDUFlhVW4zSFpVM3hrN1ZZLS0ud1k3NUAzQTNiMTlzNXhNS2V0M2dnO203QUpHVE9hRVZLQ1htb3VAcT1sbEZGbmRDV3k7USExdEdZRnpoaVVlOHAhZDlHVj9VVU9LbDAwWEZtbWJ5eFFyTlhRVGkyRFEuQGVPWTZPTg=="];
    
     NSData *data=[params dataUsingEncoding:NSUTF8StringEncoding];
     

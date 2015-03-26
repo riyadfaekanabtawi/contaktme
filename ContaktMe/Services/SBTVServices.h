@@ -34,7 +34,7 @@
 +(void)LoginUserWithemail:(NSString *)email andpassword:(NSString *)password AndHandler:(void (^)(id))handler orErrorHandler:(void (^)(NSError *))errorHandler;
 
 
-+(void)updateBasicInfoWithFullName:(NSString *)full_name andProfession:(NSString *)profession andCellphone:(NSString *)cell_phone forUserID:(NSNumber *)user_id AndHandler:(void (^)(id))handler orErrorHandler:(void (^)(NSError *))errorHandler;
++(void)updateBasicInfoWithFullName:(NSString *)full_name andProfession:(NSString *)profession andCellphone:(NSString *)cell_phone forUserID:(NSNumber *)user_id andToken:(NSString *)token AndHandler:(void (^)(id))handler orErrorHandler:(void (^)(NSError *))errorHandler;
 
 
 +(void)requestTokenForUser:(NSNumber *)user_id andPassword:(NSString *)password  AndHandler:(void (^)(id))handler orErrorHandler:(void (^)(NSError *))errorHandler;
