@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15A178w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="640" height="1136"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="640-1136.png" translatesAutoresizingMaskIntoConstraints="NO" id="NFB-b0-eCw">
-                    <rect key="frame" x="0.0" y="0.0" width="640" height="1136"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1242-2208.png" translatesAutoresizingMaskIntoConstraints="NO" id="8Jh-vV-gep">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <animations/>
                 </imageView>
             </subviews>
+            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="NFB-b0-eCw" secondAttribute="bottom" id="90L-4B-eg6"/>
-                <constraint firstItem="NFB-b0-eCw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="NrY-SI-42c"/>
-                <constraint firstAttribute="trailing" secondItem="NFB-b0-eCw" secondAttribute="trailing" id="Vxc-Vo-hjd"/>
-                <constraint firstItem="NFB-b0-eCw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="rU1-4n-EgV"/>
+                <constraint firstItem="8Jh-vV-gep" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2B9-B7-QyS"/>
+                <constraint firstAttribute="trailing" secondItem="8Jh-vV-gep" secondAttribute="trailing" id="YJs-sf-sr8"/>
+                <constraint firstAttribute="bottom" secondItem="8Jh-vV-gep" secondAttribute="bottom" id="eyy-bp-iJf"/>
+                <constraint firstItem="8Jh-vV-gep" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fFy-Do-e09"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -27,6 +29,6 @@
         </view>
     </objects>
     <resources>
-        <image name="640-1136.png" width="640" height="1136"/>
+        <image name="1242-2208.png" width="1242" height="2208"/>
     </resources>
 </document>

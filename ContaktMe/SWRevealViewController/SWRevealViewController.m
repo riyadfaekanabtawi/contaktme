@@ -100,14 +100,17 @@ static CGFloat scaledValue( CGFloat v1, CGFloat min2, CGFloat max2, CGFloat min1
     return self;
 }
 
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
 
 - (void)reloadShadow
 {
-    CALayer *frontViewLayer = _frontView.layer;
-    frontViewLayer.shadowColor = [_c.frontViewShadowColor CGColor];
-    frontViewLayer.shadowOpacity = _c.frontViewShadowOpacity;
-    frontViewLayer.shadowOffset = _c.frontViewShadowOffset;
-    frontViewLayer.shadowRadius = _c.frontViewShadowRadius;
+//    CALayer *frontViewLayer = _frontView.layer;
+//    frontViewLayer.shadowColor = [_c.frontViewShadowColor CGColor];
+//    frontViewLayer.shadowOpacity = _c.frontViewShadowOpacity;
+//    frontViewLayer.shadowOffset = _c.frontViewShadowOffset;
+//    frontViewLayer.shadowRadius = _c.frontViewShadowRadius;
 }
 
 
@@ -192,6 +195,8 @@ static CGFloat scaledValue( CGFloat v1, CGFloat min2, CGFloat max2, CGFloat min1
 
 - (void)layoutSubviews
 {
+    [super layoutSubviews];
+    
     if ( _disableLayout ) return;
 
     CGRect bounds = self.bounds;
@@ -348,6 +353,8 @@ static CGFloat scaledValue( CGFloat v1, CGFloat min2, CGFloat max2, CGFloat min1
 #pragma mark - SWContextTransitioningObject
 
 @interface SWContextTransitionObject : NSObject<UIViewControllerContextTransitioning>
+
+
 @end
 
 
@@ -490,6 +497,7 @@ static CGFloat scaledValue( CGFloat v1, CGFloat min2, CGFloat max2, CGFloat min1
 }
 
 
+
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext
 {
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
@@ -553,8 +561,8 @@ static CGFloat scaledValue( CGFloat v1, CGFloat min2, CGFloat max2, CGFloat min1
     UITouch *touch = [touches anyObject];
     CGPoint nowPoint = [touch locationInView:self.view];
     
-    if (abs(nowPoint.x - _beginPoint.x) > kDirectionPanThreshold) _dragging = YES;
-    else if (abs(nowPoint.y - _beginPoint.y) > kDirectionPanThreshold) self.state = UIGestureRecognizerStateFailed;
+    if (fabs(nowPoint.x - _beginPoint.x) > kDirectionPanThreshold) _dragging = YES;
+    else if (fabs(nowPoint.y - _beginPoint.y) > kDirectionPanThreshold) self.state = UIGestureRecognizerStateFailed;
 }
 
 @end
@@ -642,7 +650,7 @@ const int FrontViewPositionNone = 0xff;
     _rearViewRevealWidth = 260.0f;
     _rearViewRevealOverdraw = 60.0f;
     _rearViewRevealDisplacement = 40.0f;
-    _rightViewRevealWidth = 260.0f;
+    _rightViewRevealWidth = 200.0f;
     _rightViewRevealOverdraw = 60.0f;
     _rightViewRevealDisplacement = 40.0f;
     _bounceBackOnOverdraw = YES;
@@ -650,8 +658,8 @@ const int FrontViewPositionNone = 0xff;
     _stableDragOnOverdraw = NO;
     _stableDragOnLeftOverdraw = NO;
     _presentFrontViewHierarchically = NO;
-    _quickFlickVelocity = 250.0f;
-    _toggleAnimationDuration = 0.3;
+    _quickFlickVelocity = 0.0f;
+    _toggleAnimationDuration = 1;
     _toggleAnimationType = SWRevealToggleAnimationTypeSpring;
     _springDampingRatio = 1;
     _replaceViewAnimationDuration = 0.25;
@@ -1279,7 +1287,7 @@ const int FrontViewPositionNone = 0xff;
     NSTimeInterval duration = _toggleAnimationDuration;
 
     // Velocity driven change:
-    if (fabsf(velocity) > _quickFlickVelocity)
+    if (fabs(velocity) > _quickFlickVelocity)
     {
         // we may need to set the drag position and to adjust the animation duration
         CGFloat journey = xLocation;
@@ -1297,7 +1305,7 @@ const int FrontViewPositionNone = 0xff;
             }
         }
         
-        duration = fabsf(journey/velocity);
+        duration = fabs(journey/velocity);
     }
     
     // Position driven change:
@@ -1354,7 +1362,7 @@ const int FrontViewPositionNone = 0xff;
     
     NSTimeInterval duration = animated?_toggleAnimationDuration:0.0;
     NSTimeInterval firstDuration = duration;
-    int initialPosDif = abs( _frontViewPosition - preReplacementPosition );
+    NSInteger initialPosDif = labs( _frontViewPosition - preReplacementPosition );
     if ( initialPosDif == 1 ) firstDuration *= 0.8;
     else if ( initialPosDif == 0 ) firstDuration = 0;
     

@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>RadarView.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
-		</dict>
 		<key>contaktme.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -17,32 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>EB1B3F221A9E884800F9197C</key>
+		<key>EBF484161B7EC994006863B9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EB1B3F2C1A9E884800F9197C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EB1B3F491A9E8A2300F9197C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EB1B3F531A9E8A2300F9197C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EBBEA8091A9D2ADC008F0ED1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EBBEA8251A9D2ADC008F0ED1</key>
+		<key>EBF4842F1B7EC994006863B9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
