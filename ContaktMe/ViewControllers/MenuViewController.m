@@ -30,11 +30,12 @@
     self.myProjectsView.alpha = 0.0;
     self.topJobsView.alpha = 0.0;
     self.homeView.alpha = 1.0;
+    self.signOutView.alpha = 0.0;
     
     self.user_name.font = [UIFont fontWithName:FONT_REGULAR size:self.user_name.font.pointSize];
     
     self.homeLabel.font = [UIFont fontWithName:FONT_REGULAR size:self.homeLabel.font.pointSize];
-    
+    self.signoutLabel.font = [UIFont fontWithName:FONT_REGULAR size:self.signoutLabel.font.pointSize];
      self.topJobsLabel.font = [UIFont fontWithName:FONT_REGULAR size:self.topJobsLabel.font.pointSize];
     
     self.searchLabel.font = [UIFont fontWithName:FONT_REGULAR size:self.searchLabel.font.pointSize];
@@ -59,17 +60,24 @@
 
 -(IBAction)myprojectsTouchUpInside:(id)sender{
 
-    [UIView animateWithDuration:0.3 animations:^{
+    self.myProjectsLabel.transform = CGAffineTransformMakeScale(0.0, 0.0);
+    [UIView animateWithDuration:1.0
+                          delay:0.0
+         usingSpringWithDamping:0.2
+          initialSpringVelocity:6.00
+                        options:UIViewAnimationOptionAllowUserInteraction animations:^{
+                            self.myProjectsLabel.transform = CGAffineTransformIdentity;
         
         self.searchView.alpha = 0.0;
         self.lookforView.alpha = 0.0;
         self.myProjectsView.alpha = 1.0;
         self.topJobsView.alpha = 0.0;
         self.homeView.alpha = 0.0;
-    }];
-    
-    
-    [self.delegate didSelectOption:@"myProjects"];
+        self.signOutView.alpha = 0.0;
+                        }
+                     completion:^(BOOL finished) {
+                         [self.delegate didSelectOption:@"myProjects"];
+                     }];
 
 }
 
@@ -77,61 +85,125 @@
 
 -(IBAction)lookForProsTouchUpInside:(id)sender{
     
-    [UIView animateWithDuration:0.3 animations:^{
+    self.lookforLabel.transform = CGAffineTransformMakeScale(0.0, 0.0);
+    [UIView animateWithDuration:1.0
+                          delay:0.0
+         usingSpringWithDamping:0.2
+          initialSpringVelocity:6.00
+                        options:UIViewAnimationOptionAllowUserInteraction animations:^{
+                            self.lookforLabel.transform = CGAffineTransformIdentity;
         
         self.searchView.alpha = 0.0;
         self.lookforView.alpha = 1.0;
         self.myProjectsView.alpha = 0.0;
         self.topJobsView.alpha = 0.0;
         self.homeView.alpha = 0.0;
-    }];
-    [self.delegate didSelectOption:@"lookPros"];
+        self.signOutView.alpha = 0.0;
+                        }
+                     completion:^(BOOL finished) {
+                         [self.delegate didSelectOption:@"lookPros"];
+                     }];
 }
 
 
 
 -(IBAction)TopJobsTouchUpInside:(id)sender{
     
-    [UIView animateWithDuration:0.3 animations:^{
+    self.topJobsLabel.transform = CGAffineTransformMakeScale(0.0, 0.0);
+    [UIView animateWithDuration:1.0
+                          delay:0.0
+         usingSpringWithDamping:0.2
+          initialSpringVelocity:6.00
+                        options:UIViewAnimationOptionAllowUserInteraction animations:^{
+                            self.topJobsLabel.transform = CGAffineTransformIdentity;
+                            
         
         self.searchView.alpha = 0.0;
         self.lookforView.alpha = 0.0;
         self.myProjectsView.alpha = 0.0;
         self.topJobsView.alpha = 1.0;
         self.homeView.alpha = 0.0;
-    }];
-    [self.delegate didSelectOption:@"topJobs"];
+        self.signOutView.alpha = 0.0;
+                        }
+                     completion:^(BOOL finished) {
+                         [self.delegate didSelectOption:@"topJobs"];
+                     }];
 }
 
 
 -(IBAction)HomeTouchUpInside:(id)sender{
     
-    [UIView animateWithDuration:0.3 animations:^{
+    self.homeLabel.transform = CGAffineTransformMakeScale(0.0, 0.0);
+    [UIView animateWithDuration:1.0
+                          delay:0.0
+         usingSpringWithDamping:0.2
+          initialSpringVelocity:6.00
+                        options:UIViewAnimationOptionAllowUserInteraction animations:^{
+                            self.homeLabel.transform = CGAffineTransformIdentity;
         
         self.searchView.alpha = 0.0;
         self.lookforView.alpha = 0.0;
         self.myProjectsView.alpha = 0.0;
         self.topJobsView.alpha = 0.0;
         self.homeView.alpha = 1.0;
-    }];
-    [self.delegate didSelectOption:@"home"];
+        self.signOutView.alpha = 0.0;
+                        }
+                     completion:^(BOOL finished) {
+                         [self.delegate didSelectOption:@"home"];
+                     }];
 }
 
 
 
 -(IBAction)SearchJobTouchUpInside:(id)sender{
-    
-    [UIView animateWithDuration:0.3 animations:^{
-        
+      self.searchLabel.transform = CGAffineTransformMakeScale(0.0, 0.0);
+    [UIView animateWithDuration:1.0
+                          delay:0.0
+         usingSpringWithDamping:0.2
+          initialSpringVelocity:6.00
+                        options:UIViewAnimationOptionAllowUserInteraction animations:^{
+              self.searchLabel.transform = CGAffineTransformIdentity;
         self.searchView.alpha = 1.0;
         self.lookforView.alpha = 0.0;
         self.myProjectsView.alpha = 0.0;
         self.topJobsView.alpha = 0.0;
         self.homeView.alpha = 0.0;
-    }];
+        self.signOutView.alpha = 0.0;
+                        }
+                     completion:^(BOOL finished) {
+                         [self.delegate didSelectOption:@"searchJobs"];
+                     }];
+    
+}
+
+
+
+-(IBAction)SignOutTouchUpInside:(id)sender{
     
     
-    [self.delegate didSelectOption:@"searchJobs"];
+
+    
+    self.signoutLabel.transform = CGAffineTransformMakeScale(0.0, 0.0);
+    
+    [UIView animateWithDuration:1.0
+                          delay:0.0
+         usingSpringWithDamping:0.2
+          initialSpringVelocity:6.00
+                        options:UIViewAnimationOptionAllowUserInteraction animations:^{
+                            self.signoutLabel.transform = CGAffineTransformIdentity;
+                            self.searchView.alpha = 0.0;
+                            self.lookforView.alpha = 0.0;
+                            self.myProjectsView.alpha = 0.0;
+                            self.topJobsView.alpha = 0.0;
+                            self.homeView.alpha = 0.0;
+                            self.signOutView.alpha = 1.0;
+                        }
+                     completion:^(BOOL finished) {
+                         [self.delegate didSelectOption:@"signOut"];
+                     }];
+  
+    
+
     
 }
 

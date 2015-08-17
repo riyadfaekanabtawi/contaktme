@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F3DD5EC2-DED8-4BA4-9097-85A20E91A1CA</string>
+	<key>IDESourceControlProjectName</key>
+	<string>contaktme</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F763162E8BFA646846E00E701B8DBF41B1122781</key>
+		<string>bitbucket.org:riyadanabtawi/contaktme.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>contaktme.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F763162E8BFA646846E00E701B8DBF41B1122781</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>bitbucket.org:riyadanabtawi/contaktme.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F763162E8BFA646846E00E701B8DBF41B1122781</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F763162E8BFA646846E00E701B8DBF41B1122781</string>
+			<key>IDESourceControlWCCName</key>
+			<string>contaktme</string>
+		</dict>
+	</array>
+</dict>
+</plist>

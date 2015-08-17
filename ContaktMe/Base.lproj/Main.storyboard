@@ -15,6 +15,7 @@
             <string>Roboto-Light</string>
             <string>Roboto-Light</string>
             <string>Roboto-Light</string>
+            <string>Roboto-Light</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -2304,7 +2305,7 @@
                                                     <constraint firstAttribute="bottom" secondItem="fKq-HD-mlG" secondAttribute="bottom" id="yp8-qM-D2J"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MS1-hW-5Up" userLabel="Look for Pros">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MS1-hW-5Up" userLabel="topJobs">
                                                 <rect key="frame" x="0.0" y="191" width="240" height="40"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tQu-QO-9eN" userLabel="blue">
@@ -2363,6 +2364,65 @@
                                                     <constraint firstAttribute="height" constant="40" id="u2J-aD-KrR"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LoQ-Sr-ena" userLabel="signOut">
+                                                <rect key="frame" x="0.0" y="231" width="240" height="40"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aqi-J6-oby" userLabel="blue">
+                                                        <rect key="frame" x="0.0" y="0.0" width="3" height="40"/>
+                                                        <animations/>
+                                                        <color key="backgroundColor" red="0.94117647059999998" green="0.27058823529999998" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="3" id="Lvf-po-GRE"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign out" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="170" translatesAutoresizingMaskIntoConstraints="NO" id="pN2-3k-NQd" userLabel="SignOut">
+                                                        <rect key="frame" x="11" y="6" width="170" height="28"/>
+                                                        <animations/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="28" id="DBX-1Y-RBp"/>
+                                                            <constraint firstAttribute="width" constant="170" id="p6x-mQ-pFJ"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="16"/>
+                                                        <color key="textColor" red="0.36470588240000001" green="0.36470588240000001" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Fc-4u-vPI" userLabel="line">
+                                                        <rect key="frame" x="0.0" y="39" width="240" height="1"/>
+                                                        <animations/>
+                                                        <color key="backgroundColor" red="0.7970328283" green="0.7970328283" blue="0.7970328283" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="zIj-Qd-8D4"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfp-dR-zZe" userLabel="searchJob">
+                                                        <rect key="frame" x="0.0" y="0.0" width="240" height="40"/>
+                                                        <animations/>
+                                                        <state key="normal">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="SignOutTouchUpInside:" destination="6Qn-I9-p47" eventType="touchUpInside" id="uve-gi-PMt"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <animations/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="pN2-3k-NQd" firstAttribute="leading" secondItem="aqi-J6-oby" secondAttribute="trailing" constant="8" id="2ob-fM-emX"/>
+                                                    <constraint firstItem="pN2-3k-NQd" firstAttribute="top" secondItem="LoQ-Sr-ena" secondAttribute="top" constant="6" id="7ds-vN-4aS"/>
+                                                    <constraint firstAttribute="bottom" secondItem="0Fc-4u-vPI" secondAttribute="bottom" id="9V1-Al-zN1"/>
+                                                    <constraint firstAttribute="height" constant="40" id="ABu-53-R90"/>
+                                                    <constraint firstAttribute="bottom" secondItem="xfp-dR-zZe" secondAttribute="bottom" id="C1u-ey-BHt"/>
+                                                    <constraint firstItem="aqi-J6-oby" firstAttribute="leading" secondItem="LoQ-Sr-ena" secondAttribute="leading" id="Kr2-GZ-9q8"/>
+                                                    <constraint firstItem="aqi-J6-oby" firstAttribute="top" secondItem="LoQ-Sr-ena" secondAttribute="top" id="MLo-Tb-LlA"/>
+                                                    <constraint firstAttribute="trailing" secondItem="0Fc-4u-vPI" secondAttribute="trailing" id="gyj-3o-35h"/>
+                                                    <constraint firstAttribute="bottom" secondItem="aqi-J6-oby" secondAttribute="bottom" id="hon-nI-pzc"/>
+                                                    <constraint firstItem="xfp-dR-zZe" firstAttribute="top" secondItem="LoQ-Sr-ena" secondAttribute="top" id="vZb-Wc-zxG"/>
+                                                    <constraint firstItem="0Fc-4u-vPI" firstAttribute="leading" secondItem="LoQ-Sr-ena" secondAttribute="leading" id="wET-c3-AWt"/>
+                                                    <constraint firstAttribute="trailing" secondItem="xfp-dR-zZe" secondAttribute="trailing" id="wGx-qJ-uYf"/>
+                                                    <constraint firstItem="xfp-dR-zZe" firstAttribute="leading" secondItem="LoQ-Sr-ena" secondAttribute="leading" id="z82-Hb-SF7"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2373,13 +2433,16 @@
                                             <constraint firstItem="kUE-n9-2OQ" firstAttribute="top" secondItem="GK1-Ox-sWw" secondAttribute="bottom" id="AmM-iV-mxa"/>
                                             <constraint firstItem="f1r-hM-vpB" firstAttribute="leading" secondItem="iOD-8Y-bk8" secondAttribute="leading" id="BDq-Hc-RID"/>
                                             <constraint firstItem="MS1-hW-5Up" firstAttribute="leading" secondItem="iOD-8Y-bk8" secondAttribute="leading" id="Bb7-wD-fIP"/>
+                                            <constraint firstAttribute="trailing" secondItem="LoQ-Sr-ena" secondAttribute="trailing" id="EWw-RM-bLC"/>
                                             <constraint firstAttribute="trailing" secondItem="f1r-hM-vpB" secondAttribute="trailing" id="NQQ-f2-jjy"/>
                                             <constraint firstItem="GK1-Ox-sWw" firstAttribute="leading" secondItem="iOD-8Y-bk8" secondAttribute="leading" id="PXn-RD-1pa"/>
                                             <constraint firstItem="Fa6-gO-1IK" firstAttribute="top" secondItem="kUE-n9-2OQ" secondAttribute="bottom" id="UFV-fK-AVs"/>
                                             <constraint firstItem="kUE-n9-2OQ" firstAttribute="leading" secondItem="iOD-8Y-bk8" secondAttribute="leading" id="Wm6-zL-31R"/>
+                                            <constraint firstItem="LoQ-Sr-ena" firstAttribute="leading" secondItem="iOD-8Y-bk8" secondAttribute="leading" id="cMT-nE-taF"/>
                                             <constraint firstAttribute="trailing" secondItem="MS1-hW-5Up" secondAttribute="trailing" id="cWP-cE-gRD"/>
                                             <constraint firstAttribute="trailing" secondItem="Fa6-gO-1IK" secondAttribute="trailing" id="dKO-fu-Hc5"/>
                                             <constraint firstAttribute="width" constant="240" id="dUm-xl-Cna"/>
+                                            <constraint firstItem="LoQ-Sr-ena" firstAttribute="top" secondItem="MS1-hW-5Up" secondAttribute="bottom" id="e75-eq-jc4"/>
                                             <constraint firstItem="f1r-hM-vpB" firstAttribute="top" secondItem="iOD-8Y-bk8" secondAttribute="top" constant="31" id="eVG-FJ-edK"/>
                                             <constraint firstAttribute="trailing" secondItem="GK1-Ox-sWw" secondAttribute="trailing" id="hKa-MV-JLM"/>
                                             <constraint firstItem="Fa6-gO-1IK" firstAttribute="leading" secondItem="iOD-8Y-bk8" secondAttribute="leading" id="rDh-ky-wuF"/>
@@ -2516,6 +2579,8 @@
                         <outlet property="myProjectsView" destination="HbY-3C-Ye4" id="pfF-oO-J8H"/>
                         <outlet property="searchLabel" destination="lE1-7m-Gei" id="dV8-Sq-gRy"/>
                         <outlet property="searchView" destination="m01-gl-hZj" id="oMy-XA-QEL"/>
+                        <outlet property="signOutView" destination="aqi-J6-oby" id="Dk3-du-XqR"/>
+                        <outlet property="signoutLabel" destination="pN2-3k-NQd" id="e0e-1m-4It"/>
                         <outlet property="topJobsLabel" destination="E4J-Md-qlm" id="w06-Zj-tm9"/>
                         <outlet property="topJobsView" destination="tQu-QO-9eN" id="2gR-7Y-RMI"/>
                         <outlet property="user_image" destination="Rhz-1q-EVo" id="mqF-nN-JrR"/>
