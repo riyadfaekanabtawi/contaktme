@@ -18,7 +18,7 @@
 #import <Social/Social.h>
 #import "UILabel+FormattedText.h"
 #import <FBSDKShareKit/FBSDKShareKit.h>
-#import "SBTVLoaderView.h"
+
 #import "GAIFields.h"
 #import "GAI.h"
 #import "GAIDictionaryBuilder.h"
@@ -26,3 +26,4 @@
 #import "GAITrackedViewController.h"
 #import "SendPostViewController.h"
 #import "iCarousel.h"
+#import "LoadingAnimationView.h"

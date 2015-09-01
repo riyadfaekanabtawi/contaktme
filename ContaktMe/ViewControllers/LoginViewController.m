@@ -16,9 +16,8 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 @implementation LoginViewController{
 
-    SBTVLoaderView *_loader;
     BOOL  goToSettings;
-
+  
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -125,12 +124,7 @@
 -(void)callServiceFacebook{
     
 
-    _loader = [SBTVLoaderView create];
-    [_loader startAnimation];
-    UIWindow *frontWindow = [[UIApplication sharedApplication] keyWindow];
-    
-    [Functions fillContainerView:frontWindow.subviews[0] WithView:_loader];
-    
+    [self showLoader];
     FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
     [login logInWithReadPermissions:@[@"email",@"user_friends"] handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
         if (error) {
@@ -184,8 +178,7 @@
                              [defaults setObject:[response objectForKey:@"email"] forKey:@"user_email"];
                              
                              [defaults synchronize];
-                             [_loader removeFromSuperview];
-                             _loader=nil;
+                            [self hideLoader];
                              
                              
                              if ([[defaults objectForKey:@"user_custom_name"] isEqualToString:@""] || [[defaults objectForKey:@"user_bio"] isEqualToString:@""] ){
@@ -203,8 +196,7 @@
                              
                              
                          } orErrorHandler:^(NSError *error) {
-                             [_loader removeFromSuperview];
-                             _loader=nil;
+                            
                          }];
                      }
                      else
@@ -266,4 +258,22 @@
 
 }
 
+
+
+
+-(void)showLoader{
+    self.loader = [LoadingAnimationView new];
+    [self.loader showWithImage:[UIImage imageNamed:@"spinner.png"] andMessage:@"" inView:self.view];
+    [self.view bringSubviewToFront:self.loader];
+
+}
+
+
+-(void)hideLoader{
+     [self.loader hide];
+    [self.loader removeFromSuperview];
+   
+
+
+}
 @end

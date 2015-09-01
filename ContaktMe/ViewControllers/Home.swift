@@ -18,7 +18,7 @@ class Home: UIViewController,SWRevealViewControllerDelegate,UICollectionViewDele
     @IBOutlet var homecollectionView: UICollectionView!
   
     @IBOutlet var optionsImage: UIImageView!
-    
+    var loader: LoadingAnimationView!
     @IBOutlet var blockView: UIView!
     @IBOutlet var tapGestureBlock: UITapGestureRecognizer!
     var GoToSettingsAutomatically = false
@@ -232,17 +232,7 @@ self.callHomeService()
     
     func callHomeService(){
         
-        let loader  = SBTVLoaderView.create()
-        let frontView = UIApplication.sharedApplication().keyWindow
-        
- 
-        let window = UIApplication.sharedApplication().keyWindow
-        if let sub =   window?.subviews[0] as? UIView{
-            
-            Functions.fillContainerView(sub, withView: loader)
-            
-        }
-        
+  self.showloader()
  
     
         Services.getAllRecipesWithHandler({ (response) -> Void in
@@ -260,13 +250,13 @@ self.callHomeService()
                 //self.animateTable()
             }
             
-               loader.removeFromSuperview()
+               self.hideloader()
              self.homecollectionView.contentOffset = CGPointMake(0, 0);
             self.refreshControl.endRefreshing()
             }, orErrorHandler: { (err) -> Void in
                 self.reintentarView.hidden=false
                 self.homecollectionView.hidden = true
-       
+              self.hideloader()
              self.refreshControl.endRefreshing()
         })
         
@@ -479,6 +469,22 @@ self.callHomeService()
     
     
     
+    func showloader(){
+    
+     self.loader = LoadingAnimationView.new()
+        
+     self.loader.showWithImage(UIImage(named: "spinner.png"), andMessage: "", inView: self.view)
+     self.view.bringSubviewToFront(self.loader)
+        
+    }
+
+    
+    func hideloader(){
+    
+   self.loader.hide()
+        
+    
+    }
 }
     
     

@@ -10,10 +10,10 @@
 
 
 #import "Functions.h"
-#import "SBTVLoaderView.h"
+#import "LoadingAnimationView.h"
 #import "contaktme-Swift.h"
-@interface LoginViewController : UIViewController<SBTVLoaderViewDelegate>
+@interface LoginViewController : UIViewController
 
-
+@property LoadingAnimationView *loader;
 @property (nonatomic,retain) IBOutlet UILabel *facebookLabel;
 @end

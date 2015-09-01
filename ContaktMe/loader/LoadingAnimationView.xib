@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15A178w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="kPz-hC-ptV" customClass="LoadingAnimationView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AHS-de-Gaj">
+                    <rect key="frame" x="130" y="254" width="60" height="60"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CWe-eu-PYa">
+                            <rect key="frame" x="10" y="10" width="40" height="40"/>
+                            <animations/>
+                        </imageView>
+                    </subviews>
+                    <animations/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="CWe-eu-PYa" firstAttribute="top" secondItem="AHS-de-Gaj" secondAttribute="top" constant="10" id="9sr-un-m2l"/>
+                        <constraint firstAttribute="height" constant="60" id="PPn-sx-Jch"/>
+                        <constraint firstAttribute="trailing" secondItem="CWe-eu-PYa" secondAttribute="trailing" constant="10" id="WRH-ez-HoM"/>
+                        <constraint firstAttribute="bottom" secondItem="CWe-eu-PYa" secondAttribute="bottom" constant="10" id="YBz-c8-hlM"/>
+                        <constraint firstItem="CWe-eu-PYa" firstAttribute="leading" secondItem="AHS-de-Gaj" secondAttribute="leading" constant="10" id="bLs-Pv-cea"/>
+                        <constraint firstAttribute="width" constant="60" id="wpq-f9-REi"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerY" secondItem="AHS-de-Gaj" secondAttribute="centerY" id="35d-Gi-5s6"/>
+                <constraint firstAttribute="centerX" secondItem="AHS-de-Gaj" secondAttribute="centerX" id="khJ-jI-5Ww"/>
+            </constraints>
+            <connections>
+                <outlet property="animationView" destination="AHS-de-Gaj" id="9AB-tc-3jI"/>
+                <outlet property="imageView" destination="CWe-eu-PYa" id="Yy8-GA-Ebh"/>
+            </connections>
+            <point key="canvasLocation" x="339" y="404"/>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

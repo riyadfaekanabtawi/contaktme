@@ -23,6 +23,11 @@
 		EB832E541B95435300772E73 /* icon_remuneration@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB832E511B95435300772E73 /* icon_remuneration@2x.png */; };
 		EB832E551B95435300772E73 /* icon_remuneration.png in Resources */ = {isa = PBXBuildFile; fileRef = EB832E521B95435300772E73 /* icon_remuneration.png */; };
 		EB832E561B95435300772E73 /* icon_remuneration@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB832E531B95435300772E73 /* icon_remuneration@3x.png */; };
+		EB832E5A1B954E5C00772E73 /* spinner.png in Resources */ = {isa = PBXBuildFile; fileRef = EB832E571B954E5C00772E73 /* spinner.png */; };
+		EB832E5B1B954E5C00772E73 /* spinner@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB832E581B954E5C00772E73 /* spinner@2x.png */; };
+		EB832E5C1B954E5C00772E73 /* spinner@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB832E591B954E5C00772E73 /* spinner@3x.png */; };
+		EB832E611B954E7B00772E73 /* LoadingAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB832E5F1B954E7B00772E73 /* LoadingAnimationView.m */; };
+		EB832E621B954E7B00772E73 /* LoadingAnimationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB832E601B954E7B00772E73 /* LoadingAnimationView.xib */; };
 		EBF4841D1B7EC994006863B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF4841C1B7EC994006863B9 /* main.m */; };
 		EBF484201B7EC994006863B9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF4841F1B7EC994006863B9 /* AppDelegate.m */; };
 		EBF484261B7EC994006863B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF484241B7EC994006863B9 /* Main.storyboard */; };
@@ -45,8 +50,6 @@
 		EBF484D91B7ECB3D006863B9 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF484571B7ECB3D006863B9 /* PostViewController.swift */; };
 		EBF484DA1B7ECB3D006863B9 /* SBTVCustomAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF484591B7ECB3D006863B9 /* SBTVCustomAlertView.m */; };
 		EBF484DB1B7ECB3D006863B9 /* SBTVCustomAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBF4845A1B7ECB3D006863B9 /* SBTVCustomAlertView.xib */; };
-		EBF484DC1B7ECB3D006863B9 /* SBTVLoaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF4845C1B7ECB3D006863B9 /* SBTVLoaderView.m */; };
-		EBF484DD1B7ECB3D006863B9 /* SBTVLoaderView_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBF4845D1B7ECB3D006863B9 /* SBTVLoaderView_iPhone.xib */; };
 		EBF484DE1B7ECB3D006863B9 /* SBTVNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF4845F1B7ECB3D006863B9 /* SBTVNavigationViewController.m */; };
 		EBF484E01B7ECB3D006863B9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF484611B7ECB3D006863B9 /* SettingsViewController.swift */; };
 		EBF484E11B7ECB3D006863B9 /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF484621B7ECB3D006863B9 /* SpringAnimation.swift */; };
@@ -285,6 +288,12 @@
 		EB832E511B95435300772E73 /* icon_remuneration@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_remuneration@2x.png"; sourceTree = "<group>"; };
 		EB832E521B95435300772E73 /* icon_remuneration.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_remuneration.png; sourceTree = "<group>"; };
 		EB832E531B95435300772E73 /* icon_remuneration@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_remuneration@3x.png"; sourceTree = "<group>"; };
+		EB832E571B954E5C00772E73 /* spinner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spinner.png; sourceTree = "<group>"; };
+		EB832E581B954E5C00772E73 /* spinner@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spinner@2x.png"; sourceTree = "<group>"; };
+		EB832E591B954E5C00772E73 /* spinner@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spinner@3x.png"; sourceTree = "<group>"; };
+		EB832E5E1B954E7B00772E73 /* LoadingAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingAnimationView.h; sourceTree = "<group>"; };
+		EB832E5F1B954E7B00772E73 /* LoadingAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingAnimationView.m; sourceTree = "<group>"; };
+		EB832E601B954E7B00772E73 /* LoadingAnimationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingAnimationView.xib; sourceTree = "<group>"; };
 		EBF484171B7EC994006863B9 /* contaktme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = contaktme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBF4841B1B7EC994006863B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBF4841C1B7EC994006863B9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -319,9 +328,6 @@
 		EBF484581B7ECB3D006863B9 /* SBTVCustomAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBTVCustomAlertView.h; sourceTree = "<group>"; };
 		EBF484591B7ECB3D006863B9 /* SBTVCustomAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBTVCustomAlertView.m; sourceTree = "<group>"; };
 		EBF4845A1B7ECB3D006863B9 /* SBTVCustomAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SBTVCustomAlertView.xib; sourceTree = "<group>"; };
-		EBF4845B1B7ECB3D006863B9 /* SBTVLoaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBTVLoaderView.h; sourceTree = "<group>"; };
-		EBF4845C1B7ECB3D006863B9 /* SBTVLoaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBTVLoaderView.m; sourceTree = "<group>"; };
-		EBF4845D1B7ECB3D006863B9 /* SBTVLoaderView_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SBTVLoaderView_iPhone.xib; sourceTree = "<group>"; };
 		EBF4845E1B7ECB3D006863B9 /* SBTVNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBTVNavigationViewController.h; sourceTree = "<group>"; };
 		EBF4845F1B7ECB3D006863B9 /* SBTVNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBTVNavigationViewController.m; sourceTree = "<group>"; };
 		EBF484611B7ECB3D006863B9 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -628,6 +634,16 @@
 			path = iCarousel;
 			sourceTree = "<group>";
 		};
+		EB832E5D1B954E7B00772E73 /* loader */ = {
+			isa = PBXGroup;
+			children = (
+				EB832E5E1B954E7B00772E73 /* LoadingAnimationView.h */,
+				EB832E5F1B954E7B00772E73 /* LoadingAnimationView.m */,
+				EB832E601B954E7B00772E73 /* LoadingAnimationView.xib */,
+			);
+			path = loader;
+			sourceTree = "<group>";
+		};
 		EBF4840E1B7EC994006863B9 = {
 			isa = PBXGroup;
 			children = (
@@ -657,6 +673,7 @@
 		EBF484191B7EC994006863B9 /* contaktme */ = {
 			isa = PBXGroup;
 			children = (
+				EB832E5D1B954E7B00772E73 /* loader */,
 				EB53BD451B91021600AA4B99 /* iCarousel */,
 				EBF4862C1B7FA857006863B9 /* libGoogleAnalyticsServices.a */,
 				EBF486091B7FA4EA006863B9 /* AppIcon */,
@@ -748,9 +765,6 @@
 				EBF484581B7ECB3D006863B9 /* SBTVCustomAlertView.h */,
 				EBF484591B7ECB3D006863B9 /* SBTVCustomAlertView.m */,
 				EBF4845A1B7ECB3D006863B9 /* SBTVCustomAlertView.xib */,
-				EBF4845B1B7ECB3D006863B9 /* SBTVLoaderView.h */,
-				EBF4845C1B7ECB3D006863B9 /* SBTVLoaderView.m */,
-				EBF4845D1B7ECB3D006863B9 /* SBTVLoaderView_iPhone.xib */,
 				EBF4845E1B7ECB3D006863B9 /* SBTVNavigationViewController.h */,
 				EBF4845F1B7ECB3D006863B9 /* SBTVNavigationViewController.m */,
 				EBF484611B7ECB3D006863B9 /* SettingsViewController.swift */,
@@ -873,6 +887,9 @@
 		EBF485131B7ECC84006863B9 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				EB832E571B954E5C00772E73 /* spinner.png */,
+				EB832E581B954E5C00772E73 /* spinner@2x.png */,
+				EB832E591B954E5C00772E73 /* spinner@3x.png */,
 				EB832E511B95435300772E73 /* icon_remuneration@2x.png */,
 				EB832E521B95435300772E73 /* icon_remuneration.png */,
 				EB832E531B95435300772E73 /* icon_remuneration@3x.png */,
@@ -1251,7 +1268,6 @@
 				EBF485931B7ECC84006863B9 /* icon_config@2x.png in Resources */,
 				EBF485D11B7ECC84006863B9 /* icon_share_twitter.png in Resources */,
 				EBF4859C1B7ECC84006863B9 /* icon_facebook_blue@2x.png in Resources */,
-				EBF484DD1B7ECB3D006863B9 /* SBTVLoaderView_iPhone.xib in Resources */,
 				EBF486161B7FA4EA006863B9 /* 100.png in Resources */,
 				EBF486031B7FA440006863B9 /* 640-1136.png in Resources */,
 				EBF486571B806678006863B9 /* position@2x.png in Resources */,
@@ -1301,6 +1317,7 @@
 				EBF485BC1B7ECC84006863B9 /* icon_search_small.png in Resources */,
 				EB832E481B953CCA00772E73 /* icon_title.png in Resources */,
 				EBF485CE1B7ECC84006863B9 /* icon_share_facebook.png in Resources */,
+				EB832E5C1B954E5C00772E73 /* spinner@3x.png in Resources */,
 				EBF4858E1B7ECC84006863B9 /* icon_bio_small@3x.png in Resources */,
 				EBF485D31B7ECC84006863B9 /* icon_share_twitter@3x.png in Resources */,
 				EBF485D41B7ECC84006863B9 /* icon_favorite_post_ON.png in Resources */,
@@ -1311,6 +1328,7 @@
 				EBF485D01B7ECC84006863B9 /* icon_share_facebook@3x.png in Resources */,
 				EB832E541B95435300772E73 /* icon_remuneration@2x.png in Resources */,
 				EBF485F71B7F9EBA006863B9 /* menu@2x.png in Resources */,
+				EB832E621B954E7B00772E73 /* LoadingAnimationView.xib in Resources */,
 				EBF485B61B7ECC84006863B9 /* icon_reload.png in Resources */,
 				EBF485EE1B7ECF71006863B9 /* logo_white@3x.png in Resources */,
 				EBF485AE1B7ECC84006863B9 /* icon_options@2x.png in Resources */,
@@ -1341,8 +1359,10 @@
 				EBF4861D1B7FA4EA006863B9 /* 50.png in Resources */,
 				EBF4858D1B7ECC84006863B9 /* icon_bio_small@2x.png in Resources */,
 				EBF485871B7ECC84006863B9 /* DINPro-Medium.otf in Resources */,
+				EB832E5A1B954E5C00772E73 /* spinner.png in Resources */,
 				EBF484FB1B7ECB3D006863B9 /* .gitignore in Resources */,
 				EBF484281B7EC994006863B9 /* Images.xcassets in Resources */,
+				EB832E5B1B954E5C00772E73 /* spinner@2x.png in Resources */,
 				EBF485BD1B7ECC84006863B9 /* icon_search_small@2x.png in Resources */,
 				EBF485811B7ECC84006863B9 /* btn_post.png in Resources */,
 				EBF485A31B7ECC84006863B9 /* icon_favorite_post@3x.png in Resources */,
@@ -1454,7 +1474,6 @@
 				EBF485041B7ECB3D006863B9 /* SDWebImagePrefetcher.m in Sources */,
 				EBF485001B7ECB3D006863B9 /* SDWebImageDecoder.m in Sources */,
 				EBF484D71B7ECB3D006863B9 /* PostDetailViewController.swift in Sources */,
-				EBF484DC1B7ECB3D006863B9 /* SBTVLoaderView.m in Sources */,
 				EBF484E01B7ECB3D006863B9 /* SettingsViewController.swift in Sources */,
 				EBF484F81B7ECB3D006863B9 /* RNCryptorEngine.m in Sources */,
 				EBF4850F1B7ECB3D006863B9 /* TipInCellAnimator.swift in Sources */,
@@ -1462,6 +1481,7 @@
 				EBF484201B7EC994006863B9 /* AppDelegate.m in Sources */,
 				EBF484E51B7ECB3D006863B9 /* AFNetworkReachabilityManager.m in Sources */,
 				EBF484FA1B7ECB3D006863B9 /* RNEncryptor.m in Sources */,
+				EB832E611B954E7B00772E73 /* LoadingAnimationView.m in Sources */,
 				EBF485121B7ECB3D006863B9 /* User.m in Sources */,
 				EBF484EB1B7ECB3D006863B9 /* Comment.m in Sources */,
 				EBF484CE1B7ECB3D006863B9 /* NSString+HTML.m in Sources */,

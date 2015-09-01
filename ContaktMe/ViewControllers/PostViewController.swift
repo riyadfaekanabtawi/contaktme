@@ -16,16 +16,16 @@ class PostViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var postImage: UIImageView!
     @IBOutlet var postDescription: UITextField!
     @IBOutlet var usernameLabel: UILabel!
-     @IBOutlet var publicTitle: UILabel!
+    @IBOutlet var publicTitle: UILabel!
     @IBOutlet var shareFacebookButton: UIButton!
- 
-      @IBOutlet var yes_no: UILabel!
-     @IBOutlet var publishView: UIView!
-     @IBOutlet var compartir_facebook: UILabel!
+    var loader: LoadingAnimationView!
+    @IBOutlet var yes_no: UILabel!
+    @IBOutlet var publishView: UIView!
+    @IBOutlet var compartir_facebook: UILabel!
     @IBOutlet var publicar_label: UILabel!
     @IBOutlet var userAvatar: UIImageView!
     @IBOutlet var image: UIImage!
-      var delegate:PostDelegate! = nil
+    var delegate:PostDelegate! = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,17 +85,7 @@ class PostViewController: UIViewController, UITextFieldDelegate {
         
         }else{
         
-            let loader  = SBTVLoaderView.create()
-            let frontView = UIApplication.sharedApplication().keyWindow
-            
-            
-            let window = UIApplication.sharedApplication().keyWindow
-            if let sub =   window?.subviews[0] as? UIView{
-                
-                Functions.fillContainerView(sub, withView: loader)
-                
-            }
-            
+    self.showloader()
             var imageData = UIImageJPEGRepresentation(self.postImage.image, 0.1)
             let base64String = imageData.base64EncodedStringWithOptions(.allZeros)
             let defaults = NSUserDefaults.standardUserDefaults()
@@ -165,6 +155,29 @@ class PostViewController: UIViewController, UITextFieldDelegate {
         tracker.set(kGAIScreenName, value:screen)
         var build = GAIDictionaryBuilder.createScreenView().build() as [NSObject : AnyObject]
         tracker.send(build)
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    func showloader(){
+        
+        self.loader = LoadingAnimationView.new()
+        
+        self.loader.showWithImage(UIImage(named: "spinner.png"), andMessage: "", inView: self.view)
+        self.view.bringSubviewToFront(self.loader)
+        
+    }
+    
+    
+    func hideloader(){
+        
+        self.loader.hide()
+        
         
     }
 }

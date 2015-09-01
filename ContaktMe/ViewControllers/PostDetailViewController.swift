@@ -20,7 +20,7 @@ class PostDetailViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet var cancelContainer: UIView!
     @IBOutlet var deleteContainer: UIView!
     
-    
+    var loader:LoadingAnimationView!
     @IBOutlet var facebookIcon: UIImageView!
     @IBOutlet var twitterIcon: UIImageView!
     @IBOutlet var cancelIcon: UIImageView!
@@ -293,30 +293,18 @@ class PostDetailViewController: UIViewController, UICollectionViewDelegate, UICo
                 let myID = defaults.objectForKey("user_id") as! NSNumber
                 
                 
-                
-                let loader  = SBTVLoaderView.create()
-                let frontView = UIApplication.sharedApplication().keyWindow
-                
-                
-                let window = UIApplication.sharedApplication().keyWindow
-                if let sub =   window?.subviews[0] as? UIView{
-                    
-                    Functions.fillContainerView(sub, withView: loader)
-                    
-                }
-                
-                
+           self.showloader()
                 
                 Services.DestroyPostForUser(myID, andPost: self.post_id, withHandler: { (response) -> Void in
                     
                     
-                    loader.removeFromSuperview()
+                       self.hideloader()
                     self.hideOptions()
                     self.delegate.refreshHomeFromPostDetail()
                     self.navigationController?.popViewControllerAnimated(true)
                     }) { (err) -> Void in
                         
-                        loader.removeFromSuperview()
+                      self.hideloader()
                         
                 }
         })
@@ -447,17 +435,7 @@ class PostDetailViewController: UIViewController, UICollectionViewDelegate, UICo
             }, completion: nil)
         
         if (self.commentTextField.text != ""){
-            let loader  = SBTVLoaderView.create()
-            let frontView = UIApplication.sharedApplication().keyWindow
-            
-            
-            let window = UIApplication.sharedApplication().keyWindow
-            if let sub =   window?.subviews[0] as? UIView{
-                
-                Functions.fillContainerView(sub, withView: loader)
-                
-            }
-            
+       self.showloader()
             Services.PostCommentByUser(user_id, forRecipe: self.post_id, withContent: self.commentTextField.text, withHandler: { (response) -> Void in
                 
                 self.commentTextField.text = ""
@@ -471,10 +449,10 @@ class PostDetailViewController: UIViewController, UICollectionViewDelegate, UICo
                         
                         
                 })
-                loader.removeFromSuperview()
+                          self.hideloader()
                 }, orErrorHandler: { (err) -> Void in
                     
-                    loader.removeFromSuperview()
+                              self.hideloader()
                     NSLog("FAILED POST COMMENT SERVICE")
                     
             })
@@ -591,6 +569,25 @@ class PostDetailViewController: UIViewController, UICollectionViewDelegate, UICo
         
         
         
+        
+        
+    }
+    
+    
+    
+    func showloader(){
+        
+        self.loader = LoadingAnimationView.new()
+        
+        self.loader.showWithImage(UIImage(named: "spinner.png"), andMessage: "", inView: self.view)
+        self.view.bringSubviewToFront(self.loader)
+        
+    }
+    
+    
+    func hideloader(){
+        
+        self.loader.hide()
         
         
     }

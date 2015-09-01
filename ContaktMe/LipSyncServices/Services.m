@@ -10,10 +10,13 @@
 #import "SBTVCustomAlertView.h"
 #import "Notification.h"
 #import "Functions.h"
-
-#import "SBTVLoaderView.h"
+#import "LoadingAnimationView.h"
 #import "AFHTTPRequestOperationManager.h"
-@implementation Services
+@implementation Services{
+
+    LoadingAnimationView *loader;
+
+}
 
 
 
@@ -23,16 +26,7 @@
 +(void)LoginWithName:(NSString *)name andPassword:(NSString *)password WithHandler:(void (^)(id)) handler orErrorHandler:(void (^)(NSError *)) errorHandler{
     
     
-    
-    SBTVLoaderView *loader = [SBTVLoaderView create];
-    
-    
-    UIWindow *frontWindow = [[UIApplication sharedApplication] keyWindow];
-    
-    [Functions fillContainerView:frontWindow.subviews[0] WithView:loader];
-    
-    
-
+ 
     
     NSDictionary *parameters = @{@"name" :name,@"password" :password};
     
@@ -55,8 +49,7 @@
         
         errorHandler(error);
         
-        [loader endAnimation];
-        [loader removeFromSuperview];
+      
     }];
     
     
@@ -680,4 +673,7 @@
     }];
 
 }
+
+
+
 @end

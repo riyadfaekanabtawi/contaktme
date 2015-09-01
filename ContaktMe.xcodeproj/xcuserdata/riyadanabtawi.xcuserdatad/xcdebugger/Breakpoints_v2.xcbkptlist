@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "contaktme/ViewControllers/LoginViewController.m"
-            timestampString = "461352794.24557"
+            timestampString = "462770940.091158"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
             landmarkName = "-callServiceFacebook"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "contaktme/ViewControllers/LoginViewController.m"
-            timestampString = "461354437.767904"
+            timestampString = "462770940.091158"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "-prepareForSegue:sender:"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "contaktme/ViewControllers/LoginViewController.m"
-            timestampString = "461354439.489112"
+            timestampString = "462770940.091158"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "-prepareForSegue:sender:"
             landmarkType = "5">
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "contaktme/ViewControllers/Home.swift"
-            timestampString = "462763162.012162"
+            timestampString = "462770108.493024"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "343"
-            endingLineNumber = "343"
+            startingLineNumber = "333"
+            endingLineNumber = "333"
             landmarkName = "Home"
             landmarkType = "3">
          </BreakpointContent>
@@ -202,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "contaktme/LipSyncServices/Services.m"
-            timestampString = "461402331.396193"
+            timestampString = "462770940.091158"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
             landmarkName = "+PostforUser:andTitle:andDescr:andRemuneration:andCategory:andLocation:andPosition:andBenefits:WithHandler:orErrorHandler:"
             landmarkType = "5">
          </BreakpointContent>
@@ -218,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "contaktme/LipSyncServices/Services.m"
-            timestampString = "461402332.262969"
+            timestampString = "462770940.091158"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
             landmarkName = "+PostforUser:andTitle:andDescr:andRemuneration:andCategory:andLocation:andPosition:andBenefits:WithHandler:orErrorHandler:"
             landmarkType = "5">
          </BreakpointContent>
@@ -234,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "contaktme/LipSyncServices/Services.m"
-            timestampString = "461402380.267734"
+            timestampString = "462770940.091158"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "+PostforUser:andTitle:andDescr:andRemuneration:andCategory:andLocation:andPosition:andBenefits:WithHandler:orErrorHandler:"
             landmarkType = "5">
          </BreakpointContent>
@@ -250,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "contaktme/LipSyncServices/Services.m"
-            timestampString = "461402663.983259"
+            timestampString = "462770940.091158"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "+RegisterWithNAme:andEmail:andImageURL:andPassword:andpasswordConfirmation:andUserID:WithHandler:orErrorHandler:"
             landmarkType = "5">
          </BreakpointContent>
@@ -266,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "contaktme/LipSyncServices/Services.m"
-            timestampString = "461402936.235278"
+            timestampString = "462770940.091158"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "+RegisterWithNAme:andEmail:andImageURL:andPassword:andpasswordConfirmation:andUserID:WithHandler:orErrorHandler:"
             landmarkType = "5">
          </BreakpointContent>
@@ -282,11 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "contaktme/LipSyncServices/Services.m"
-            timestampString = "461402958.421211"
+            timestampString = "462770940.091158"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "+RegisterWithNAme:andEmail:andImageURL:andPassword:andpasswordConfirmation:andUserID:WithHandler:orErrorHandler:"
             landmarkType = "5">
          </BreakpointContent>
@@ -442,11 +442,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "contaktme/ViewControllers/Home.swift"
-            timestampString = "462763162.012162"
+            timestampString = "462770108.493024"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "349"
-            endingLineNumber = "349"
+            startingLineNumber = "339"
+            endingLineNumber = "339"
             landmarkName = "showPost(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -474,11 +474,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "contaktme/ViewControllers/Home.swift"
-            timestampString = "462763162.012162"
+            timestampString = "462770108.493024"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "294"
-            endingLineNumber = "294"
+            startingLineNumber = "284"
+            endingLineNumber = "284"
             landmarkName = "loggedOut()"
             landmarkType = "5">
          </BreakpointContent>
@@ -490,11 +490,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "contaktme/ViewControllers/Home.swift"
-            timestampString = "462763162.012162"
+            timestampString = "462770108.493024"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "365"
-            endingLineNumber = "365"
+            startingLineNumber = "355"
+            endingLineNumber = "355"
             landmarkName = "didSelectMenuOption(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -506,11 +506,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "contaktme/ViewControllers/LoginViewController.m"
-            timestampString = "462156193.904747"
+            timestampString = "462770940.091158"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "-callServiceFacebook"
             landmarkType = "5">
             <Locations>

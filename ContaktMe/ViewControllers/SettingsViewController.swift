@@ -26,14 +26,14 @@ class SettingsViewController: UIViewController,CLLocationManagerDelegate {
     @IBOutlet var customNameTextField: UITextField!
     @IBOutlet var biographyTextField: UITextView!
     @IBOutlet var profileImageView: UIImageView!
-     @IBOutlet var nameTextField: UILabel!
+    @IBOutlet var nameTextField: UILabel!
     @IBOutlet var titleView: UILabel!
-     @IBOutlet var fullName: UILabel!
+    @IBOutlet var fullName: UILabel!
     @IBOutlet var locationLabel: UILabel!
     @IBOutlet var cerrarSesionLabel: UILabel!
     var IsFirstTime = false
     var delegate:settingsDelegate! = nil
-    
+    var loader:LoadingAnimationView!
     
     override func viewDidAppear(animated: Bool) {
         
@@ -152,17 +152,7 @@ class SettingsViewController: UIViewController,CLLocationManagerDelegate {
             let user_avatar = defaults.objectForKey("user_image") as! String
             
             
-            let loader  = SBTVLoaderView.create()
-            let frontView = UIApplication.sharedApplication().keyWindow
-            
-            
-            let window = UIApplication.sharedApplication().keyWindow
-            if let sub =   window?.subviews[0] as? UIView{
-                
-                Functions.fillContainerView(sub, withView: loader)
-                
-            }
-            
+          self.showloader()
             Services.EditUser(user_ids, name: user_name, image_url: user_avatar, andEmail: user_email, andCustomName: self.customNameTextField.text, andBio: self.biographyTextField.text, withHandler: { (response) -> Void in
             
               let customName = response.objectForKey("custom_name") as! String
@@ -175,7 +165,7 @@ class SettingsViewController: UIViewController,CLLocationManagerDelegate {
             defaults.setObject(customName, forKey: "user_custom_name")
             defaults.synchronize()
             
-            loader.removeFromSuperview()
+            self.hideloader()
             var alert = UIAlertController(title: "Genial!", message: "Actualizaste tu información", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
             self.customNameTextField.resignFirstResponder()
@@ -192,7 +182,7 @@ class SettingsViewController: UIViewController,CLLocationManagerDelegate {
            
         }, orErrorHandler: { (err) -> Void in
               NSLog("FAILED EDITING SERVICE")
-  loader.removeFromSuperview()
+    self.hideloader()
         })
             
             
@@ -224,6 +214,26 @@ class SettingsViewController: UIViewController,CLLocationManagerDelegate {
     
     @IBAction func GoBack(sender: UIButton) {
         self.navigationController?.popViewControllerAnimated(true)
+        
+        
+    }
+    
+    
+    
+    
+    func showloader(){
+        
+        self.loader = LoadingAnimationView.new()
+        
+        self.loader.showWithImage(UIImage(named: "spinner.png"), andMessage: "", inView: self.view)
+        self.view.bringSubviewToFront(self.loader)
+        
+    }
+    
+    
+    func hideloader(){
+        
+        self.loader.hide()
         
         
     }
