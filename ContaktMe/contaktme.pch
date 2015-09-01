@@ -1,0 +1,113 @@
+//
+//  contaktme.pch
+//  contaktme
+//
+//  Created by Riyad Anabtawi on 8/15/15.
+//  Copyright (c) 2015 Riyad Anabtawi. All rights reserved.
+//
+
+#ifndef contaktme_contaktme_pch
+#define contaktme_contaktme_pch
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#endif
+#define isNSNull(value) [value isKindOfClass:[NSNull class]]
+#define replaceNSNullValue(value) isNSNull(value) ? nil : value
+#define RADIANS(degrees) ((degrees * M_PI) / 180.0)
+
+#define BASE_URL @"http://contaktme-test.anabtatec-mobile.com/"
+
+
+//FONTS
+#define FONT_REGULAR   @"DINPro-Regular"
+#define FONT_BOLD  @"DINPro-Bold"
+#define FONT_MEDIUM  @"DINPro-Medium"
+#define FONT_LIGHT  @"DINPro-Light"
+#define FONT_BLACK  @"DINPro-Black"
+
+#define TIMER_DURATION_ADDS 10
+
+#import "GAI.h"
+#import "GAIFields.h"
+
+#define IS_IPHONE_4_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.width - ( double )320 ) < DBL_EPSILON )
+
+
+#define IS_IPHONE_4 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )480 ) < DBL_EPSILON )
+
+
+#define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+#define IS_RETINA ([[UIScreen mainScreen] respondsToSelector:@selector(displayLinkWithTarget:selector:)] && ([UIScreen mainScreen].scale >= 2.0))
+
+#define IS_IPHONE_6 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )667 ) < DBL_EPSILON )
+#define isNSNull(value) [value isKindOfClass:[NSNull class]]
+#define replaceNSNullValue(value) isNSNull(value) ? nil : value
+
+#define noConexion @"Al parecer no tienes conexión a Internet. ¿Deseas ir a la configuración?"
+#define VideoError @"No es posible cargar el video. Comprueba tu conexión a Internet e intenta nuevamente."
+#define NoDetail @"No puedes ver el detalle de un partido que aún no ha comenzado."
+#define NoContent @"Contenido no disponible"
+
+
+#define isIOS7 floor(NSFoundationVersionNumber) < NSFoundationVersionNumber_iOS_8_0
+
+#define IS_IPHONE_6Plus ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )736 ) < DBL_EPSILON )
+
+//ERROR TEXTS
+
+#define missingFieldsTitle @"Campos Obligatorios"
+#define missingFields @"Todos los campos son obligatorios, por favor completa los que faltan."
+
+#define wrongEmail @"El email que pusiste es inválido, por favor ingresa un email correcto."
+
+#define wrongEmailTitle @"Email Incorrecto"
+
+#define twitterErrorTitle @"Cuenta de Twitter"
+
+#define twitterError @"Por favor configura una cuenta de Twitter en las preferencias de tu teléfono antes de twittear."
+
+
+#define conexionErrorTitle @"Error de Conexión"
+
+#define conexionError @"Espera a que se reestablezca la conexión un momento antes de continuar."
+
+
+#define missinEmailErrorTitle @"Email Desconocido"
+
+#define missingEmailError @"El email que pusiste no existe en nuestros registros, por favor verifica que sea el mismo con el que te registraste."
+
+#define confirmLiveExitTitle @"Confirmar Salida"
+
+#define confirmLiveExitError @"¿Estás seguro que quieres salir? Si sales no podrás volver a votar por este famoso mientras canta."
+
+
+#define newVersion @"Existe una nueva versión disponible."
+
+#define newVersionTitle @"Nueva actualización"
+
+
+#define emailExists @"El email que pusiste ya existem porfavor intenta con otro email."
+
+#define emailExistsTitle @"Email ya existe"
+
+#define updateSuccess @"Haz actualizado tu información satisfactoriamente."
+
+#define updateSuccessTitle @"Bien!"
+
+
+#define userDoesNotExist @"El email que pusiste no existe. Intenta con otro email."
+
+#define userDoesNotExistTitle @"Lo sentimos"
+//END ERROR TEXTS
+
+
+
+#endif

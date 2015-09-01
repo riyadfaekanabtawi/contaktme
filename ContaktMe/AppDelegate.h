@@ -1,29 +1,41 @@
 //
 //  AppDelegate.h
-//  BeepGoosh
+//  LipSync
 //
-//  Created by Riyad Anabtawi on 1/11/15.
-//  Copyright (c) 2015 Riyad Anabtawi. All rights reserved.
+//  Created by SmartBoxTV on 01-06-15.
+//  Copyright (c) 2015 SmartBoxTV. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-@protocol AppiShit
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 
--(void)playLiveVideoAfterMinimizing;
+@protocol AppiShit
 -(void)sbtvAppDidRecieveNotification:(NSDictionary *)notification;
+
+
 @end
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
-
+@property NSNumber *user_id;
+@property NSNumber *player_id;
+@property NSNumber *match_id;
+@property NSNumber *media_id;
+@property (strong, nonatomic) NSTimer *serviceTimer;
 +(void)setVideoPlaying:(BOOL)isPlaying;
+@property NSDictionary *pendingNotification;
 +(BOOL)isVideoPlaying;
+
 +(BOOL)shouldAutorotate;
 +(NSUInteger)supportedInterfaceOrientations;
+
 +(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation;
-@property (nonatomic,retain) NSDictionary *pendingNotification;
+-(void)StartTimerwithMatchID:(NSNumber *)match_id andUserID:(NSNumber *)user_id andPlayerID:(NSNumber *)player_id;
 @property (nonatomic,retain) id<AppiShit> delegate;
 
-@end
 
+
+@end

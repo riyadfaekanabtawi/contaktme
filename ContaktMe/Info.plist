@@ -4,19 +4,10 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string></string>
-    
-    <key>NSLocationAlwaysUsageDescription</key>
-    <string></string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
-	<key>CFBundleIcons</key>
-	<dict/>
-	<key>CFBundleIcons~ipad</key>
-	<dict/>
 	<key>CFBundleIdentifier</key>
-	<string>com.contaktme.contaktme</string>
+	<string>com.anabtatec.$(PRODUCT_NAME:rfc1034identifier)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -27,24 +18,64 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.anabtatec.contaktme</string>
+		</dict>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>dlcontaktme</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>dlcontaktme</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb1663911547162122</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>b186bc648cbe07e9c7008348f75826f31cc64446</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>Crashlytics</string>
+			</dict>
+		</array>
+	</dict>
+	<key>FacebookAppID</key>
+	<string>1663911547162122</string>
+	<key>FacebookDisplayName</key>
+	<string>contaktme</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>contaktme</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>contaktme</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Roboto-Bold.ttf</string>
-		<string>Roboto-Light.ttf</string>
-        <string>Sansation-Bold.ttf</string>
-        <string>Sansation-BoldItalic.ttf</string>
-        <string>Sansation-Light.ttf</string>
-        <string>Sansation-Italic.ttf</string>
-        <string>Sansation-LightItalic.ttf</string>
-        <string>Sansation-Regular.ttf</string>
-		<string>Roboto-Regular.ttf</string>
-		<string>Roboto-Medium.ttf</string>
-        <string>MOVISTARHEADLINE-BOLD-WEBFONT_0.TTF</string>
-        <string>MOVISTARHEADLINE-REGULAR-WEBFONT_0.TTF</string>
+		<string>DINPro-Bold.otf</string>
+		<string>DINPro-Regular.otf</string>
+		<string>DINPro-Black.otf</string>
+		<string>DINPro-Light.otf</string>
+		<string>DINPro-Medium.otf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
@@ -53,8 +84,9 @@
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
-		<string>location-services</string>
 	</array>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

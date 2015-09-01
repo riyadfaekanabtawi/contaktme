@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0610"
+   LastUpgradeVersion = "0640"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EBBEA8091A9D2ADC008F0ED1"
+               BlueprintIdentifier = "EBF484161B7EC994006863B9"
                BuildableName = "contaktme.app"
                BlueprintName = "contaktme"
                ReferencedContainer = "container:contaktme.xcodeproj">
@@ -28,23 +28,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EBBEA8251A9D2ADC008F0ED1"
+               BlueprintIdentifier = "EBF4842F1B7EC994006863B9"
                BuildableName = "contaktmeTests.xctest"
                BlueprintName = "contaktmeTests"
-               ReferencedContainer = "container:contaktme.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EB1B3F2C1A9E884800F9197C"
-               BuildableName = "RadarViewTests.xctest"
-               BlueprintName = "RadarViewTests"
                ReferencedContainer = "container:contaktme.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -60,19 +46,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EBBEA8251A9D2ADC008F0ED1"
+               BlueprintIdentifier = "EBF4842F1B7EC994006863B9"
                BuildableName = "contaktmeTests.xctest"
                BlueprintName = "contaktmeTests"
-               ReferencedContainer = "container:contaktme.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EB1B3F2C1A9E884800F9197C"
-               BuildableName = "RadarViewTests.xctest"
-               BlueprintName = "RadarViewTests"
                ReferencedContainer = "container:contaktme.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -80,7 +56,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "EBBEA8091A9D2ADC008F0ED1"
+            BlueprintIdentifier = "EBF484161B7EC994006863B9"
             BuildableName = "contaktme.app"
             BlueprintName = "contaktme"
             ReferencedContainer = "container:contaktme.xcodeproj">
@@ -96,10 +72,11 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "EBBEA8091A9D2ADC008F0ED1"
+            BlueprintIdentifier = "EBF484161B7EC994006863B9"
             BuildableName = "contaktme.app"
             BlueprintName = "contaktme"
             ReferencedContainer = "container:contaktme.xcodeproj">
@@ -114,10 +91,11 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "EBBEA8091A9D2ADC008F0ED1"
+            BlueprintIdentifier = "EBF484161B7EC994006863B9"
             BuildableName = "contaktme.app"
             BlueprintName = "contaktme"
             ReferencedContainer = "container:contaktme.xcodeproj">
