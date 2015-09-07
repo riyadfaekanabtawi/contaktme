@@ -10,6 +10,8 @@
 	<string>contaktme</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>DD0FEDEAFBAF16123D761188077F0151E0558237</key>
+		<string>bitbucket.org:smartbox_way/lvbp.git</string>
 		<key>F763162E8BFA646846E00E701B8DBF41B1122781</key>
 		<string>bitbucket.org:riyadanabtawi/contaktme.git</string>
 	</dict>
@@ -17,6 +19,8 @@
 	<string>contaktme.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>DD0FEDEAFBAF16123D761188077F0151E0558237</key>
+		<string>../../../beisball</string>
 		<key>F763162E8BFA646846E00E701B8DBF41B1122781</key>
 		<string>../..</string>
 	</dict>
@@ -28,6 +32,14 @@
 	<string>F763162E8BFA646846E00E701B8DBF41B1122781</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DD0FEDEAFBAF16123D761188077F0151E0558237</string>
+			<key>IDESourceControlWCCName</key>
+			<string>beisball</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

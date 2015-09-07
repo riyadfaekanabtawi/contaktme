@@ -31,6 +31,8 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
     @IBOutlet var user_followers: UILabel!
     @IBOutlet var user_points: UILabel!
     @IBOutlet var user_email: UILabel!
+    @IBOutlet var settingsButton: UIButton!
+    @IBOutlet var settingsImage: UIImageView!
     @IBOutlet var user_profession: UILabel!
     @IBOutlet var user_location: UILabel!
     @IBOutlet var user_mobile: UILabel!
@@ -89,10 +91,20 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
          self.user_points_label.font = UIFont(name: FONT_REGULAR, size: self.user_points_label.font.pointSize)
          self.user_followers_label.font = UIFont(name: FONT_REGULAR, size: self.user_followers_label.font.pointSize)
          self.user_followers.font = UIFont(name: FONT_REGULAR, size: self.user_followers.font.pointSize)
-           let defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = NSUserDefaults.standardUserDefaults()
         
-        let user_id = defaults.objectForKey("user_id") as? NSNumber
-        Services.getUserInfoWithID(user_id, andHandler: { (response) -> Void in
+       let user_id = defaults.objectForKey("user_id") as? NSNumber
+        
+        
+        if self.userMain.user_id == user_id{
+            self.settingsButton.hidden = false
+            self.settingsImage.hidden = false
+        }else{
+            
+            self.settingsButton.hidden = true
+            self.settingsImage.hidden = true
+        }
+        Services.getUserInfoWithID(self.userMain.user_id, andHandler: { (response) -> Void in
             
       
         self.userMain = response as! User
@@ -184,7 +196,7 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
     
     func showUpdateView(){
     
-        UIView.animateWithDuration(0.1, animations: { () -> Void in
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
             self.topUpdateViewConstraintFather.constant = 0
              self.BottomUpdateViewConstraintFather.constant = 0
             self.view.layoutIfNeeded()
@@ -200,7 +212,7 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
         self.mobileTextField.resignFirstResponder()
         self.workplaceTextField.resignFirstResponder()
         
-        UIView.animateWithDuration(0.1, animations: { () -> Void in
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
             self.topUpdateViewConstraintFather.constant = self.view.frame.size.height
             self.BottomUpdateViewConstraintFather.constant = -self.view.frame.size.height
             self.view.layoutIfNeeded()

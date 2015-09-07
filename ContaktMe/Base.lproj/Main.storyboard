@@ -857,24 +857,24 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9cd-CY-qHw" userLabel="navView">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9cd-CY-qHw" userLabel="navView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu.png" translatesAutoresizingMaskIntoConstraints="NO" id="gUr-zr-fN5">
-                                        <rect key="frame" x="14" y="30" width="22" height="22"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="gUr-zr-fN5">
+                                        <rect key="frame" x="14" y="30" width="27" height="15"/>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="22" id="6kg-DE-cc0"/>
-                                            <constraint firstAttribute="width" constant="22" id="Maq-6I-Wk6"/>
+                                            <constraint firstAttribute="height" constant="15" id="6kg-DE-cc0"/>
+                                            <constraint firstAttribute="width" constant="27" id="Maq-6I-Wk6"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQK-bm-Xvt">
-                                        <rect key="frame" x="0.0" y="0.0" width="59" height="64"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="85" height="64"/>
                                         <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="TGe-4q-GOk"/>
-                                            <constraint firstAttribute="width" constant="59" id="x0T-F5-6SV"/>
+                                            <constraint firstAttribute="width" constant="85" id="x0T-F5-6SV"/>
                                         </constraints>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <state key="normal">
@@ -2529,6 +2529,8 @@
                         <outlet property="emailTextField" destination="TWk-s8-G0w" id="mYf-Fc-Hdk"/>
                         <outlet property="mobileTextField" destination="EV9-h2-71c" id="fHH-TP-wTY"/>
                         <outlet property="professionTextField" destination="SCd-wy-hZR" id="1Ei-JG-Kqz"/>
+                        <outlet property="settingsButton" destination="e7V-tk-qqL" id="OPP-1Y-vkv"/>
+                        <outlet property="settingsImage" destination="T60-qQ-ubd" id="DuX-6P-nou"/>
                         <outlet property="skilsTextField" destination="DGf-PJ-gci" id="bDT-F5-NhV"/>
                         <outlet property="titleUpdate" destination="DOM-EO-NfC" id="GIB-pt-FRp"/>
                         <outlet property="topUpdateViewConstraintFather" destination="xq7-Rg-HLc" id="Zfj-13-pG0"/>
@@ -3410,7 +3412,7 @@
         <image name="link.png" width="20" height="20"/>
         <image name="login_1.png" width="569" height="853"/>
         <image name="logo_white.png" width="192" height="24"/>
-        <image name="menu.png" width="26" height="11"/>
+        <image name="menuIcon.png" width="27" height="15"/>
         <image name="placeholder_user.png" width="600" height="568"/>
         <image name="position.png" width="24" height="20"/>
         <image name="postFacebook.png" width="28" height="29"/>
