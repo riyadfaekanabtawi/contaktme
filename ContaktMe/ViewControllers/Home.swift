@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Home: UIViewController,SWRevealViewControllerDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UINavigationControllerDelegate,SendPostDelegate,MenuViewControllerDelegate,cardCellDelegate {
+class Home: UIViewController,SWRevealViewControllerDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UINavigationControllerDelegate,SendPostDelegate,MenuViewControllerDelegate,cardCellDelegate,homeCellDelegate {
 
     var members:[Post] = []
     var friends:[User] = []
@@ -34,7 +34,7 @@ class Home: UIViewController,SWRevealViewControllerDelegate,UICollectionViewDele
     @IBOutlet var subTitleReintentar: UILabel!
     var indexPath: NSIndexPath! = nil
     
- 
+    var userMain:User!
     
     
     @IBOutlet var twitterContainer: UIView!
@@ -217,6 +217,13 @@ self.callHomeService()
         
         let controller = segue.destinationViewController as! SearchViewController
   
+        }
+        
+        if segue.identifier == "profile"{
+        
+        let controller = segue.destinationViewController as! ProfileViewController
+        controller.userMain = self.userMain
+        
         }
      
     }
@@ -431,6 +438,8 @@ self.callHomeService()
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("homecell", forIndexPath: indexPath) as! HomeCollectionViewCell
         let job = self.members[indexPath.row]
+        cell.controller = self
+        cell.delegate = self
         cell.displayJob(job)
         return cell
         
@@ -484,6 +493,16 @@ self.callHomeService()
    self.loader.hide()
         
     
+    }
+    
+    
+    
+    //Home cell delegate
+    func selectedProfileFromHomeCell(user: User) {
+        
+        
+        self.userMain = user
+        self.performSegueWithIdentifier("profile", sender: self)
     }
 }
     

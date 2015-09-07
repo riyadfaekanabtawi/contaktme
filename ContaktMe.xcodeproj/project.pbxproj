@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB3ECEC41B9D14DF00EAD426 /* postFacebook.png in Resources */ = {isa = PBXBuildFile; fileRef = EB3ECEBE1B9D14DF00EAD426 /* postFacebook.png */; };
+		EB3ECEC51B9D14DF00EAD426 /* postFacebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB3ECEBF1B9D14DF00EAD426 /* postFacebook@2x.png */; };
+		EB3ECEC61B9D14DF00EAD426 /* postFacebook@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB3ECEC01B9D14DF00EAD426 /* postFacebook@3x.png */; };
+		EB3ECEC71B9D14DF00EAD426 /* postTwitter.png in Resources */ = {isa = PBXBuildFile; fileRef = EB3ECEC11B9D14DF00EAD426 /* postTwitter.png */; };
+		EB3ECEC81B9D14DF00EAD426 /* postTwitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB3ECEC21B9D14DF00EAD426 /* postTwitter@2x.png */; };
+		EB3ECEC91B9D14DF00EAD426 /* postTwitter@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB3ECEC31B9D14DF00EAD426 /* postTwitter@3x.png */; };
 		EB53BD431B91019D00AA4B99 /* nearbyJobs.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB53BD411B91019D00AA4B99 /* nearbyJobs.swift */; };
 		EB53BD441B91019D00AA4B99 /* RadarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB53BD421B91019D00AA4B99 /* RadarView.swift */; };
 		EB53BD481B91021600AA4B99 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = EB53BD471B91021600AA4B99 /* iCarousel.m */; };
@@ -271,6 +277,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB3ECEBE1B9D14DF00EAD426 /* postFacebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = postFacebook.png; sourceTree = "<group>"; };
+		EB3ECEBF1B9D14DF00EAD426 /* postFacebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "postFacebook@2x.png"; sourceTree = "<group>"; };
+		EB3ECEC01B9D14DF00EAD426 /* postFacebook@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "postFacebook@3x.png"; sourceTree = "<group>"; };
+		EB3ECEC11B9D14DF00EAD426 /* postTwitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = postTwitter.png; sourceTree = "<group>"; };
+		EB3ECEC21B9D14DF00EAD426 /* postTwitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "postTwitter@2x.png"; sourceTree = "<group>"; };
+		EB3ECEC31B9D14DF00EAD426 /* postTwitter@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "postTwitter@3x.png"; sourceTree = "<group>"; };
 		EB53BD411B91019D00AA4B99 /* nearbyJobs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = nearbyJobs.swift; sourceTree = "<group>"; };
 		EB53BD421B91019D00AA4B99 /* RadarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarView.swift; sourceTree = "<group>"; };
 		EB53BD461B91021600AA4B99 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
@@ -887,6 +899,12 @@
 		EBF485131B7ECC84006863B9 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				EB3ECEBE1B9D14DF00EAD426 /* postFacebook.png */,
+				EB3ECEBF1B9D14DF00EAD426 /* postFacebook@2x.png */,
+				EB3ECEC01B9D14DF00EAD426 /* postFacebook@3x.png */,
+				EB3ECEC11B9D14DF00EAD426 /* postTwitter.png */,
+				EB3ECEC21B9D14DF00EAD426 /* postTwitter@2x.png */,
+				EB3ECEC31B9D14DF00EAD426 /* postTwitter@3x.png */,
 				EB832E571B954E5C00772E73 /* spinner.png */,
 				EB832E581B954E5C00772E73 /* spinner@2x.png */,
 				EB832E591B954E5C00772E73 /* spinner@3x.png */,
@@ -1242,6 +1260,7 @@
 				EBF486251B7FA588006863B9 /* 114.png in Resources */,
 				EBF485AF1B7ECC84006863B9 /* icon_options@3x.png in Resources */,
 				EBF485A61B7ECC84006863B9 /* icon_map_small@3x.png in Resources */,
+				EB3ECEC91B9D14DF00EAD426 /* postTwitter@3x.png in Resources */,
 				EBF485881B7ECC84006863B9 /* DINPro-Regular.otf in Resources */,
 				EBF485A11B7ECC84006863B9 /* icon_favorite_post.png in Resources */,
 				EBF485A81B7ECC84006863B9 /* icon_name_small@2x.png in Resources */,
@@ -1249,6 +1268,7 @@
 				EBF4861F1B7FA4EA006863B9 /* 72.png in Resources */,
 				EBF4865E1B806799006863B9 /* bennefits@3x.png in Resources */,
 				EBF485AC1B7ECC84006863B9 /* icon_notification@3x.png in Resources */,
+				EB3ECEC61B9D14DF00EAD426 /* postFacebook@3x.png in Resources */,
 				EBF485D81B7ECC84006863B9 /* icon_favorite_post_ON_big@2x.png in Resources */,
 				EBF485BA1B7ECC84006863B9 /* icon_search@2x.png in Resources */,
 				EBF485C01B7ECC84006863B9 /* icon_user_small@2x.png in Resources */,
@@ -1305,7 +1325,9 @@
 				EBF485901B7ECC84006863B9 /* icon_coment_post@2x.png in Resources */,
 				EBF485CB1B7ECC84006863B9 /* icon_cancelar.png in Resources */,
 				EBF485941B7ECC84006863B9 /* icon_config@3x.png in Resources */,
+				EB3ECEC51B9D14DF00EAD426 /* postFacebook@2x.png in Resources */,
 				EBF485E61B7ECF0A006863B9 /* login_4.png in Resources */,
+				EB3ECEC71B9D14DF00EAD426 /* postTwitter.png in Resources */,
 				EBF486021B7FA440006863B9 /* 1242-2208.png in Resources */,
 				EBF485B41B7ECC84006863B9 /* icon_photo@2x.png in Resources */,
 				EBF485CC1B7ECC84006863B9 /* icon_cancelar@2x.png in Resources */,
@@ -1324,6 +1346,7 @@
 				EBF485C91B7ECC84006863B9 /* icon_borrar@2x.png in Resources */,
 				EBF485D91B7ECC84006863B9 /* icon_favorite_post_ON_big@3x.png in Resources */,
 				EBF486191B7FA4EA006863B9 /* 144.png in Resources */,
+				EB3ECEC81B9D14DF00EAD426 /* postTwitter@2x.png in Resources */,
 				EBF485DA1B7ECC84006863B9 /* icon_favorite_small.png in Resources */,
 				EBF485D01B7ECC84006863B9 /* icon_share_facebook@3x.png in Resources */,
 				EB832E541B95435300772E73 /* icon_remuneration@2x.png in Resources */,
@@ -1354,6 +1377,7 @@
 				EBF485E71B7ECF0A006863B9 /* login_5.png in Resources */,
 				EBF4865C1B806799006863B9 /* bennefits.png in Resources */,
 				EB832E4E1B953FD100772E73 /* icon_description.png in Resources */,
+				EB3ECEC41B9D14DF00EAD426 /* postFacebook.png in Resources */,
 				EBF4859F1B7ECC84006863B9 /* icon_favorite@2x.png in Resources */,
 				EBF485CA1B7ECC84006863B9 /* icon_borrar@3x.png in Resources */,
 				EBF4861D1B7FA4EA006863B9 /* 50.png in Resources */,

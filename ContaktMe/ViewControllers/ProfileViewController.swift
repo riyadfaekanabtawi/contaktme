@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
+class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UITextFieldDelegate {
 
     @IBOutlet var user_name: UILabel!
     @IBOutlet var user_posted_jobs_label: UILabel!
@@ -18,10 +18,13 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
     @IBOutlet var user_location_label: UILabel!
     @IBOutlet var user_mobile_label: UILabel!
     @IBOutlet var user_workplace_label: UILabel!
+    @IBOutlet var updateButtonUIView: UIView!
+    @IBOutlet var update_infoLabel: UILabel!
     @IBOutlet var user_followers_label: UILabel!
     @IBOutlet var user_points_label: UILabel!
-    
-    
+    @IBOutlet var updateViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet var topUpdateViewConstraintFather: NSLayoutConstraint!
+     @IBOutlet var BottomUpdateViewConstraintFather: NSLayoutConstraint!
     var userMain: User!
     var skill_array :[String] = []
     @IBOutlet var user_posts: UILabel!
@@ -32,12 +35,40 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
     @IBOutlet var user_location: UILabel!
     @IBOutlet var user_mobile: UILabel!
     @IBOutlet var user_workplace: UILabel!
+    @IBOutlet var useR_image: UIImageView!
+    
+    
+    @IBOutlet var professionTextField: UITextField!
+    @IBOutlet var emailTextField: UITextField!
+    @IBOutlet var mobileTextField: UITextField!
+    @IBOutlet var workplaceTextField: UITextField!
+    @IBOutlet var skilsTextField: UITextField!
+    
+       @IBOutlet var titleUpdate: UILabel!
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        self.hideUpdateView()
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWasShown:"), name:UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
+        self.useR_image.layer.cornerRadius = self.useR_image.frame.size.width/2
+        self.titleUpdate.font = UIFont(name: FONT_REGULAR, size: self.titleUpdate.font.pointSize)
         
+        self.professionTextField.font = UIFont(name: FONT_LIGHT, size: self.professionTextField.font.pointSize)
+        self.workplaceTextField.font = UIFont(name: FONT_LIGHT, size: self.workplaceTextField.font.pointSize)
+        self.emailTextField.font = UIFont(name: FONT_LIGHT, size: self.emailTextField.font.pointSize)
+        self.mobileTextField.font = UIFont(name: FONT_LIGHT, size: self.mobileTextField.font.pointSize)
+        self.skilsTextField.font = UIFont(name: FONT_LIGHT, size: self.skilsTextField.font.pointSize)
+        self.updateButtonUIView.layer.cornerRadius = 2
+        self.updateButtonUIView.layer.masksToBounds = true
+        self.updateButtonUIView.layer.borderWidth = 2
+        self.updateButtonUIView.layer.borderColor = UIColor.whiteColor().CGColor
+        
+        self.useR_image.layer.borderColor = Functions.colorWithHexString("F04531").CGColor
+        self.useR_image.layer.borderWidth = 2
+        self.useR_image.layer.masksToBounds = true
         self.user_name.font = UIFont(name: FONT_REGULAR, size: self.user_name.font.pointSize)
         self.user_posted_jobs_label.font = UIFont(name: FONT_REGULAR, size: self.user_posted_jobs_label.font.pointSize)
         self.user_skills_label.font = UIFont(name: FONT_REGULAR, size: self.user_skills_label.font.pointSize)
@@ -52,6 +83,7 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
         self.user_location.font = UIFont(name: FONT_REGULAR, size: self.user_location.font.pointSize)
         self.user_mobile.font = UIFont(name: FONT_REGULAR, size: self.user_mobile.font.pointSize)
         self.user_workplace.font = UIFont(name: FONT_REGULAR, size: self.user_workplace.font.pointSize)
+        self.update_infoLabel.font = UIFont(name: FONT_REGULAR, size: self.update_infoLabel.font.pointSize)
         
         self.user_followers.font = UIFont(name: FONT_REGULAR, size: self.user_followers.font.pointSize)
          self.user_points_label.font = UIFont(name: FONT_REGULAR, size: self.user_points_label.font.pointSize)
@@ -62,10 +94,10 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
         let user_id = defaults.objectForKey("user_id") as? NSNumber
         Services.getUserInfoWithID(user_id, andHandler: { (response) -> Void in
             
-            
+      
         self.userMain = response as! User
         self.user_email.text = self.userMain.email
-            
+               self.useR_image.sd_setImageWithURL(NSURL(string: self.userMain.profilepicture))
         self.user_name.text = self.userMain.user_name
         self.user_followers.text = String(self.userMain.friends.count)
             
@@ -126,5 +158,95 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
         return 1
     }
     
-   
+    @IBAction func backNAvigationTouchUpInside(sender: UIButton) {
+        
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    
+    
+    @IBAction func hideUpdateViewTap(sender: UIButton) {
+        
+        self.hideUpdateView()
+    }
+    
+    @IBAction func updateInfoTuchUpInside(sender: UIButton) {
+        
+        self.showUpdateView()
+    }
+    
+    
+    @IBAction func sendInfoTuchUpInside(sender: UIButton) {
+        
+  
+    }
+    
+    
+    func showUpdateView(){
+    
+        UIView.animateWithDuration(0.1, animations: { () -> Void in
+            self.topUpdateViewConstraintFather.constant = 0
+             self.BottomUpdateViewConstraintFather.constant = 0
+            self.view.layoutIfNeeded()
+        })
+    
+    }
+    
+    
+    
+    func hideUpdateView(){
+        self.professionTextField.resignFirstResponder()
+        self.emailTextField.resignFirstResponder()
+        self.mobileTextField.resignFirstResponder()
+        self.workplaceTextField.resignFirstResponder()
+        
+        UIView.animateWithDuration(0.1, animations: { () -> Void in
+            self.topUpdateViewConstraintFather.constant = self.view.frame.size.height
+            self.BottomUpdateViewConstraintFather.constant = -self.view.frame.size.height
+            self.view.layoutIfNeeded()
+        })
+    
+    
+    }
+    
+    
+    
+    
+    func keyboardWasShown(notification: NSNotification) {
+        var info = notification.userInfo!
+        var keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        
+        UIView.animateWithDuration(0.1, animations: { () -> Void in
+            self.updateViewBottomConstraint.constant = keyboardFrame.size.height
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    
+    func keyboardWillHide(notification: NSNotification) {
+        var info = notification.userInfo!
+        var keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        
+        UIView.animateWithDuration(0.1, animations: { () -> Void in
+            self.updateViewBottomConstraint.constant = 134
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        if textField == self.professionTextField { // Switch focus to other text field
+            self.emailTextField.becomeFirstResponder()
+        }else  if textField == self.emailTextField { // Switch focus to other text field
+            self.mobileTextField.becomeFirstResponder()
+        }else  if textField == self.mobileTextField { // Switch focus to other text field
+            self.workplaceTextField.becomeFirstResponder()
+        }else  if textField == self.workplaceTextField { // Switch focus to other text field
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+    
+    
 }

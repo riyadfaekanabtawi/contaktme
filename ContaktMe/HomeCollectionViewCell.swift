@@ -7,11 +7,15 @@
 //
 
 import UIKit
-
+public protocol homeCellDelegate {
+    func selectedProfileFromHomeCell(user : User)
+    
+}
 class HomeCollectionViewCell: UICollectionViewCell,UIWebViewDelegate {
     
     @IBOutlet var header: UIView!
     @IBOutlet var footer: UIView!
+    var delegate:homeCellDelegate! = nil
     @IBOutlet var webView: UIWebView!
     @IBOutlet var userName: UILabel!
     @IBOutlet var userImage: UIImageView!
@@ -22,7 +26,9 @@ class HomeCollectionViewCell: UICollectionViewCell,UIWebViewDelegate {
     @IBOutlet var description_label: UILabel!
     @IBOutlet var bennefits_label: UILabel!
     @IBOutlet var remuneration_label: UILabel!
+    var controller: UIViewController!
     
+    var post: Post!
     override func awakeFromNib() {
         
         
@@ -38,11 +44,14 @@ class HomeCollectionViewCell: UICollectionViewCell,UIWebViewDelegate {
         self.applicantsLabel.font = UIFont(name: FONT_REGULAR, size: self.applicantsLabel.font.pointSize)
         self.categoryLabel.font = UIFont(name: FONT_REGULAR, size: self.categoryLabel.font.pointSize)
         self.bennefits_label.font = UIFont(name: FONT_REGULAR, size: self.bennefits_label.font.pointSize)
+
+
         
     }
     
     func displayJob(job:Post){
     
+        self.post = job
 
         self.userImage.sd_setImageWithURL(NSURL(string: job.user_owner.profilepicture))
 
@@ -92,4 +101,62 @@ class HomeCollectionViewCell: UICollectionViewCell,UIWebViewDelegate {
         
         
     }
+    
+    
+    @IBAction func ShareFacebookTouchUpInside(sender: UIButton) {
+        
+        
+        
+    
+                let postDescription = self.post.post_description
+                
+                let fullURL = BASE_URL + "show_post?id=" + self.post.post_id.stringValue
+                let imageURL = BASE_URL + self.post.post_image
+                
+                var content: FBSDKShareLinkContent = FBSDKShareLinkContent()
+                content.contentURL =  NSURL(string: fullURL)
+                content.contentTitle = postDescription
+                content.contentDescription = postDescription
+                content.imageURL = NSURL(string: imageURL)
+                // Share Dialog
+                FBSDKShareDialog.showFromViewController(self.controller, withContent: content, delegate: nil)
+
+        
+        
+        
+        
+        
+    }
+    
+    @IBAction func ShareTwitterTouchUpInside(sender: UIButton) {
+        
+ 
+        
+  
+                let defaults = NSUserDefaults.standardUserDefaults()
+                if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter){
+                    
+                    let string = BASE_URL + "show_post?id=" + self.post.post_id.stringValue
+                    let tweetSheet = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+                    tweetSheet.setInitialText(self.post.post_description)
+                    tweetSheet.addURL(NSURL(string: string))
+                    self.controller.presentViewController(tweetSheet, animated: true, completion: nil)
+   
+                
+                    
+                    
+                }else{
+                    var alert = UIAlertController(title: "Ooops!", message: "Tienes que tener una cuenta de twitter instalada. Debes ir a las configuraciones de tu celular y asociar una cuenta twitter.", preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                    self.controller.presentViewController(alert, animated: true, completion: nil)
+                    
+        }
+    }
+    
+    
+    @IBAction func goToProfileTouchUpInside(sender: UIButton) {
+        
+     self.delegate.selectedProfileFromHomeCell(self.post.user_owner)
+    }
+    
 }
