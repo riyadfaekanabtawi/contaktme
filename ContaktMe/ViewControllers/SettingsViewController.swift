@@ -153,37 +153,37 @@ class SettingsViewController: UIViewController,CLLocationManagerDelegate {
             
             
           self.showloader()
-            Services.EditUser(user_ids, name: user_name, image_url: user_avatar, andEmail: user_email, andCustomName: self.customNameTextField.text, andBio: self.biographyTextField.text, withHandler: { (response) -> Void in
-            
-              let customName = response.objectForKey("custom_name") as! String
-                 let bio = response.objectForKey("bio") as! String
-            self.customNameTextField.text = customName
-                self.biographyTextField.text = bio
-               self.delegate.updatedCustomNameFisrtTime()
-             defaults.setObject(bio, forKey: "user_bio")
-            
-            defaults.setObject(customName, forKey: "user_custom_name")
-            defaults.synchronize()
-            
-            self.hideloader()
-            var alert = UIAlertController(title: "Genial!", message: "Actualizaste tu información", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-            self.customNameTextField.resignFirstResponder()
-            self.biographyTextField.resignFirstResponder()
-            self.presentViewController(alert, animated: true, completion: nil)
-            if self.IsFirstTime {
-           
-            self.navigationController?.popViewControllerAnimated(true)
-            
-            }else{
-            self.delegate.refreshProfile()
-            
-            }
-           
-        }, orErrorHandler: { (err) -> Void in
-              NSLog("FAILED EDITING SERVICE")
-    self.hideloader()
-        })
+//            Services.EditUser(user_ids, name: user_name, image_url: user_avatar, andEmail: user_email, andCustomName: self.customNameTextField.text, andBio: self.biographyTextField.text, withHandler: { (response) -> Void in
+//            
+//              let customName = response.objectForKey("custom_name") as! String
+//                 let bio = response.objectForKey("bio") as! String
+//            self.customNameTextField.text = customName
+//                self.biographyTextField.text = bio
+//               self.delegate.updatedCustomNameFisrtTime()
+//             defaults.setObject(bio, forKey: "user_bio")
+//            
+//            defaults.setObject(customName, forKey: "user_custom_name")
+//            defaults.synchronize()
+//            
+//            self.hideloader()
+//            var alert = UIAlertController(title: "Genial!", message: "Actualizaste tu información", preferredStyle: UIAlertControllerStyle.Alert)
+//            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+//            self.customNameTextField.resignFirstResponder()
+//            self.biographyTextField.resignFirstResponder()
+//            self.presentViewController(alert, animated: true, completion: nil)
+//            if self.IsFirstTime {
+//           
+//            self.navigationController?.popViewControllerAnimated(true)
+//            
+//            }else{
+//            self.delegate.refreshProfile()
+//            
+//            }
+//           
+//        }, orErrorHandler: { (err) -> Void in
+//              NSLog("FAILED EDITING SERVICE")
+//    self.hideloader()
+//        })
             
             
         }else{

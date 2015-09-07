@@ -29,7 +29,8 @@
 +(void)getAllRecipesWithHandler:(void (^)(id)) handler orErrorHandler:(void (^)(NSError *)) errorHandler;
 
 
-+(void)EditUser:(NSNumber *)user_id name:(NSString *)user_name image_url:(NSString *)image_url andEmail:(NSString *)email andCustomName:(NSString *)custom_name andBio:(NSString *)biography WithHandler:(void (^)(id)) handler orErrorHandler:(void (^)(NSError *)) errorHandler;
+
++(void)EditUser:(NSNumber *)user_id name:(NSString *)user_name image_url:(NSString *)image_url andEmail:(NSString *)email andBio:(NSString *)biography andTelefone:(NSString *)telefone andBackDropURL:(NSString *)backdrop andProfession:(NSString *)profession andWorkPlace:(NSString *)workplace andSkills:(NSString *)skills WithHandler:(void (^)(id)) handler orErrorHandler:(void (^)(NSError *)) errorHandler;
 
 
 +(void)getUserInfoWithID:(NSNumber *)user_id andHandler:(void (^)(id)) handler orErrorHandler:(void (^)(NSError *)) errorHandler;

@@ -22,9 +22,15 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
     @IBOutlet var update_infoLabel: UILabel!
     @IBOutlet var user_followers_label: UILabel!
     @IBOutlet var user_points_label: UILabel!
+    
+    
+    
     @IBOutlet var updateViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet var topUpdateViewConstraintFather: NSLayoutConstraint!
      @IBOutlet var BottomUpdateViewConstraintFather: NSLayoutConstraint!
+    
+    
+    
     var userMain: User!
     var skill_array :[String] = []
     @IBOutlet var user_posts: UILabel!
@@ -44,6 +50,7 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var mobileTextField: UITextField!
     @IBOutlet var workplaceTextField: UITextField!
+    @IBOutlet var bioTextField: UITextField!
     @IBOutlet var skilsTextField: UITextField!
     
        @IBOutlet var titleUpdate: UILabel!
@@ -190,6 +197,14 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
     
     @IBAction func sendInfoTuchUpInside(sender: UIButton) {
         
+        
+        Services.EditUser(self.userMain.user_id, name: self.userMain.user_name, image_url: self.userMain.profilepicture, andEmail: self.emailTextField.text, andCustomName: "", andBio: self.bioTextField, andTelefone: self.mobileTextField.text, andBackDropURL: self.userMain.user_backDrop, andProfession: self.professionTextField.text, andWorkPlace: self.workplaceTextField.text, andSkills: self.skilsTextField.text, withHandler: { (response) -> Void in
+            
+            
+            
+        }) { (error) -> Void in
+          
+        }
   
     }
     

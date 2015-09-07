@@ -201,11 +201,11 @@
 
 
 
-+(void)EditUser:(NSNumber *)user_id name:(NSString *)user_name image_url:(NSString *)image_url andEmail:(NSString *)email andCustomName:(NSString *)custom_name andBio:(NSString *)biography WithHandler:(void (^)(id)) handler orErrorHandler:(void (^)(NSError *)) errorHandler{
++(void)EditUser:(NSNumber *)user_id name:(NSString *)user_name image_url:(NSString *)image_url andEmail:(NSString *)email andBio:(NSString *)biography andTelefone:(NSString *)telefone andBackDropURL:(NSString *)backdrop andProfession:(NSString *)profession andWorkPlace:(NSString *)workplace andSkills:(NSString *)skills WithHandler:(void (^)(id)) handler orErrorHandler:(void (^)(NSError *)) errorHandler{
     
 
     
-     NSDictionary *parameters = @{@"user":@{@"name" :user_name,@"email" :email,@"image_url" :image_url,@"custom_name" :custom_name,@"bio" :biography,@"id" :user_id,@"password" :@"121788gloriA",@"password_confirmation" :@"121788gloriA",@"created_at" :[NSDate date],@"updated_at" :[NSDate date]}};
+    NSDictionary *parameters = @{@"user":@{@"name" :user_name,@"email" :email,@"image_url" :image_url,@"bio" :biography,@"telefone" :telefone,@"backdrop_url" :backdrop,@"profession" :profession, @"workplace" :workplace,@"skills" :skills,@"id"  :user_id,@"password" :@"121788gloriA",@"password_confirmation" :@"121788gloriA",@"created_at" :[NSDate date],@"updated_at" :[NSDate date]}};
     
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];

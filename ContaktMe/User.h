@@ -12,6 +12,7 @@
 
 
 @property NSString *user_name;
+@property NSString *user_backDrop;
 @property NSString *user_mobile;
 @property NSString *profilepicture;
 @property NSString *email;
