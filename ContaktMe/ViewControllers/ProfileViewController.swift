@@ -22,7 +22,7 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
     @IBOutlet var update_infoLabel: UILabel!
     @IBOutlet var user_followers_label: UILabel!
     @IBOutlet var user_points_label: UILabel!
-    
+    @IBOutlet var user_cover_image: UIImageView!
     
     
     @IBOutlet var updateViewBottomConstraint: NSLayoutConstraint!
@@ -64,7 +64,6 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
         self.useR_image.layer.cornerRadius = self.useR_image.frame.size.width/2
         self.titleUpdate.font = UIFont(name: FONT_REGULAR, size: self.titleUpdate.font.pointSize)
-        
         self.professionTextField.font = UIFont(name: FONT_LIGHT, size: self.professionTextField.font.pointSize)
         self.workplaceTextField.font = UIFont(name: FONT_LIGHT, size: self.workplaceTextField.font.pointSize)
         self.emailTextField.font = UIFont(name: FONT_LIGHT, size: self.emailTextField.font.pointSize)
@@ -119,7 +118,8 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
                self.useR_image.sd_setImageWithURL(NSURL(string: self.userMain.profilepicture))
         self.user_name.text = self.userMain.user_name
         self.user_followers.text = String(self.userMain.friends.count)
-            
+        self.user_cover_image.sd_setImageWithURL(NSURL(string: self.userMain.user_backDrop))
+
         self.user_posts.text = String(self.userMain.posts.count)
         self.user_mobile.text = self.userMain.user_mobile
             self.user_workplace.text = self.userMain.workplace;
@@ -198,17 +198,17 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
     @IBAction func sendInfoTuchUpInside(sender: UIButton) {
         
         
-        Services.EditUser(self.userMain.user_id, name: self.userMain.user_name, image_url: self.userMain.profilepicture, andEmail: self.emailTextField.text, andCustomName: "", andBio: self.bioTextField, andTelefone: self.mobileTextField.text, andBackDropURL: self.userMain.user_backDrop, andProfession: self.professionTextField.text, andWorkPlace: self.workplaceTextField.text, andSkills: self.skilsTextField.text, withHandler: { (response) -> Void in
-            
-            
-            
-        }) { (error) -> Void in
-          
-        }
+  Services.EditUser(2, name:"", image_url: "", andEmail: "", andBio: "", andTelefone:"", andBackDropURL:"", andProfession:"", andWorkPlace:"", andSkills:"", withHandler: { (response) -> Void in
+
+    
+    
+  }, orErrorHandler: { (err) -> Void in
+
+    
   
+    })
+    
     }
-    
-    
     func showUpdateView(){
     
         UIView.animateWithDuration(0.3, animations: { () -> Void in

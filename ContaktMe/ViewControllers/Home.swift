@@ -183,15 +183,14 @@ self.callHomeService()
     
  
     @IBAction func menuButtonTouchUpInside(sender: UIButton) {
-        if let revealViewController = self.revealViewController() {
-            revealViewController.revealToggleAnimated(true)
+      self.revealViewController().revealToggleAnimated(true)
             
             UIView.animateWithDuration(0.3, animations: { () -> Void in
                 self.blockView.alpha=1.0
                   self.blockView.hidden=false
                    self.tapGestureBlock.enabled = true
             })
-        }
+      
     }
     
     
@@ -482,7 +481,7 @@ self.callHomeService()
     
      self.loader = LoadingAnimationView.new()
         
-     self.loader.showWithImage(UIImage(named: "spinner.png"), andMessage: "", inView: self.view)
+     self.loader.showWithImage(UIImage(named:"spinner_white.png"), andColor: "#f04531", andMessage: "", inView: self.view)
      self.view.bringSubviewToFront(self.loader)
         
     }

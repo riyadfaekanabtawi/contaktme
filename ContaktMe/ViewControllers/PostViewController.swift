@@ -168,7 +168,7 @@ class PostViewController: UIViewController, UITextFieldDelegate {
         
         self.loader = LoadingAnimationView.new()
         
-        self.loader.showWithImage(UIImage(named: "spinner.png"), andMessage: "", inView: self.view)
+        self.loader.showWithImage(UIImage(named:"spinner.png"), andColor: "#f04531", andMessage: "", inView: self.view)
         self.view.bringSubviewToFront(self.loader)
         
     }

@@ -96,7 +96,16 @@
 */
 -(IBAction)sendPost:(id)sender{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([self.titlePostTextField.text isEqualToString:@""] || [self.descriptionTextView.text isEqualToString:@""] || [self.remunerationPostTextField.text isEqualToString:@""] || [self.categoryPostTextField.text isEqualToString:@""] || [self.locationPostTextField.text isEqualToString:@""] || [self.positionPostTextField.text isEqualToString:@""] || [self.benefitsPostTextField.text isEqualToString:@""]){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ooops..."
+                                                        message:@"You have to fill in all the fields. Please try again."
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
 
+    
+    }else{
         [Services PostforUser:[defaults objectForKey:@"user_id"] andTitle:self.titlePostTextField.text andDescr:self.descriptionTextView.text andRemuneration:self.remunerationPostTextField.text andCategory:self.categoryPostTextField.text andLocation:self.locationPostTextField.text andPosition:self.positionPostTextField.text andBenefits:self.benefitsPostTextField.text WithHandler:^(id response) {
             
             
@@ -107,15 +116,19 @@
             
             if (!firstTime){
                 firstTime = YES;
-                  [self.navigationController popViewControllerAnimated:YES];
+                [self.navigationController popViewControllerAnimated:YES];
             }
-          
+            
         } orErrorHandler:^(NSError *err) {
             
             
             
         }];
-   
+        
+    
+    
+    }
+    
     
 }
 

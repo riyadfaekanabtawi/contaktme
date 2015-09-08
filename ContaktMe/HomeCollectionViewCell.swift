@@ -14,24 +14,25 @@ public protocol homeCellDelegate {
 class HomeCollectionViewCell: UICollectionViewCell,UIWebViewDelegate {
     
     @IBOutlet var header: UIView!
-    @IBOutlet var footer: UIView!
+     @IBOutlet weak var  footer: UIView!
     var delegate:homeCellDelegate! = nil
-    @IBOutlet var webView: UIWebView!
-    @IBOutlet var userName: UILabel!
-    @IBOutlet var userImage: UIImageView!
-    @IBOutlet var timeSinceLabel: UILabel!
-    @IBOutlet var categoryLabel: UILabel!
-    @IBOutlet var applicantsLabel: UILabel!
-    @IBOutlet var title_label: UILabel!
-    @IBOutlet var description_label: UILabel!
-    @IBOutlet var bennefits_label: UILabel!
-    @IBOutlet var remuneration_label: UILabel!
+    @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var timeSinceLabel: UILabel!
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var applicantsLabel: UILabel!
+    @IBOutlet weak var title_label: UILabel!
+    @IBOutlet weak var description_label: UILabel!
+    @IBOutlet weak var bennefits_label: UILabel!
+    @IBOutlet weak var remuneration_label: UILabel!
+    @IBOutlet weak var icon_apply: UIImageView!
     var controller: UIViewController!
     
     var post: Post!
     override func awakeFromNib() {
         
-        
+      self.icon_apply.alpha = 0.5
         self.userName.font = UIFont(name: FONT_LIGHT, size: self.userName.font.pointSize)
         self.timeSinceLabel.font = UIFont(name: FONT_LIGHT, size: self.timeSinceLabel.font.pointSize)
         
@@ -57,13 +58,13 @@ class HomeCollectionViewCell: UICollectionViewCell,UIWebViewDelegate {
 
         self.userName.text = job.user_owner.user_name
         self.timeSinceLabel.text = job.days_since.stringValue
-        
+        self.description_label.text = job.post_description
         self.bennefits_label.text = job.post_benefits
         self.title_label.text = job.post_title
         self.categoryLabel.text = job.post_category
         self.applicantsLabel.text = "Applicants \(job.post_likes)"
         
-        self.remuneration_label.text = job.post_remuneration
+        self.remuneration_label.text = "\(job.post_remuneration) $USD"
         
         
         if job.hours_since.integerValue <= 0 && job.minutes_since.integerValue <= 0 && job.seconds_since.integerValue > 0{

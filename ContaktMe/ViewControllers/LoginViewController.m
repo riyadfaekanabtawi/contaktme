@@ -140,16 +140,22 @@
             {
                 NSLog(@"Token is available : %@",[[FBSDKAccessToken currentAccessToken]tokenString]);
                 
-                [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"id, name, link, first_name, last_name, picture.type(large), email, birthday, bio ,location ,friends ,hometown , friendlists"}]
+                [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"id, name, link, first_name,cover, last_name, picture.type(large), email, birthday, bio ,location ,friends ,hometown , friendlists"}]
                  startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
                      if (!error)
                      {
                          
-                         
+                         [Services RegisterWithNAme:[result objectForKey:@"name"]
+                                           andEmail:[result objectForKey:@"email"]
+                                        andImageURL:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?width=175&height=175",[result objectForKey:@"id"]]
+                                     andBackDropUrl:[[result objectForKey:@"cover"] objectForKey:@"source"]
+                                        andPassword:@"121788gloriA"
+                            andpasswordConfirmation:@"121788gloriA"
+                                          andUserID:[result objectForKey:@"id"]
+                                        WithHandler:^(id response) {
+                                       
                     
-                         [Services RegisterWithNAme:[result objectForKey:@"name"] andEmail:[result objectForKey:@"email"] andImageURL:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?width=175&height=175",[result objectForKey:@"id"]] andPassword:@"121788gloriA" andpasswordConfirmation:@"121788gloriA" andUserID:[result objectForKey:@"id"] WithHandler:^(id response) {
-                             
-                             
+                   
                              
                              User *userLoggedIn = [[User alloc] initWithDictionary:response];
                              
@@ -263,7 +269,8 @@
 
 -(void)showLoader{
     self.loader = [LoadingAnimationView new];
-    [self.loader showWithImage:[UIImage imageNamed:@"spinner.png"] andMessage:@"" inView:self.view];
+    [self.loader showWithImage:[UIImage imageNamed:@"spinner.png"] andColor:@"#ffffff" andMessage:@"" inView:self.view];
+    [self.loader startAnimation];
     [self.view bringSubviewToFront:self.loader];
 
 }

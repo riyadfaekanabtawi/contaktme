@@ -14,19 +14,21 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AHS-de-Gaj">
                     <rect key="frame" x="130" y="254" width="60" height="60"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CWe-eu-PYa">
-                            <rect key="frame" x="10" y="10" width="40" height="40"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spinner.png" translatesAutoresizingMaskIntoConstraints="NO" id="CWe-eu-PYa">
+                            <rect key="frame" x="15" y="15" width="31" height="30"/>
                             <animations/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="31" id="fPS-7H-h5u"/>
+                                <constraint firstAttribute="height" constant="30" id="ifC-rW-fY0"/>
+                            </constraints>
                         </imageView>
                     </subviews>
                     <animations/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="CWe-eu-PYa" firstAttribute="top" secondItem="AHS-de-Gaj" secondAttribute="top" constant="10" id="9sr-un-m2l"/>
+                        <constraint firstAttribute="centerX" secondItem="CWe-eu-PYa" secondAttribute="centerX" id="AqT-SW-Eyh"/>
                         <constraint firstAttribute="height" constant="60" id="PPn-sx-Jch"/>
-                        <constraint firstAttribute="trailing" secondItem="CWe-eu-PYa" secondAttribute="trailing" constant="10" id="WRH-ez-HoM"/>
-                        <constraint firstAttribute="bottom" secondItem="CWe-eu-PYa" secondAttribute="bottom" constant="10" id="YBz-c8-hlM"/>
-                        <constraint firstItem="CWe-eu-PYa" firstAttribute="leading" secondItem="AHS-de-Gaj" secondAttribute="leading" constant="10" id="bLs-Pv-cea"/>
+                        <constraint firstAttribute="centerY" secondItem="CWe-eu-PYa" secondAttribute="centerY" id="gdP-A5-Q76"/>
                         <constraint firstAttribute="width" constant="60" id="wpq-f9-REi"/>
                     </constraints>
                 </view>
@@ -41,9 +43,12 @@
                 <outlet property="animationView" destination="AHS-de-Gaj" id="9AB-tc-3jI"/>
                 <outlet property="imageView" destination="CWe-eu-PYa" id="Yy8-GA-Ebh"/>
             </connections>
-            <point key="canvasLocation" x="339" y="404"/>
+            <point key="canvasLocation" x="264" y="358"/>
         </view>
     </objects>
+    <resources>
+        <image name="spinner.png" width="31" height="30"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

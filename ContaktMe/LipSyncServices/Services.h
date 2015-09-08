@@ -17,7 +17,7 @@
 +(void)LoginWithName:(NSString *)name andPassword:(NSString *)password WithHandler:(void (^)(id)) handler orErrorHandler:(void (^)(NSError *)) errorHandler;
 
 
-+(void)RegisterWithNAme:(NSString *)name andEmail:(NSString *)email andImageURL:(NSString *)image_url andPassword:(NSString *)password andpasswordConfirmation:(NSString *)password_confirmation andUserID:(NSNumber *)user_id WithHandler:(void (^)(id)) handler orErrorHandler:(void (^)(NSError *)) errorHandler;
++(void)RegisterWithNAme:(NSString *)name andEmail:(NSString *)email andImageURL:(NSString *)image_url andBackDropUrl:(NSString *)backdrop andPassword:(NSString *)password andpasswordConfirmation:(NSString *)password_confirmation andUserID:(NSNumber *)user_id WithHandler:(void (^)(id)) handler orErrorHandler:(void (^)(NSError *)) errorHandler;
 
 +(void)PostforUser:(NSNumber *)user_id andTitle:(NSString *)title andDescr:(NSString *)descr andRemuneration:(NSString *)remuneration andCategory:(NSString *)category andLocation:(NSString *)location andPosition:(NSString *)position andBenefits:(NSString *)benefits WithHandler:(void (^)(id)) handler orErrorHandler:(void (^)(NSError *)) errorHandler;
 

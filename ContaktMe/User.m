@@ -20,6 +20,7 @@
         self.user_id = [dictionary objectForKey:@"id"];
         self.user_name = [dictionary objectForKey:@"name"];
         self.email = [dictionary objectForKey:@"email"];
+        self.user_backDrop = [dictionary objectForKey:@"backdrop_url"];
         if([[dictionary objectForKey:@"image_url"] isKindOfClass:[NSNull class]] || [dictionary objectForKey:@"image_url"]==nil || ![dictionary objectForKey:@"image_url"]){
         self.profilepicture = @"placeholder";
         }else{

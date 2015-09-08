@@ -33,6 +33,9 @@ static float const kEaseInEaseOutDuration = 0.5f;
 {
     [super awakeFromNib];
     [self setNeedsLayout];
+    
+    self.animationView.layer.cornerRadius = 2.0;
+    self.animationView.layer.masksToBounds = YES;
 }
 
 - (void)layoutSubviews
@@ -43,11 +46,12 @@ static float const kEaseInEaseOutDuration = 0.5f;
     _animationView.layer.cornerRadius = 3.0;
 }
 
-- (void)showWithImage:(UIImage *)image andMessage:(NSString *)message inView:(UIView *)view
+- (void)showWithImage:(UIImage *)image andColor:(NSString *)color andMessage:(NSString *)message inView:(UIView *)view
 {
     _messageLabel.text = message;
     _imageView.image = image;
     [self startAnimation];
+    _animationView.backgroundColor = [Functions colorWithHexString:color];
   
     [Functions fillContainerView:view WithView:self];
     [_animationView setAlpha:0.0f];
@@ -92,7 +96,7 @@ static float const kEaseInEaseOutDuration = 0.5f;
     [animation setKeyTimes:time];
     [animation setValues:angle];
     [animation setTimingFunctions:function];
-    animation.duration = 2.2;
+    animation.duration = 1.2;
     animation.repeatCount = HUGE_VALF;
     [_animationView.layer addAnimation:animation forKey:animationKey];
 }

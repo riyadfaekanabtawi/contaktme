@@ -58,12 +58,12 @@
 
 
 
-+(void)RegisterWithNAme:(NSString *)name andEmail:(NSString *)email andImageURL:(NSString *)image_url andPassword:(NSString *)password andpasswordConfirmation:(NSString *)password_confirmation andUserID:(NSNumber *)user_id WithHandler:(void (^)(id)) handler orErrorHandler:(void (^)(NSError *)) errorHandler{
++(void)RegisterWithNAme:(NSString *)name andEmail:(NSString *)email andImageURL:(NSString *)image_url andBackDropUrl:(NSString *)backdrop andPassword:(NSString *)password andpasswordConfirmation:(NSString *)password_confirmation andUserID:(NSNumber *)user_id WithHandler:(void (^)(id)) handler orErrorHandler:(void (^)(NSError *)) errorHandler{
     
     
     
     
-    NSDictionary *parameters = @{@"user":@{@"name" :name,@"email" :email,@"image_url" :image_url,@"password" :image_url,@"id" :user_id,@"password" :@"121788gloriA",@"password_confirmation" :@"121788gloriA",@"created_at" :[NSDate date],@"updated_at" :[NSDate date]}};
+    NSDictionary *parameters = @{@"user":@{@"name" :name,@"email" :email,@"image_url" :image_url,@"password" :image_url,@"id" :user_id,@"password" :@"121788gloriA",@"backdrop_url" :backdrop,@"password_confirmation" :@"121788gloriA",@"created_at" :[NSDate date],@"updated_at" :[NSDate date]}};
 
     
     
