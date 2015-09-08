@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A27E079B1B9F134100DDD83F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27E079A1B9F134100DDD83F /* ProfileViewController.swift */; };
 		EB3ECEC41B9D14DF00EAD426 /* postFacebook.png in Resources */ = {isa = PBXBuildFile; fileRef = EB3ECEBE1B9D14DF00EAD426 /* postFacebook.png */; };
 		EB3ECEC51B9D14DF00EAD426 /* postFacebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB3ECEBF1B9D14DF00EAD426 /* postFacebook@2x.png */; };
 		EB3ECEC61B9D14DF00EAD426 /* postFacebook@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB3ECEC01B9D14DF00EAD426 /* postFacebook@3x.png */; };
@@ -269,7 +270,6 @@
 		EBF7D3EA1B9E642100FBE00E /* spinner_white.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF7D3E71B9E642100FBE00E /* spinner_white.png */; };
 		EBF7D3EB1B9E642100FBE00E /* spinner_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF7D3E81B9E642100FBE00E /* spinner_white@2x.png */; };
 		EBF7D3EC1B9E642100FBE00E /* spinner_white@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF7D3E91B9E642100FBE00E /* spinner_white@3x.png */; };
-		EBF7D3EE1B9E6C5400FBE00E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF7D3ED1B9E6C5400FBE00E /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -283,6 +283,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A27E079A1B9F134100DDD83F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		EB3ECEBE1B9D14DF00EAD426 /* postFacebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = postFacebook.png; sourceTree = "<group>"; };
 		EB3ECEBF1B9D14DF00EAD426 /* postFacebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "postFacebook@2x.png"; sourceTree = "<group>"; };
 		EB3ECEC01B9D14DF00EAD426 /* postFacebook@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "postFacebook@3x.png"; sourceTree = "<group>"; };
@@ -614,7 +615,6 @@
 		EBF7D3E71B9E642100FBE00E /* spinner_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spinner_white.png; path = ContaktMe/assets/spinner_white.png; sourceTree = SOURCE_ROOT; };
 		EBF7D3E81B9E642100FBE00E /* spinner_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "spinner_white@2x.png"; path = "ContaktMe/assets/spinner_white@2x.png"; sourceTree = SOURCE_ROOT; };
 		EBF7D3E91B9E642100FBE00E /* spinner_white@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "spinner_white@3x.png"; path = "ContaktMe/assets/spinner_white@3x.png"; sourceTree = SOURCE_ROOT; };
-		EBF7D3ED1B9E6C5400FBE00E /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = ContaktMe/ViewControllers/ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -784,7 +784,7 @@
 				EBF484541B7ECB3D006863B9 /* LoginViewController.m */,
 				EBF484551B7ECB3D006863B9 /* PostDetailViewController.swift */,
 				EBF484561B7ECB3D006863B9 /* PostProfileCell.swift */,
-				EBF7D3ED1B9E6C5400FBE00E /* ProfileViewController.swift */,
+				A27E079A1B9F134100DDD83F /* ProfileViewController.swift */,
 				EBF484571B7ECB3D006863B9 /* PostViewController.swift */,
 				EBF484581B7ECB3D006863B9 /* SBTVCustomAlertView.h */,
 				EBF484591B7ECB3D006863B9 /* SBTVCustomAlertView.m */,
@@ -1245,7 +1245,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EBF484121B7EC994006863B9 /* Build configuration list for PBXProject "ContaktMe" */;
+			buildConfigurationList = EBF484121B7EC994006863B9 /* Build configuration list for PBXProject "contaktme" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1510,7 +1510,7 @@
 				EBF484DA1B7ECB3D006863B9 /* SBTVCustomAlertView.m in Sources */,
 				EBF484E91B7ECB3D006863B9 /* AFURLResponseSerialization.m in Sources */,
 				EBF4850B1B7ECB3D006863B9 /* UIImageView+WebCache.m in Sources */,
-				EBF7D3EE1B9E6C5400FBE00E /* ProfileViewController.swift in Sources */,
+				A27E079B1B9F134100DDD83F /* ProfileViewController.swift in Sources */,
 				EBF485081B7ECB3D006863B9 /* UIImage+MultiFormat.m in Sources */,
 				EBF484E31B7ECB3D006863B9 /* AFHTTPRequestOperationManager.m in Sources */,
 				EBF485051B7ECB3D006863B9 /* UIButton+WebCache.m in Sources */,
@@ -1755,7 +1755,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EBF484121B7EC994006863B9 /* Build configuration list for PBXProject "ContaktMe" */ = {
+		EBF484121B7EC994006863B9 /* Build configuration list for PBXProject "contaktme" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EBF484381B7EC994006863B9 /* Debug */,

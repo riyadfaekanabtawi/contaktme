@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15A178w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jEG-nv-Hdu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jEG-nv-Hdu">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -1987,14 +1987,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rob-gv-gAT" userLabel="ProfileView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OpB-BJ-gfc">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OpB-BJ-gfc">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="157"/>
                                         <animations/>
                                     </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DYe-or-UiC">
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DYe-or-UiC">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="157"/>
                                         <animations/>
-                                        <color key="backgroundColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JEb-oh-p1L">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
@@ -2586,6 +2586,7 @@
                         <outlet property="user_skills_label" destination="tc6-eI-ICE" id="Awl-Jj-iSZ"/>
                         <outlet property="user_workplace" destination="cJD-LU-7py" id="g0M-KK-Alp"/>
                         <outlet property="user_workplace_label" destination="oSg-HD-gUT" id="M6T-qL-Q4Q"/>
+                        <outlet property="view_blur" destination="DYe-or-UiC" id="l9g-O0-bUN"/>
                         <outlet property="workplaceTextField" destination="yPo-wI-kqO" id="emA-34-cxe"/>
                     </connections>
                 </viewController>

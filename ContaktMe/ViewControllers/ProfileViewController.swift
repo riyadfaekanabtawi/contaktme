@@ -23,7 +23,7 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
     @IBOutlet var user_followers_label: UILabel!
     @IBOutlet var user_points_label: UILabel!
     @IBOutlet var user_cover_image: UIImageView!
-    
+    @IBOutlet var view_blur: UIView!
     
     @IBOutlet var updateViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet var topUpdateViewConstraintFather: NSLayoutConstraint!
@@ -57,7 +57,30 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
     
     override func viewDidLoad() {
         
+        
+        
+        
+        
         super.viewDidLoad()
+        
+        
+        
+        if !UIAccessibilityIsReduceTransparencyEnabled() {
+         
+            
+            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            //always fill the view
+            blurEffectView.frame = self.view.bounds
+
+            
+            self.view_blur.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
+        } 
+        
+        
+        
+        
+        
         self.hideUpdateView()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWasShown:"), name:UIKeyboardWillShowNotification, object: nil);
