@@ -10,8 +10,14 @@
 
 @interface LoadingAnimationView : UIView
 
-- (void)showWithImage:(UIImage *)image andColor:(NSString *)color andMessage:(NSString *)message inView:(UIView *)view;
+
+
+@property (nonatomic, weak) IBOutlet UIView *animationView;
+@property (nonatomic, weak) IBOutlet UIImageView *imageView;
+
+
 - (void)hide;
 - (void)startAnimation;
-
++(LoadingAnimationView *)createWithMessage:(NSString *)message andColor:(NSString *)color andImage:(UIImage *)image
+;
 @end

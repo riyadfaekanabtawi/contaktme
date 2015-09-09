@@ -24,7 +24,7 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
     @IBOutlet var user_points_label: UILabel!
     @IBOutlet var user_cover_image: UIImageView!
     @IBOutlet var view_blur: UIView!
-    
+    var loader:LoadingAnimationView!
     @IBOutlet var updateViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet var topUpdateViewConstraintFather: NSLayoutConstraint!
      @IBOutlet var BottomUpdateViewConstraintFather: NSLayoutConstraint!
@@ -57,7 +57,7 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
     
     override func viewDidLoad() {
         
-        
+         self.hideUpdateView()
         
         
         
@@ -74,14 +74,15 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
             blurEffectView.frame = self.view.bounds
 
             
-            self.view_blur.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
-        } 
+            self.view_blur.addSubview(blurEffectView)
+            self.view_blur.alpha = 0.9
+        }
         
         
         
         
         
-        self.hideUpdateView()
+       
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWasShown:"), name:UIKeyboardWillShowNotification, object: nil);
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
@@ -100,7 +101,33 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
         self.useR_image.layer.borderColor = Functions.colorWithHexString("F04531").CGColor
         self.useR_image.layer.borderWidth = 2
         self.useR_image.layer.masksToBounds = true
-        self.user_name.font = UIFont(name: FONT_REGULAR, size: self.user_name.font.pointSize)
+        
+        
+        if UIDevice().userInterfaceIdiom == .Phone {
+            switch UIScreen.mainScreen().nativeBounds.height {
+            case 480:
+       self.user_name.font = UIFont(name: FONT_REGULAR, size: 18)
+            case 960:
+               self.user_name.font = UIFont(name: FONT_REGULAR, size: 18)
+            case 1136:
+              self.user_name.font = UIFont(name: FONT_REGULAR, size: 18)
+            case 1334:
+               self.user_name.font = UIFont(name: FONT_REGULAR, size: self.user_name.font.pointSize)
+            case 2208:
+               self.user_name.font = UIFont(name: FONT_REGULAR, size: self.user_name.font.pointSize)
+            default:
+                println("unknown")
+            }
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
         self.user_posted_jobs_label.font = UIFont(name: FONT_REGULAR, size: self.user_posted_jobs_label.font.pointSize)
         self.user_skills_label.font = UIFont(name: FONT_REGULAR, size: self.user_skills_label.font.pointSize)
         self.user_email_label.font = UIFont(name: FONT_REGULAR, size: self.user_email_label.font.pointSize)
@@ -108,18 +135,18 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
         self.user_location_label.font = UIFont(name: FONT_REGULAR, size: self.user_location_label.font.pointSize)
         self.user_mobile_label.font = UIFont(name: FONT_REGULAR, size: self.user_mobile_label.font.pointSize)
         self.user_workplace_label.font = UIFont(name: FONT_REGULAR, size: self.user_workplace_label.font.pointSize)
-        self.user_posts.font = UIFont(name: FONT_REGULAR, size: self.user_posts.font.pointSize)
+        self.user_posts.font = UIFont(name: FONT_BOLD, size: self.user_posts.font.pointSize)
         self.user_email.font = UIFont(name: FONT_REGULAR, size: self.user_email.font.pointSize)
         self.user_profession.font = UIFont(name: FONT_REGULAR, size: self.user_profession.font.pointSize)
         self.user_location.font = UIFont(name: FONT_REGULAR, size: self.user_location.font.pointSize)
         self.user_mobile.font = UIFont(name: FONT_REGULAR, size: self.user_mobile.font.pointSize)
         self.user_workplace.font = UIFont(name: FONT_REGULAR, size: self.user_workplace.font.pointSize)
         self.update_infoLabel.font = UIFont(name: FONT_REGULAR, size: self.update_infoLabel.font.pointSize)
-        
-        self.user_followers.font = UIFont(name: FONT_REGULAR, size: self.user_followers.font.pointSize)
+        self.user_points.font = UIFont(name: FONT_BOLD, size: self.user_points.font.pointSize)
+        self.user_followers.font = UIFont(name: FONT_BOLD, size: self.user_followers.font.pointSize)
          self.user_points_label.font = UIFont(name: FONT_REGULAR, size: self.user_points_label.font.pointSize)
          self.user_followers_label.font = UIFont(name: FONT_REGULAR, size: self.user_followers_label.font.pointSize)
-         self.user_followers.font = UIFont(name: FONT_REGULAR, size: self.user_followers.font.pointSize)
+         self.user_followers.font = UIFont(name: FONT_BOLD, size: self.user_followers.font.pointSize)
         let defaults = NSUserDefaults.standardUserDefaults()
         
        let user_id = defaults.objectForKey("user_id") as? NSNumber
@@ -133,6 +160,7 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
             self.settingsButton.hidden = true
             self.settingsImage.hidden = true
         }
+        self.showloader()
         Services.getUserInfoWithID(self.userMain.user_id, andHandler: { (response) -> Void in
             
       
@@ -146,7 +174,7 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
         self.user_posts.text = String(self.userMain.posts.count)
         self.user_mobile.text = self.userMain.user_mobile
             self.user_workplace.text = self.userMain.workplace;
-            
+            self.hideloader()
         }) { (err) -> Void in
        
         }
@@ -249,7 +277,7 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
         self.emailTextField.resignFirstResponder()
         self.mobileTextField.resignFirstResponder()
         self.workplaceTextField.resignFirstResponder()
-        
+        self.skilsTextField.resignFirstResponder()
         UIView.animateWithDuration(0.3, animations: { () -> Void in
             self.topUpdateViewConstraintFather.constant = self.view.frame.size.height
             self.BottomUpdateViewConstraintFather.constant = -self.view.frame.size.height
@@ -298,5 +326,23 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
         return true
     }
     
+    
+    
+    func showloader(){
+        
+        self.loader = LoadingAnimationView.createWithMessage("", andColor: "f04531", andImage: UIImage(named: "spinner_white.png"))
+        self.loader.startAnimation()
+        
+          Functions.fillContainerView(self.view, withView: self.loader)
+        
+    }
+    
+    
+    func hideloader(){
+        
+        self.loader.hide()
+        
+        
+    }
     
 }

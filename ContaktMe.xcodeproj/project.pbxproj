@@ -270,6 +270,9 @@
 		EBF7D3EA1B9E642100FBE00E /* spinner_white.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF7D3E71B9E642100FBE00E /* spinner_white.png */; };
 		EBF7D3EB1B9E642100FBE00E /* spinner_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF7D3E81B9E642100FBE00E /* spinner_white@2x.png */; };
 		EBF7D3EC1B9E642100FBE00E /* spinner_white@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF7D3E91B9E642100FBE00E /* spinner_white@3x.png */; };
+		EBF7D3F31B9FA6C600FBE00E /* icon_back_orange.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF7D3F01B9FA6C600FBE00E /* icon_back_orange.png */; };
+		EBF7D3F41B9FA6C600FBE00E /* icon_back_orange@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF7D3F11B9FA6C600FBE00E /* icon_back_orange@2x.png */; };
+		EBF7D3F51B9FA6C600FBE00E /* icon_back_orange@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBF7D3F21B9FA6C600FBE00E /* icon_back_orange@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -615,6 +618,9 @@
 		EBF7D3E71B9E642100FBE00E /* spinner_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spinner_white.png; path = ContaktMe/assets/spinner_white.png; sourceTree = SOURCE_ROOT; };
 		EBF7D3E81B9E642100FBE00E /* spinner_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "spinner_white@2x.png"; path = "ContaktMe/assets/spinner_white@2x.png"; sourceTree = SOURCE_ROOT; };
 		EBF7D3E91B9E642100FBE00E /* spinner_white@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "spinner_white@3x.png"; path = "ContaktMe/assets/spinner_white@3x.png"; sourceTree = SOURCE_ROOT; };
+		EBF7D3F01B9FA6C600FBE00E /* icon_back_orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_back_orange.png; path = ContaktMe/assets/icon_back_orange.png; sourceTree = SOURCE_ROOT; };
+		EBF7D3F11B9FA6C600FBE00E /* icon_back_orange@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_back_orange@2x.png"; path = "ContaktMe/assets/icon_back_orange@2x.png"; sourceTree = SOURCE_ROOT; };
+		EBF7D3F21B9FA6C600FBE00E /* icon_back_orange@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_back_orange@3x.png"; path = "ContaktMe/assets/icon_back_orange@3x.png"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -974,6 +980,9 @@
 				EBF485211B7ECC84006863B9 /* DINPro-Medium.otf */,
 				EBF485221B7ECC84006863B9 /* DINPro-Regular.otf */,
 				EBF485231B7ECC84006863B9 /* icon_back.png */,
+				EBF7D3F01B9FA6C600FBE00E /* icon_back_orange.png */,
+				EBF7D3F11B9FA6C600FBE00E /* icon_back_orange@2x.png */,
+				EBF7D3F21B9FA6C600FBE00E /* icon_back_orange@3x.png */,
 				EBF485241B7ECC84006863B9 /* icon_back@2x.png */,
 				EBF485251B7ECC84006863B9 /* icon_back@3x.png */,
 				EBF485261B7ECC84006863B9 /* icon_bio_small.png */,
@@ -1245,7 +1254,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EBF484121B7EC994006863B9 /* Build configuration list for PBXProject "contaktme" */;
+			buildConfigurationList = EBF484121B7EC994006863B9 /* Build configuration list for PBXProject "ContaktMe" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1340,6 +1349,7 @@
 				EBF485CF1B7ECC84006863B9 /* icon_share_facebook@2x.png in Resources */,
 				EBF4859B1B7ECC84006863B9 /* icon_facebook_blue.png in Resources */,
 				EBF4859E1B7ECC84006863B9 /* icon_favorite.png in Resources */,
+				EBF7D3F51B9FA6C600FBE00E /* icon_back_orange@3x.png in Resources */,
 				EBF485901B7ECC84006863B9 /* icon_coment_post@2x.png in Resources */,
 				EBF7D3EA1B9E642100FBE00E /* spinner_white.png in Resources */,
 				EBF7D3EC1B9E642100FBE00E /* spinner_white@3x.png in Resources */,
@@ -1373,9 +1383,11 @@
 				EBF485D01B7ECC84006863B9 /* icon_share_facebook@3x.png in Resources */,
 				EB832E541B95435300772E73 /* icon_remuneration@2x.png in Resources */,
 				EB832E621B954E7B00772E73 /* LoadingAnimationView.xib in Resources */,
+				EBF7D3F41B9FA6C600FBE00E /* icon_back_orange@2x.png in Resources */,
 				EBF485B61B7ECC84006863B9 /* icon_reload.png in Resources */,
 				EBF485EE1B7ECF71006863B9 /* logo_white@3x.png in Resources */,
 				EBF485AE1B7ECC84006863B9 /* icon_options@2x.png in Resources */,
+				EBF7D3F31B9FA6C600FBE00E /* icon_back_orange.png in Resources */,
 				EBF486201B7FA4EA006863B9 /* 80.png in Resources */,
 				EBF485B71B7ECC84006863B9 /* icon_reload@2x.png in Resources */,
 				EBF485E41B7ECF0A006863B9 /* login_2.png in Resources */,
@@ -1683,7 +1695,7 @@
 				);
 				GCC_PREFIX_HEADER = contaktme/contaktme.pch;
 				INFOPLIST_FILE = contaktme/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1707,7 +1719,7 @@
 				);
 				GCC_PREFIX_HEADER = contaktme/contaktme.pch;
 				INFOPLIST_FILE = contaktme/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1755,7 +1767,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EBF484121B7EC994006863B9 /* Build configuration list for PBXProject "contaktme" */ = {
+		EBF484121B7EC994006863B9 /* Build configuration list for PBXProject "ContaktMe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EBF484381B7EC994006863B9 /* Debug */,

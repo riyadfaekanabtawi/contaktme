@@ -14,50 +14,43 @@ static float const kEaseInEaseOutDuration = 0.5f;
 
 @interface LoadingAnimationView ()
 
-@property (nonatomic, weak) IBOutlet UIView *animationView;
-@property (nonatomic, weak) IBOutlet UILabel *messageLabel;
-@property (nonatomic, weak) IBOutlet UIImageView *imageView;
 
 @end
 
 @implementation LoadingAnimationView
 
-- (id)init
+- (id)initWithFrame:(CGRect)frame
 {
-    NSArray *viewArray = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:self options:nil];
+    self = [super initWithFrame:frame];
+    if (self) {
+        // Initialization code
+    }
+    return self;
+}
+-(void)endAnimationAndRemoveView{}
+
++(LoadingAnimationView *)createWithMessage:(NSString *)message andColor:(NSString *)color andImage:(UIImage *)image
+{
     
-    return [viewArray objectAtIndex:0];
-}
+    LoadingAnimationView *loader =nil;
 
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-    [self setNeedsLayout];
+    loader =[[[NSBundle mainBundle] loadNibNamed:@"LoadingAnimationView" owner:self options:nil] objectAtIndex: 0];
+
+    loader.animationView.layer.cornerRadius = loader.animationView.frame.size.width/2;
+    loader.animationView.layer.masksToBounds = YES;
+ 
+    loader.imageView.image = image;
+   
+    loader.animationView.backgroundColor = [Functions colorWithHexString:color];
+ 
+
+//    [loader.animationView setAlpha:0.0f];
+//    [UIView animateWithDuration:kEaseInEaseOutDuration delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+//    [loader.animationView setAlpha:1.0f];
+//    } completion:nil];
     
-    self.animationView.layer.cornerRadius = 2.0;
-    self.animationView.layer.masksToBounds = YES;
-}
-
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
-    self.layer.backgroundColor = [[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.0] CGColor];
-    _animationView.layer.backgroundColor = [[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.0] CGColor];
-    _animationView.layer.cornerRadius = 3.0;
-}
-
-- (void)showWithImage:(UIImage *)image andColor:(NSString *)color andMessage:(NSString *)message inView:(UIView *)view
-{
-    _messageLabel.text = message;
-    _imageView.image = image;
-    [self startAnimation];
-    _animationView.backgroundColor = [Functions colorWithHexString:color];
-  
-    [Functions fillContainerView:view WithView:self];
-    [_animationView setAlpha:0.0f];
-    [UIView animateWithDuration:kEaseInEaseOutDuration delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
-        [_animationView setAlpha:1.0f];
-    } completion:nil];
+    
+    return loader;
 }
 
 - (void)hide

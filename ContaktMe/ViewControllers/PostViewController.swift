@@ -166,10 +166,11 @@ class PostViewController: UIViewController, UITextFieldDelegate {
     
     func showloader(){
         
-        self.loader = LoadingAnimationView.new()
+   
         
-        self.loader.showWithImage(UIImage(named:"spinner.png"), andColor: "#f04531", andMessage: "", inView: self.view)
-        self.view.bringSubviewToFront(self.loader)
+        self.loader = LoadingAnimationView.createWithMessage("", andColor: "f04531", andImage: UIImage(named:"spinner.png"))
+        self.loader.startAnimation()
+        Functions.fillContainerView(self.view, withView: self.loader)
         
     }
     

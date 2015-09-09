@@ -54,7 +54,7 @@
 
 -(void)viewDidAppear:(BOOL)animated{
 
-
+  self.homeView.alpha = 1.0;
 
 }
 
@@ -168,8 +168,10 @@
         self.homeView.alpha = 0.0;
         self.signOutView.alpha = 1.0;
     }completion:^(BOOL finished) {
-       [self.delegate didSelectMenuOption:@"logout"];
         
+       [self.delegate didSelectMenuOption:@"logout"];
+         self.signOutView.alpha = 0.0;
+      
     }];
     
     

@@ -36,7 +36,7 @@
     self.facebookLabel.font=[UIFont fontWithName:FONT_REGULAR size:self.facebookLabel.font.pointSize];
     
 
-    
+  
     if(![defaults objectForKey:@"user_id"]){
         
         
@@ -268,10 +268,9 @@
 
 
 -(void)showLoader{
-    self.loader = [LoadingAnimationView new];
-    [self.loader showWithImage:[UIImage imageNamed:@"spinner.png"] andColor:@"#ffffff" andMessage:@"" inView:self.view];
+    self.loader = [LoadingAnimationView createWithMessage:@"" andColor:@"ffffff" andImage:[UIImage imageNamed:@"spinner.png"]];
     [self.loader startAnimation];
-    [self.view bringSubviewToFront:self.loader];
+    [Functions fillContainerView:self.view WithView:self.loader];
 
 }
 

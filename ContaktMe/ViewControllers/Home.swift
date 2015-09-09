@@ -110,7 +110,7 @@ class Home: UIViewController,SWRevealViewControllerDelegate,UICollectionViewDele
         self.blockView.hidden = true
         self.tapGestureBlock.enabled = false
      self.setNeedsStatusBarAppearanceUpdate()
-     
+
         self.reintentarView.hidden = true
         self.titleReintentar.font = UIFont (name: FONT_REGULAR, size: self.titleReintentar.font.pointSize)
         self.subTitleReintentar.font = UIFont (name: FONT_REGULAR, size: self.subTitleReintentar.font.pointSize)
@@ -479,10 +479,10 @@ self.callHomeService()
     
     func showloader(){
     
-     self.loader = LoadingAnimationView.new()
-        
-     self.loader.showWithImage(UIImage(named:"spinner_white.png"), andColor: "#f04531", andMessage: "", inView: self.view)
-     self.view.bringSubviewToFront(self.loader)
+     self.loader = LoadingAnimationView.createWithMessage("", andColor: "f04531", andImage: UIImage(named: "spinner_white.png"))
+    self.loader.startAnimation()
+    Functions.fillContainerView(self.view, withView: self.loader)
+    
         
     }
 
