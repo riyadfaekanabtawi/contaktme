@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
-class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UITextFieldDelegate {
+import CoreLocation
+class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UITextFieldDelegate,CLLocationManagerDelegate {
 
     @IBOutlet var user_name: UILabel!
     @IBOutlet var user_posted_jobs_label: UILabel!
@@ -28,8 +28,8 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
     @IBOutlet var updateViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet var topUpdateViewConstraintFather: NSLayoutConstraint!
      @IBOutlet var BottomUpdateViewConstraintFather: NSLayoutConstraint!
-    
-    
+    let locationManager = CLLocationManager()
+    var cityLocation: String = ""
     
     var userMain: User!
     var skill_array :[String] = []
@@ -63,6 +63,17 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
         
         super.viewDidLoad()
         
+        
+        self.locationManager.requestAlwaysAuthorization()
+        
+        // For use in foreground
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
         
         
         if !UIAccessibilityIsReduceTransparencyEnabled() {
@@ -163,9 +174,14 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
         self.showloader()
         Services.getUserInfoWithID(self.userMain.user_id, andHandler: { (response) -> Void in
             
-      
+   
         self.userMain = response as! User
         self.user_email.text = self.userMain.email
+            if self.userMain.profession == nil{
+            self.user_profession.text = ""
+            }else{
+            self.user_profession.text = self.userMain.profession
+            }
                self.useR_image.sd_setImageWithURL(NSURL(string: self.userMain.profilepicture))
         self.user_name.text = self.userMain.user_name
         self.user_followers.text = String(self.userMain.friends.count)
@@ -184,6 +200,35 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+        println("Error while updating location " + error.localizedDescription)
+    }
+    
+    
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        CLGeocoder().reverseGeocodeLocation(manager.location, completionHandler: {(placemarks, error)->Void in
+            if (error != nil) {
+                println("Reverse geocoder failed with error" + error.localizedDescription)
+                return
+            }
+            
+            if placemarks.count != 0 {
+                let pm = placemarks[0] as! CLPlacemark
+                self.displayLocationInfo(pm)
+            }else {
+                println("Problem with the data received from geocoder")
+            }
+        })
+    }
+    
+    func displayLocationInfo(placemark: CLPlacemark) {
+        
+        self.cityLocation = placemark.locality as String
+        
+        self.user_location_label.text=self.cityLocation
+        
+        
     }
     
 
