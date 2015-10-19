@@ -44,12 +44,36 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     
     
-
-    
+    self.descriptionTextView.text = @"job description";
+    self.descriptionTextView.textColor= [UIColor lightGrayColor];
     
 }
 
+- (void)textViewDidBeginEditing:(UITextView *)textView{
 
+    if (textView.textColor == [UIColor lightGrayColor]){
+    
+        textView.text = nil;
+        textView.textColor = [UIColor blackColor];
+    
+    }
+
+
+
+}
+
+
+- (void)textViewDidEndEditing:(UITextView *)textView{
+
+
+    if ([textView.text isEqual:@""]){
+    
+    textView.text = @"job description";
+        textView.textColor = [UIColor lightGrayColor];
+    
+    }
+
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];

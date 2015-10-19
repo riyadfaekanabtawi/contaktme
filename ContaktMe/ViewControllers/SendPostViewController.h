@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@protocol SendPostDelegate <NSObject,UIScrollViewDelegate,UITextFieldDelegate>
+@protocol SendPostDelegate <NSObject,UIScrollViewDelegate,UITextFieldDelegate,UITextViewDelegate>
 
 @optional
 -(void)postDidSend;

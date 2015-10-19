@@ -9,7 +9,7 @@
 import UIKit
 public protocol homeCellDelegate {
     func selectedProfileFromHomeCell(user : User)
-    
+    func appliedForJob(post: Post)
 }
 class HomeCollectionViewCell: UICollectionViewCell,UIWebViewDelegate {
     
@@ -158,6 +158,15 @@ class HomeCollectionViewCell: UICollectionViewCell,UIWebViewDelegate {
     @IBAction func goToProfileTouchUpInside(sender: UIButton) {
         
      self.delegate.selectedProfileFromHomeCell(self.post.user_owner)
+    }
+    
+    
+    
+    @IBAction func applyForJobTouchUpInside(sender: AnyObject) {
+        
+        self.delegate.appliedForJob(self.post)
+        
+        
     }
     
 }

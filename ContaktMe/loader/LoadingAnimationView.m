@@ -89,7 +89,7 @@ static float const kEaseInEaseOutDuration = 0.5f;
     [animation setKeyTimes:time];
     [animation setValues:angle];
     [animation setTimingFunctions:function];
-    animation.duration = 1.2;
+    animation.duration = .8;
     animation.repeatCount = HUGE_VALF;
     [_animationView.layer addAnimation:animation forKey:animationKey];
 }

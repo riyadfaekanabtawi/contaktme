@@ -16,6 +16,9 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
     @IBOutlet var user_email_label: UILabel!
     @IBOutlet var user_profession_label: UILabel!
     @IBOutlet var user_location_label: UILabel!
+    @IBOutlet var user_skills: UILabel!
+    @IBOutlet var followView: UIView!
+    @IBOutlet var followLabel: UILabel!
     @IBOutlet var user_mobile_label: UILabel!
     @IBOutlet var user_workplace_label: UILabel!
     @IBOutlet var updateButtonUIView: UIView!
@@ -97,7 +100,7 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWasShown:"), name:UIKeyboardWillShowNotification, object: nil);
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
-        self.useR_image.layer.cornerRadius = self.useR_image.frame.size.width/2
+        self.useR_image.layer.cornerRadius = 2
         self.titleUpdate.font = UIFont(name: FONT_REGULAR, size: self.titleUpdate.font.pointSize)
         self.professionTextField.font = UIFont(name: FONT_LIGHT, size: self.professionTextField.font.pointSize)
         self.workplaceTextField.font = UIFont(name: FONT_LIGHT, size: self.workplaceTextField.font.pointSize)
@@ -107,8 +110,9 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
         self.updateButtonUIView.layer.cornerRadius = 2
         self.updateButtonUIView.layer.masksToBounds = true
         self.updateButtonUIView.layer.borderWidth = 2
+        self.followLabel.font = UIFont(name: FONT_BOLD, size: self.followLabel.font.pointSize)
         self.updateButtonUIView.layer.borderColor = UIColor.whiteColor().CGColor
-        
+        self.user_skills.font = UIFont(name: FONT_REGULAR, size: self.user_skills.font.pointSize)
         self.useR_image.layer.borderColor = Functions.colorWithHexString("F04531").CGColor
         self.useR_image.layer.borderWidth = 2
         self.useR_image.layer.masksToBounds = true
@@ -133,9 +137,7 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
         
         
         
-        
-        
-        
+
         
         
         
@@ -166,37 +168,101 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
         if self.userMain.user_id == user_id{
             self.settingsButton.hidden = false
             self.settingsImage.hidden = false
+            self.followView.hidden = true
         }else{
-            
+            self.followView.hidden = false
             self.settingsButton.hidden = true
             self.settingsImage.hidden = true
         }
-        self.showloader()
-        Services.getUserInfoWithID(self.userMain.user_id, andHandler: { (response) -> Void in
-            
-   
-        self.userMain = response as! User
-        self.user_email.text = self.userMain.email
-            if self.userMain.profession == nil{
-            self.user_profession.text = ""
-            }else{
-            self.user_profession.text = self.userMain.profession
-            }
-               self.useR_image.sd_setImageWithURL(NSURL(string: self.userMain.profilepicture))
-        self.user_name.text = self.userMain.user_name
-        self.user_followers.text = String(self.userMain.friends.count)
-        self.user_cover_image.sd_setImageWithURL(NSURL(string: self.userMain.user_backDrop))
 
-        self.user_posts.text = String(self.userMain.posts.count)
-        self.user_mobile.text = self.userMain.user_mobile
-            self.user_workplace.text = self.userMain.workplace;
-            self.hideloader()
-        }) { (err) -> Void in
-       
-        }
+     self.callService()
         // Do any additional setup after loading the view.
     }
 
+    
+    func callService(){
+    
+            self.showloader()
+        Services.getUserInfoWithID(self.userMain.user_id, andHandler: { (response) -> Void in
+            
+            
+            self.userMain = response as! User
+            self.user_email.text = self.userMain.email
+            //            if self.userMain.profession == nil{
+            //            self.user_profession.text = ""
+            //            }else{
+            //            self.user_profession.text = self.userMain.profession
+            //            }
+            self.useR_image.sd_setImageWithURL(NSURL(string: self.userMain.profilepicture))
+            self.user_name.text = self.userMain.user_name
+            self.user_followers.text = String(self.userMain.friends.count)
+            self.user_cover_image.sd_setImageWithURL(NSURL(string: self.userMain.user_backDrop))
+            
+            self.user_posts.text = String(self.userMain.posts.count)
+            
+            self.emailTextField.text = self.userMain.email
+            
+            
+            
+            
+            if self.userMain.workplace == nil{
+                
+                self.workplaceTextField.text = ""
+                self.workplaceTextField.placeholder = "workplace"
+                self.user_workplace.text = ""
+            }else{
+                self.workplaceTextField.text = self.userMain.workplace;
+                self.user_workplace.text = self.userMain.workplace;
+                
+            }
+            
+            
+            
+            if self.userMain.profession == nil{
+                
+                self.professionTextField.text = ""
+                self.professionTextField.placeholder = "profession"
+                self.user_profession.text = ""
+            }else{
+                self.professionTextField.text = self.userMain.profession;
+                self.user_profession.text = self.userMain.profession;
+                
+            }
+            
+            
+            
+            
+            if self.userMain.user_mobile == nil{
+                
+                self.mobileTextField.text = ""
+                self.mobileTextField.placeholder = "mobile phone"
+                self.user_mobile.text = ""
+            }else{
+                self.mobileTextField.text = self.userMain.user_mobile;
+                self.user_mobile.text = self.userMain.user_mobile;
+                
+            }
+            
+            if self.userMain.user_skills == nil{
+                
+                self.skilsTextField.text = ""
+                self.skilsTextField.placeholder = "your skills"
+                self.user_skills.text = ""
+            }else{
+                self.skilsTextField.text = self.userMain.user_skills;
+                self.user_skills.text = self.userMain.user_skills;
+                
+            }
+            
+            
+            
+            
+            self.hideloader()
+            }) { (err) -> Void in
+                
+        }
+    
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -293,16 +359,26 @@ class ProfileViewController: UIViewController,UICollectionViewDelegate,UICollect
     
     @IBAction func sendInfoTuchUpInside(sender: UIButton) {
         
+        let defaults = NSUserDefaults.standardUserDefaults()
         
-  Services.EditUser(2, name:"", image_url: "", andEmail: "", andBio: "", andTelefone:"", andBackDropURL:"", andProfession:"", andWorkPlace:"", andSkills:"", withHandler: { (response) -> Void in
+        let user_id = defaults.objectForKey("user_id") as! NSNumber
+        
+        if (self.emailTextField.text == "" || self.professionTextField.text == "" || self.mobileTextField.text == "" || self.workplaceTextField.text == ""  || self.skilsTextField.text == ""){
+        
+        
+        }else{
+            Services.EditUser(user_id, name:self.userMain.user_name, image_url: self.userMain.profilepicture, andEmail: self.emailTextField.text, andBio: "", andTelefone:self.mobileTextField.text, andBackDropURL:self.userMain.user_backDrop, andProfession:self.professionTextField.text, andWorkPlace:self.workplaceTextField.text, andSkills:self.skilsTextField.text, withHandler: { (response) -> Void in
+                self.hideUpdateView()
+                  self.callService()
+                
+                }, orErrorHandler: { (err) -> Void in
+                    
+                    
+                    
+            })
+        
+        }
 
-    
-    
-  }, orErrorHandler: { (err) -> Void in
-
-    
-  
-    })
     
     }
     func showUpdateView(){

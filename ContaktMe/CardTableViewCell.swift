@@ -15,6 +15,7 @@ protocol cardCellDelegate{
     func selectedOptionsNoDelete(post:Post)
     func refreshHomeAtIndex(index:Int)
     func selectedPost(post:Post)
+
     
 }
 class CardTableViewCell: UITableViewCell,UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,CommentsCellDelegate  {
@@ -376,7 +377,8 @@ class CardTableViewCell: UITableViewCell,UITableViewDataSource,UITableViewDelega
     
     
     
-
+  
+    
 }
 
 

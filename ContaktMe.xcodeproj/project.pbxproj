@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A27E079B1B9F134100DDD83F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27E079A1B9F134100DDD83F /* ProfileViewController.swift */; };
+		EB378FB51B9FE4B5005E45BC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB378FB41B9FE4B5005E45BC /* ProfileViewController.swift */; };
 		EB3ECEC41B9D14DF00EAD426 /* postFacebook.png in Resources */ = {isa = PBXBuildFile; fileRef = EB3ECEBE1B9D14DF00EAD426 /* postFacebook.png */; };
 		EB3ECEC51B9D14DF00EAD426 /* postFacebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB3ECEBF1B9D14DF00EAD426 /* postFacebook@2x.png */; };
 		EB3ECEC61B9D14DF00EAD426 /* postFacebook@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB3ECEC01B9D14DF00EAD426 /* postFacebook@3x.png */; };
@@ -33,6 +33,9 @@
 		EB832E5B1B954E5C00772E73 /* spinner@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB832E581B954E5C00772E73 /* spinner@2x.png */; };
 		EB832E5C1B954E5C00772E73 /* spinner@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB832E591B954E5C00772E73 /* spinner@3x.png */; };
 		EB832E621B954E7B00772E73 /* LoadingAnimationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB832E601B954E7B00772E73 /* LoadingAnimationView.xib */; };
+		EBBF882D1BCDDEDA0026DC7F /* refresh_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EBBF882A1BCDDEDA0026DC7F /* refresh_icon.png */; };
+		EBBF882E1BCDDEDA0026DC7F /* refresh_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBBF882B1BCDDEDA0026DC7F /* refresh_icon@2x.png */; };
+		EBBF882F1BCDDEDA0026DC7F /* refresh_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBBF882C1BCDDEDA0026DC7F /* refresh_icon@3x.png */; };
 		EBD3BFD71B9E425700D17FEA /* menuIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD3BFD41B9E425700D17FEA /* menuIcon.png */; };
 		EBD3BFD81B9E425700D17FEA /* menuIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD3BFD51B9E425700D17FEA /* menuIcon@2x.png */; };
 		EBD3BFD91B9E425700D17FEA /* menuIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD3BFD61B9E425700D17FEA /* menuIcon@3x.png */; };
@@ -286,7 +289,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A27E079A1B9F134100DDD83F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		EB378FB41B9FE4B5005E45BC /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = ContaktMe/ViewControllers/ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
 		EB3ECEBE1B9D14DF00EAD426 /* postFacebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = postFacebook.png; sourceTree = "<group>"; };
 		EB3ECEBF1B9D14DF00EAD426 /* postFacebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "postFacebook@2x.png"; sourceTree = "<group>"; };
 		EB3ECEC01B9D14DF00EAD426 /* postFacebook@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "postFacebook@3x.png"; sourceTree = "<group>"; };
@@ -313,6 +316,9 @@
 		EB832E581B954E5C00772E73 /* spinner@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spinner@2x.png"; sourceTree = "<group>"; };
 		EB832E591B954E5C00772E73 /* spinner@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spinner@3x.png"; sourceTree = "<group>"; };
 		EB832E601B954E7B00772E73 /* LoadingAnimationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingAnimationView.xib; sourceTree = "<group>"; };
+		EBBF882A1BCDDEDA0026DC7F /* refresh_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = refresh_icon.png; path = ContaktMe/assets/refresh_icon.png; sourceTree = SOURCE_ROOT; };
+		EBBF882B1BCDDEDA0026DC7F /* refresh_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "refresh_icon@2x.png"; path = "ContaktMe/assets/refresh_icon@2x.png"; sourceTree = SOURCE_ROOT; };
+		EBBF882C1BCDDEDA0026DC7F /* refresh_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "refresh_icon@3x.png"; path = "ContaktMe/assets/refresh_icon@3x.png"; sourceTree = SOURCE_ROOT; };
 		EBD3BFD41B9E425700D17FEA /* menuIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menuIcon.png; path = ContaktMe/assets/menuIcon.png; sourceTree = SOURCE_ROOT; };
 		EBD3BFD51B9E425700D17FEA /* menuIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menuIcon@2x.png"; path = "ContaktMe/assets/menuIcon@2x.png"; sourceTree = SOURCE_ROOT; };
 		EBD3BFD61B9E425700D17FEA /* menuIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menuIcon@3x.png"; path = "ContaktMe/assets/menuIcon@3x.png"; sourceTree = SOURCE_ROOT; };
@@ -790,7 +796,7 @@
 				EBF484541B7ECB3D006863B9 /* LoginViewController.m */,
 				EBF484551B7ECB3D006863B9 /* PostDetailViewController.swift */,
 				EBF484561B7ECB3D006863B9 /* PostProfileCell.swift */,
-				A27E079A1B9F134100DDD83F /* ProfileViewController.swift */,
+				EB378FB41B9FE4B5005E45BC /* ProfileViewController.swift */,
 				EBF484571B7ECB3D006863B9 /* PostViewController.swift */,
 				EBF484581B7ECB3D006863B9 /* SBTVCustomAlertView.h */,
 				EBF484591B7ECB3D006863B9 /* SBTVCustomAlertView.m */,
@@ -917,6 +923,9 @@
 		EBF485131B7ECC84006863B9 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				EBBF882A1BCDDEDA0026DC7F /* refresh_icon.png */,
+				EBBF882B1BCDDEDA0026DC7F /* refresh_icon@2x.png */,
+				EBBF882C1BCDDEDA0026DC7F /* refresh_icon@3x.png */,
 				EBD3BFDA1B9E49E000D17FEA /* icon_apply.png */,
 				EBF7D3E71B9E642100FBE00E /* spinner_white.png */,
 				EBF7D3E81B9E642100FBE00E /* spinner_white@2x.png */,
@@ -1242,6 +1251,7 @@
 		EBF4840F1B7EC994006863B9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Riyad Anabtawi";
 				TargetAttributes = {
@@ -1294,6 +1304,7 @@
 				EBF4861F1B7FA4EA006863B9 /* 72.png in Resources */,
 				EBF7D3EB1B9E642100FBE00E /* spinner_white@2x.png in Resources */,
 				EBF4865E1B806799006863B9 /* bennefits@3x.png in Resources */,
+				EBBF882D1BCDDEDA0026DC7F /* refresh_icon.png in Resources */,
 				EBF485AC1B7ECC84006863B9 /* icon_notification@3x.png in Resources */,
 				EB3ECEC61B9D14DF00EAD426 /* postFacebook@3x.png in Resources */,
 				EBF485D81B7ECC84006863B9 /* icon_favorite_post_ON_big@2x.png in Resources */,
@@ -1390,12 +1401,14 @@
 				EBF7D3F31B9FA6C600FBE00E /* icon_back_orange.png in Resources */,
 				EBF486201B7FA4EA006863B9 /* 80.png in Resources */,
 				EBF485B71B7ECC84006863B9 /* icon_reload@2x.png in Resources */,
+				EBBF882E1BCDDEDA0026DC7F /* refresh_icon@2x.png in Resources */,
 				EBF485E41B7ECF0A006863B9 /* login_2.png in Resources */,
 				EBF485D21B7ECC84006863B9 /* icon_share_twitter@2x.png in Resources */,
 				EBF485AA1B7ECC84006863B9 /* icon_notification.png in Resources */,
 				EBF485D71B7ECC84006863B9 /* icon_favorite_post_ON_big.png in Resources */,
 				EBF485B01B7ECC84006863B9 /* icon_out_small.png in Resources */,
 				EBD3BFD81B9E425700D17FEA /* menuIcon@2x.png in Resources */,
+				EBBF882F1BCDDEDA0026DC7F /* refresh_icon@3x.png in Resources */,
 				EBF486461B803EBA006863B9 /* link@2x.png in Resources */,
 				EBF485B21B7ECC84006863B9 /* icon_out_small@3x.png in Resources */,
 				EBF485A91B7ECC84006863B9 /* icon_name_small@3x.png in Resources */,
@@ -1522,7 +1535,7 @@
 				EBF484DA1B7ECB3D006863B9 /* SBTVCustomAlertView.m in Sources */,
 				EBF484E91B7ECB3D006863B9 /* AFURLResponseSerialization.m in Sources */,
 				EBF4850B1B7ECB3D006863B9 /* UIImageView+WebCache.m in Sources */,
-				A27E079B1B9F134100DDD83F /* ProfileViewController.swift in Sources */,
+				EB378FB51B9FE4B5005E45BC /* ProfileViewController.swift in Sources */,
 				EBF485081B7ECB3D006863B9 /* UIImage+MultiFormat.m in Sources */,
 				EBF484E31B7ECB3D006863B9 /* AFHTTPRequestOperationManager.m in Sources */,
 				EBF485051B7ECB3D006863B9 /* UIButton+WebCache.m in Sources */,

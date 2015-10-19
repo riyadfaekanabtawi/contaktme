@@ -19,7 +19,7 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    self.user_image.layer.cornerRadius = self.user_image.frame.size.width/2;
+    self.user_image.layer.cornerRadius = 2;
     self.user_image.layer.masksToBounds = YES;
     
     
@@ -54,7 +54,7 @@
 
 -(void)viewDidAppear:(BOOL)animated{
 
-  self.homeView.alpha = 1.0;
+
 
 }
 
@@ -172,6 +172,29 @@
        [self.delegate didSelectMenuOption:@"logout"];
          self.signOutView.alpha = 0.0;
       
+    }];
+    
+    
+    
+    
+}
+
+
+-(IBAction)SignOutTouchUpInside:(id)sender{
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        
+        self.searchView.alpha = 0.0;
+        self.lookforView.alpha = 0.0;
+        self.myProjectsView.alpha = 0.0;
+        self.topJobsView.alpha = 0.0;
+        self.homeView.alpha = 0.0;
+        self.signOutView.alpha = 1.0;
+    }completion:^(BOOL finished) {
+        
+        [self.delegate didSelectMenuOption:@"logout"];
+        self.signOutView.alpha = 0.0;
+        
     }];
     
     

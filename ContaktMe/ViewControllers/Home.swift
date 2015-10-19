@@ -141,7 +141,7 @@ class Home: UIViewController,SWRevealViewControllerDelegate,UICollectionViewDele
         
         
         self.navigationItem.setHidesBackButton(true, animated: false)
-        self.navigationItem.leftBarButtonItems = []
+
         let revealViewController = SWRevealViewController()
         // appearance and layout customization
         self.navigationController?.setNavigationBarHidden(navigationController?.navigationBarHidden == false, animated: true)
@@ -163,29 +163,44 @@ self.callHomeService()
     
     
     func slideMenuSetup() {
+        let menuButton = UIButton(frame: CGRectMake(0, 0, 40, 26))
+        menuButton.imageEdgeInsets = UIEdgeInsetsMake(6, -5, 7, 25)
+        menuButton.setImage(UIImage(named: "menuIcon.png"), forState: UIControlState.Normal)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: menuButton)
         
+        
+        let refreshBut = UIButton(frame: CGRectMake(0, 0, 22, 22))
+        
+        refreshBut.setImage(UIImage(named: "refresh_icon.png"), forState: UIControlState.Normal)
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: refreshBut)
         
         
         if let revealViewController = self.revealViewController() {
             revealViewController.delegate = self
-            revealViewController.toggleAnimationDuration = 0.5
+            revealViewController.toggleAnimationDuration = 0.3
             
-            revealViewController.rearViewRevealWidth = 200
+            revealViewController.rearViewRevealWidth = UIDevice.currentDevice().userInterfaceIdiom == .Pad ? 250 : 230
             self.navigationController?.navigationBar.addGestureRecognizer(revealViewController.panGestureRecognizer())
             
             let menu = revealViewController.rearViewController as! MenuViewController
-          
-            menu.delegate = self
+            menu.delegate = self;
         }
         
-}
+        //TODO: Handle controller
+        menuButton.addTarget(self, action: "menuButtonTouchUpInside:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        
+        refreshBut.addTarget(self, action: "refreshhAllTouchUpInside:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+    }
     
     
  
     @IBAction func menuButtonTouchUpInside(sender: UIButton) {
       self.revealViewController().revealToggleAnimated(true)
             
-            UIView.animateWithDuration(0.3, animations: { () -> Void in
+            UIView.animateWithDuration(0.1, animations: { () -> Void in
                 self.blockView.alpha=1.0
                   self.blockView.hidden=false
                    self.tapGestureBlock.enabled = true
@@ -502,6 +517,24 @@ self.callHomeService()
         
         self.userMain = user
         self.performSegueWithIdentifier("profile", sender: self)
+    }
+    
+    
+    
+    func appliedForJob(post: Post) {
+          let defaults = NSUserDefaults.standardUserDefaults()
+        
+        
+        let myID = defaults.objectForKey("user_id") as! NSNumber
+        
+        Services.LikePost(post.post_id, byUser: myID, withHandler: { (response) -> Void in
+            
+        }) { (err) -> Void in
+           
+        }
+        
+        
+        
     }
 }
     

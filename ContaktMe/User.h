@@ -17,8 +17,10 @@
 @property NSString *profilepicture;
 @property NSString *email;
 @property NSString *workplace;
+@property NSString *profession;
 @property NSNumber *user_id;
 @property NSString *custom_name;
+@property NSString *user_skills;
 @property NSArray *posts;
 @property NSArray *friends;
 -(User *)initWithDictionary:(NSDictionary *)dictionary;

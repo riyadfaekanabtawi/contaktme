@@ -205,7 +205,7 @@
     
 
     
-    NSDictionary *parameters = @{@"user":@{@"name" :user_name,@"email" :email,@"image_url" :image_url,@"bio" :biography,@"telefone" :telefone,@"backdrop_url" :backdrop,@"profession" :profession, @"workplace" :workplace,@"skills" :skills,@"id"  :user_id,@"password" :@"121788gloriA",@"password_confirmation" :@"121788gloriA",@"created_at" :[NSDate date],@"updated_at" :[NSDate date]}};
+    NSDictionary *parameters = @{@"user":@{@"name" :user_name,@"email" :email,@"image_url" :image_url,@"bio" :biography,@"telefone" :telefone,@"backdrop_url" :backdrop,@"profession" :profession, @"workplace" :workplace,@"users_skills" :skills,@"id"  :user_id,@"password" :@"121788gloriA",@"password_confirmation" :@"121788gloriA",@"created_at" :[NSDate date],@"updated_at" :[NSDate date]}};
     
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];

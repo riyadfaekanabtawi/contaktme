@@ -24,21 +24,22 @@
         if([[dictionary objectForKey:@"image_url"] isKindOfClass:[NSNull class]] || [dictionary objectForKey:@"image_url"]==nil || ![dictionary objectForKey:@"image_url"]){
         self.profilepicture = @"placeholder";
         }else{
-          self.profilepicture = [dictionary objectForKey:@"image_url"];
+            self.profilepicture = replaceNSNullValue([dictionary objectForKey:@"image_url"]);
         }
-      
+            self.user_skills = replaceNSNullValue([dictionary objectForKey:@"users_skills"]);
+         self.workplace = replaceNSNullValue([dictionary objectForKey:@"workplace"]);
         if(![dictionary objectForKey:@"custom_name"]){
         
         self.custom_name = @"";
             
-        
+      
         
         }else{
         self.custom_name = [dictionary objectForKey:@"custom_name"];
         
         }
-        
-        
+        self.user_mobile =replaceNSNullValue([dictionary objectForKey:@"telefone"]);
+        self.profession = replaceNSNullValue([dictionary objectForKey:@"profession"]);
         NSMutableArray *array =[NSMutableArray new];
         
         for ( NSDictionary *dic in [dictionary objectForKey:@"recipes"]){
