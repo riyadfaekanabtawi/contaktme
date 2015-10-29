@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15A282b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jEG-nv-Hdu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jEG-nv-Hdu">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -885,14 +885,39 @@
                                             <action selector="menuButtonTouchUpInside:" destination="eD1-fx-8cm" eventType="touchUpInside" id="QmW-Xd-bXn"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="refresh_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Jm9-D4-pYP">
+                                        <rect key="frame" x="278" y="25" width="22" height="22"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="22" id="f0E-li-7fZ"/>
+                                            <constraint firstAttribute="height" constant="22" id="oUp-oo-UI4"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dx2-fC-xKb">
+                                        <rect key="frame" x="264" y="10" width="46" height="44"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="46" id="1f4-fM-l1c"/>
+                                            <constraint firstAttribute="height" constant="44" id="F60-ev-DzW"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" red="0.94117647058823528" green="0.27058823529411763" blue="0.19215686274509805" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Jm9-D4-pYP" secondAttribute="trailing" constant="20" id="4Ij-nB-qrt"/>
+                                    <constraint firstItem="Jm9-D4-pYP" firstAttribute="top" secondItem="9cd-CY-qHw" secondAttribute="top" constant="25" id="9lv-h2-sFH"/>
                                     <constraint firstAttribute="height" constant="64" id="CRU-Jg-aOK"/>
                                     <constraint firstItem="gUr-zr-fN5" firstAttribute="top" secondItem="9cd-CY-qHw" secondAttribute="top" constant="30" id="FSd-YN-hEb"/>
+                                    <constraint firstItem="dx2-fC-xKb" firstAttribute="top" secondItem="9cd-CY-qHw" secondAttribute="top" constant="10" id="RfA-dL-eyE"/>
                                     <constraint firstItem="BQK-bm-Xvt" firstAttribute="top" secondItem="9cd-CY-qHw" secondAttribute="top" id="Rg0-Jk-oG4"/>
                                     <constraint firstItem="BQK-bm-Xvt" firstAttribute="leading" secondItem="9cd-CY-qHw" secondAttribute="leading" id="Y0A-VS-Ic4"/>
+                                    <constraint firstAttribute="trailing" secondItem="dx2-fC-xKb" secondAttribute="trailing" constant="10" id="oHx-gp-Vag"/>
                                     <constraint firstItem="gUr-zr-fN5" firstAttribute="leading" secondItem="9cd-CY-qHw" secondAttribute="leading" constant="14" id="w3i-Ob-XNW"/>
                                 </constraints>
                             </view>
@@ -3549,6 +3574,7 @@
         <image name="position.png" width="24" height="20"/>
         <image name="postFacebook.png" width="28" height="29"/>
         <image name="postTwitter.png" width="28" height="29"/>
+        <image name="refresh_icon.png" width="22" height="22"/>
         <image name="sadLocation_icon.png" width="569" height="853"/>
     </resources>
 </document>

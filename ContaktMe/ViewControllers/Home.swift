@@ -105,7 +105,7 @@ class Home: UIViewController,SWRevealViewControllerDelegate,UICollectionViewDele
     }
     
     override func viewDidLoad() {
-        self.slideMenuSetup()
+       // self.slideMenuSetup()
        self.blockView.alpha=0.0
         self.blockView.hidden = true
         self.tapGestureBlock.enabled = false
@@ -167,20 +167,18 @@ self.callHomeService()
         menuButton.imageEdgeInsets = UIEdgeInsetsMake(6, -5, 7, 25)
         menuButton.setImage(UIImage(named: "menuIcon.png"), forState: UIControlState.Normal)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: menuButton)
-        
-        
+
+       
         let refreshBut = UIButton(frame: CGRectMake(0, 0, 22, 22))
         
         refreshBut.setImage(UIImage(named: "refresh_icon.png"), forState: UIControlState.Normal)
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: refreshBut)
-        
-        
         if let revealViewController = self.revealViewController() {
             revealViewController.delegate = self
             revealViewController.toggleAnimationDuration = 0.3
             
-            revealViewController.rearViewRevealWidth = UIDevice.currentDevice().userInterfaceIdiom == .Pad ? 250 : 230
+            revealViewController.rearViewRevealWidth = 250
             self.navigationController?.navigationBar.addGestureRecognizer(revealViewController.panGestureRecognizer())
             
             let menu = revealViewController.rearViewController as! MenuViewController

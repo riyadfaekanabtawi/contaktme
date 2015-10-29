@@ -28,6 +28,7 @@
 @property (nonatomic,retain) IBOutlet UILabel *myProjectsLabel;
 @property (nonatomic,retain) IBOutlet UILabel *searchLabel;
 @property (nonatomic,retain) IBOutlet UILabel *signoutLabel;
+@property (nonatomic,retain) IBOutlet UILabel *inviteFriendsLabel;
 
 @property (nonatomic,retain) id<MenuViewControllerDelegate> delegate;
 
@@ -37,5 +38,7 @@
 @property (nonatomic,retain) IBOutlet UIView *myProjectsView;
 @property (nonatomic,retain) IBOutlet UIView *searchView;
 @property (nonatomic,retain) IBOutlet UIView *signOutView;
+
+@property (nonatomic,retain) IBOutlet UIView *inviteFriendsView;
 
 @end

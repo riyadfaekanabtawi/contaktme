@@ -29,6 +29,7 @@
     self.lookforView.alpha = 0.0;
     self.myProjectsView.alpha = 0.0;
     self.topJobsView.alpha = 0.0;
+    self.inviteFriendsView.alpha = 0.0;
     self.homeView.alpha = 1.0;
     self.signOutView.alpha = 0.0;
     
@@ -39,6 +40,7 @@
      self.topJobsLabel.font = [UIFont fontWithName:FONT_REGULAR size:self.topJobsLabel.font.pointSize];
     
     self.searchLabel.font = [UIFont fontWithName:FONT_REGULAR size:self.searchLabel.font.pointSize];
+    self.inviteFriendsLabel.font = [UIFont fontWithName:FONT_REGULAR size:self.inviteFriendsLabel.font.pointSize];
     
     self.lookforLabel.font = [UIFont fontWithName:FONT_REGULAR size:self.lookforLabel.font.pointSize];
     
@@ -65,6 +67,7 @@
         self.searchView.alpha = 0.0;
         self.lookforView.alpha = 0.0;
         self.myProjectsView.alpha = 1.0;
+        self.inviteFriendsView.alpha = 0.0;
         self.topJobsView.alpha = 0.0;
         self.homeView.alpha = 0.0;
         self.signOutView.alpha = 0.0;
@@ -87,6 +90,7 @@
         self.searchView.alpha = 0.0;
         self.lookforView.alpha = 1.0;
         self.myProjectsView.alpha = 0.0;
+        self.inviteFriendsView.alpha = 0.0;
         self.topJobsView.alpha = 0.0;
         self.homeView.alpha = 0.0;
         self.signOutView.alpha = 0.0;
@@ -104,6 +108,7 @@
         
         self.searchView.alpha = 0.0;
         self.lookforView.alpha = 0.0;
+        self.inviteFriendsView.alpha = 0.0;
         self.myProjectsView.alpha = 0.0;
         self.topJobsView.alpha = 1.0;
         self.homeView.alpha = 0.0;
@@ -122,6 +127,7 @@
         
         self.searchView.alpha = 0.0;
         self.lookforView.alpha = 0.0;
+        self.inviteFriendsView.alpha = 0.0;
         self.myProjectsView.alpha = 0.0;
         self.topJobsView.alpha = 0.0;
         self.homeView.alpha = 1.0;
@@ -140,6 +146,7 @@
     [UIView animateWithDuration:0.3 animations:^{
         
         self.searchView.alpha = 1.0;
+        self.inviteFriendsView.alpha = 0.0;
         self.lookforView.alpha = 0.0;
         self.myProjectsView.alpha = 0.0;
         self.topJobsView.alpha = 0.0;
@@ -162,6 +169,7 @@
     [UIView animateWithDuration:0.3 animations:^{
         
         self.searchView.alpha = 0.0;
+        self.inviteFriendsView.alpha = 0.0;
         self.lookforView.alpha = 0.0;
         self.myProjectsView.alpha = 0.0;
         self.topJobsView.alpha = 0.0;
@@ -180,20 +188,20 @@
 }
 
 
--(IBAction)SignOutTouchUpInside:(id)sender{
+-(IBAction)inviteFriendsTouchUpInside:(id)sender{
     
     [UIView animateWithDuration:0.3 animations:^{
-        
+        self.inviteFriendsView.alpha = 1.0;
         self.searchView.alpha = 0.0;
         self.lookforView.alpha = 0.0;
         self.myProjectsView.alpha = 0.0;
         self.topJobsView.alpha = 0.0;
         self.homeView.alpha = 0.0;
-        self.signOutView.alpha = 1.0;
+        self.signOutView.alpha = 0.0;
     }completion:^(BOOL finished) {
         
-        [self.delegate didSelectMenuOption:@"logout"];
-        self.signOutView.alpha = 0.0;
+      
+        self.inviteFriendsView.alpha = 0.0;
         
     }];
     
